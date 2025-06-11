@@ -1,19 +1,35 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-// import Image from 'next/image'
+import Image from 'next/image'
+import { climateCrisis } from '@/lib/font'
 
 export default function Home() {
 	return (
 		<main className='min-h-screen bg-white text-gray-900 p-6'>
-			<section className='max-w-4xl mx-auto text-center py-12'>
-				<h1 className='text-4xl md:text-6xl font-bold mb-4'>
-					Rochelle Rossman
-				</h1>
-				<p className='text-lg md:text-xl text-gray-600 mb-6'>
-					Front-End Developer | React, WordPress, Tailwind | Lover of
-					clean code & good UI
-				</p>
+			<section>
+				<div className='flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto py-8'>
+					<span>
+						<h1
+							className={`${climateCrisis.className} text-4xl md:text-6xl mb-4`}
+						>
+							Rochelle Rossman
+						</h1>
+						<p className='text-lg md:text-xl text-gray-600 mb-6'>
+							Front-End Developer | React, WordPress, Tailwind |
+							Lover of clean code & good UI
+						</p>
+					</span>
+					<Image
+						src='/lightbulb-screen-logo.png'
+						alt='Profile photo'
+						className='block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5'
+						width={240}
+						height={240}
+						priority
+					/>
+				</div>
+
 				<Button asChild>
 					<Link href='/projects'>View My Work</Link>
 				</Button>
