@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import "./globals.css";
 import Navbar  from "@/components/nav";
 import Footer from "@/components/footer";
@@ -23,12 +23,13 @@ export default function RootLayout({
 			lang='en'
 			className={` ${geistSans.variable} ${geistMono.variable}`}
 		>
-			<body className='antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-12'>
-				<main className='flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[768px] w-full'>
+			<body className='antialiased bg-linear-to-br from-amber-200 via-cyan-200 to-red-300 flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-12'>
+				<main className='flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-4xl w-full'>
 					<Navbar />
 					{children}
 					<Footer />
 				</main>
+				<SpeedInsights />
 			</body>
 		</html>
   )
