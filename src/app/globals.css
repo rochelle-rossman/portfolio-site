@@ -44,6 +44,12 @@
 }
 
 :root {
+  --color-cream: oklch(0.968 0.027 74.15);
+  --color-coral: oklch(0.697 0.25 20.62);
+  --color-purple: oklch(0.572 0.244 295.3);
+  --color-gold: oklch(0.827 0.2 79.6);
+  --color-teal: oklch(0.791 0.159 189.5);
+  --color-navy: oklch(0.241 0.048 261.5);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
@@ -116,7 +122,64 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle at 20% 25%,
+        var(--color-gold) 0%,
+        var(--color-teal) 30%,
+        var(--color-coral) 60%,
+        var(--color-purple) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .bg-gradient-radial-animated {
+      background-image: radial-gradient(circle at 20% 25%,
+          oklch(0.8 0.12 79.6),
+          oklch(0.75 0.1 189.5),
+          oklch(0.67 0.15 20.62),
+          oklch(0.56 0.12 295.3));
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      animation: radial-drift 18s ease-in-out infinite;
+    }
+
+    @keyframes radial-drift {
+
+      0%,
+      100% {
+        background-position: 20% 25%;
+      }
+
+      50% {
+        background-position: 25% 30%;
+      }
+    }
+  }
+
+  .bg-radial-blur::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 25%,
+        oklch(0.8 0.12 79.6) 0%,
+        transparent 70%);
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .bg-radial-blend::before {
+    mix-blend-mode: overlay;
+  }
+
 }

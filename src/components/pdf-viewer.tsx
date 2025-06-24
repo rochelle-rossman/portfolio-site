@@ -1,4 +1,4 @@
-// import * as React from 'react'
+'use client'
 import { Viewer } from '@react-pdf-viewer/core'
 import { toolbarPlugin, ToolbarSlot } from '@react-pdf-viewer/toolbar'
 
