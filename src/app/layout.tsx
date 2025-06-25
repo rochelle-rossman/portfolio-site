@@ -3,7 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import Navbar from '@/components/nav'
 import Footer from '@/components/footer'
-import { geistSans, geistMono } from '@/lib/font'
+import { geistSans, geistMono, climateCrisis } from '@/lib/font'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang='en'
-			className={` ${geistSans.variable} ${geistMono.variable}`}
+			className={` ${geistSans.variable} ${geistMono.variable} ${climateCrisis.variable}`}
 		>
 			<body className='antialiased relative bg-gradient-radial bg-gradient-radial-animated bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-12'>
 				<div className='absolute inset-0 z-0 overflow-hidden'>

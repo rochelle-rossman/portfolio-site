@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Climate_Crisis } from "next/font/google";
 
 export const climateCrisis = Climate_Crisis({
+	variable: "--font-climate-crisis",
 	subsets: ["latin"],
 	display: "swap",
 });

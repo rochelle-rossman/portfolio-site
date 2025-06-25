@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-climate-crisis: var(--font-climate-crisis);
+  --font-geist-sans: var(--font-geist-sans);
+  --font-geist-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -50,6 +53,9 @@
   --color-gold: oklch(0.827 0.2 79.6);
   --color-teal: oklch(0.791 0.159 189.5);
   --color-navy: oklch(0.241 0.048 261.5);
+  --font-climate-crisis: 'Climate Crisis', cursive;
+  --font-geist-sans: 'Geist Sans', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
