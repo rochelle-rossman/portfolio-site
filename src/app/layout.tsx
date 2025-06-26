@@ -1,17 +1,29 @@
+import { Montserrat, Climate_Crisis } from 'next/font/google'
 import type { Metadata } from 'next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import Navbar from '@/components/nav'
 import Footer from '@/components/footer'
-import { geistSans, geistMono } from '@/lib/font'
-import Image from 'next/image'
+import BackgroundDecor from '@/components/background'
 
 export const metadata: Metadata = {
-	title: 'Rochelle Rossman',
+	title: 'Rochelle Rossman | Web Developer',
 	metadataBase: new URL('https://rochellerossman.dev/'),
 	description:
-		'Portfolio of Rochelle Rossman, a software engineer specializing in web and front-end development.',
+		'Portfolio of Rochelle Rossman, a web developer specializing in accessible, performant, and creative front-end solutions.',
 }
+
+const montserrat = Montserrat({
+	subsets: ['latin'],
+	variable: '--font-montserrat',
+	display: 'swap',
+})
+
+const climate_crisis = Climate_Crisis({
+	variable: '--font-climate-crisis',
+	subsets: ['latin'],
+	display: 'swap',
+})
 
 export default function RootLayout({
 	children,
@@ -21,40 +33,14 @@ export default function RootLayout({
 	return (
 		<html
 			lang='en'
-			className={` ${geistSans.variable} ${geistMono.variable}`}
+			className={`${climate_crisis.variable} ${montserrat.variable} antialiased`}
 		>
-			<body className='antialiased relative bg-gradient-radial bg-gradient-radial-animated bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-12'>
-				<div className='absolute inset-0 z-0 overflow-hidden'>
-					<div className='absolute top-[10%] left-[5%] z-0 opacity-70'>
-						<Image
-							src='/twinkle.png'
-							alt=''
-							width={80}
-							height={80}
-							className='object-contain'
-						/>
-					</div>
-					<div className='absolute top-[60%] right-[-5%] z-0 opacity-70 overflow-hidden'>
-						<Image
-							src='/cloud.png'
-							alt=''
-							width={150}
-							height={150}
-							className='object-contain'
-						/>
-					</div>
-					<div className='absolute bottom-[20%] left-[10%] z-0 opacity-50'>
-						<Image
-							src='/cloud.png'
-							alt=''
-							width={250}
-							height={250}
-							className='object-contain'
-						/>
-					</div>
-				</div>
-
-				<main className='relative z-10 flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-4xl w-full'>
+			<body className='relative bg-gradient-radial bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mb-12'>
+				<BackgroundDecor />
+				<main
+					className='relative z-10 flex flex-col px-6 sm:px-4 max-w-4xl w-full'
+					role='main'
+				>
 					<Navbar />
 					{children}
 					<Footer />
