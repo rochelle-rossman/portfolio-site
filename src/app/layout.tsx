@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 		'Portfolio of Rochelle Rossman, a web developer specializing in accessible, performant, and creative front-end solutions.',
 }
 
-export const montserrat = Montserrat({
+const montserrat = Montserrat({
 	subsets: ['latin'],
 	variable: '--font-montserrat',
 	display: 'swap',
