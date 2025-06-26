@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const navItems = {
-	'/#about': { name: 'About' },
+	'/': { name: 'About' },
 
 	'/resume': { name: 'Résumé' },
 }
@@ -14,7 +14,7 @@ export default function Navbar() {
 					<Link
 						key={path}
 						href={path}
-						className=' flex align-middle relative'
+						className='flex align-middle relative'
 					>
 						{name}
 					</Link>

@@ -14,8 +14,15 @@ export default function ResumeIndexPage() {
 					<h2 className='text-4xl font-bold'>
 						Rochelle Rossman
 					</h2>
-					<p className='mt-1 text-lg'>
-						📍{' '}Kingston, NY
+					<p className='text-lg'>
+						Web Developer • Kingston, NY •
+						rochelle.rossman@gmail.com •{' '}
+						<a
+							href='https://github.com/rochelle-rossman'
+							className='text-primary underline hover:opacity-80'
+						>
+							github.com/rochelle-rossman
+						</a>
 					</p>
 				</div>
 
@@ -32,12 +39,12 @@ export default function ResumeIndexPage() {
 				</div>
 			</div>
 
-			<section className='space-y-12 text-base text-foreground'>
+			<section className='space-y-12'>
 				<div>
-					<h2 className='text-2xl font-semibold text-primary mb-2'>
+					<h2 className='text-2xl font-semibold mb-2'>
 						Summary
 					</h2>
-					<p className='bg-muted/30 rounded-lg p-4'>
+					<p className='text-lg'>
 						Innovative and results-driven Web Software Developer
 						with expertise in building scalable, high-performance
 						web applications. Combining technical proficiency with
@@ -50,13 +57,12 @@ export default function ResumeIndexPage() {
 				</div>
 
 				<div>
-					<h2 className='text-2xl font-semibold text-primary mb-2'>
+					<h2 className='text-2xl font-semibold mb-2'>
 						Skills
 					</h2>
-
-					<div className='space-y-6 grid grid-cols-2 gap-4'>
+					<div className='space-y-6'>
 						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className='font-medium text-lg mb-3'>
+							<h3 className='text-lg mb-3'>
 								🧠 Languages & Frameworks
 							</h3>
 							<div className='flex flex-wrap gap-2'>
@@ -68,12 +74,10 @@ export default function ResumeIndexPage() {
 									'Next.js',
 									'Astro',
 									'PHP',
-									'Python',
 								].map((skill, i) => (
 									<Badge
 										key={i}
 										variant='outline'
-										className='text-sm font-normal'
 									>
 										{skill}
 									</Badge>
@@ -82,9 +86,7 @@ export default function ResumeIndexPage() {
 						</div>
 
 						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className='font-medium text-lg mb-3'>
-								🗄️ CMS & Back End
-							</h3>
+							<h3 className=' text-lg mb-3'>🗄️ CMS & Back End</h3>
 							<div className='flex flex-wrap gap-2'>
 								{[
 									'WordPress',
@@ -95,7 +97,6 @@ export default function ResumeIndexPage() {
 									<Badge
 										key={i}
 										variant='outline'
-										className='text-sm font-normal'
 									>
 										{skill}
 									</Badge>
@@ -104,7 +105,7 @@ export default function ResumeIndexPage() {
 						</div>
 
 						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className='font-medium text-lg mb-3'>
+							<h3 className=' text-lg mb-3'>
 								🎨 Styling & Design
 							</h3>
 							<div className='flex flex-wrap gap-2'>
@@ -118,7 +119,6 @@ export default function ResumeIndexPage() {
 									<Badge
 										key={i}
 										variant='outline'
-										className='text-sm font-normal'
 									>
 										{skill}
 									</Badge>
@@ -127,23 +127,18 @@ export default function ResumeIndexPage() {
 						</div>
 
 						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className='font-medium text-lg mb-3'>
-								🛠️ DevOps & Tools
-							</h3>
+							<h3 className=' text-lg mb-3'>🛠️ DevOps & Tools</h3>
 							<div className='flex flex-wrap gap-2'>
 								{[
 									'Git',
 									'GitHub',
 									'Docker',
-									'Kubernetes',
 									'AWS',
 									'Argo CD',
-									'Datadog',
 								].map((skill, i) => (
 									<Badge
 										key={i}
 										variant='outline'
-										className='text-sm font-normal'
 									>
 										{skill}
 									</Badge>
@@ -152,9 +147,7 @@ export default function ResumeIndexPage() {
 						</div>
 
 						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className='font-medium text-lg mb-3'>
-								🔄 Workflows
-							</h3>
+							<h3 className=' text-lg mb-3'>🔄 Workflows</h3>
 							<div className='flex flex-wrap gap-2'>
 								{['Agile', 'Scrum'].map((skill, i) => (
 									<Badge
@@ -170,15 +163,13 @@ export default function ResumeIndexPage() {
 					</div>
 				</div>
 
-				<div>
-					<h2 className='text-2xl font-semibold text-primary mb-2'>
-						Experience
+				<div className='bg-muted/30 rounded-lg p-6'>
+					<h2 className='text-2xl font-semibold text-primary mb-4'>
+						💼 Experience
 					</h2>
 
 					<div className='mb-6'>
-						<h3 className='text-xl font-medium'>
-							TechnologyAdvice
-						</h3>
+						<h3 className='text-xl '>TechnologyAdvice</h3>
 						<p className='italic mb-2'>
 							Web Developer • May 2023 – Jan 2025
 						</p>
@@ -223,7 +214,7 @@ export default function ResumeIndexPage() {
 					</div>
 
 					<div>
-						<h3 className='text-xl font-medium'>Trader Joe’s</h3>
+						<h3 className='text-xl '>Trader Joe’s</h3>
 						<p className='italic mb-2'>
 							Lead Sign Artist & Crew Member • Nov 2013 – Jul 2022
 						</p>
@@ -244,9 +235,9 @@ export default function ResumeIndexPage() {
 					</div>
 				</div>
 
-				<div>
+				<div className='bg-muted/30 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold text-primary mb-2'>
-						Education
+						🎓 Education
 					</h2>
 					<p>
 						<strong>
@@ -256,9 +247,9 @@ export default function ResumeIndexPage() {
 					</p>
 				</div>
 
-				<div>
+				<div className='bg-muted/30 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold text-primary mb-2'>
-						Links
+						🔗 Links
 					</h2>
 					<ul className='list-none space-y-1'>
 						<li>

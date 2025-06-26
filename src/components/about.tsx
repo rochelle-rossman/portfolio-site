@@ -1,22 +1,21 @@
 export default function About() {
 	return (
-		<section
-			id='about'
-			className='mx-auto max-w-3xl px-6 bg-muted/30 rounded-lg p-4'
-		>
+		<section className='mx-auto max-w-3xl px-6'>
 			<p className='mb-4'>
-				👋 I’m Rochelle — a web developer who loves turning ideas into
+				<span className='text-3xl font-semibold'>👋 I’m Rochelle</span>{' '}
+				<br /> — a web developer who loves turning ideas into
 				accessible, responsive, and thoughtfully crafted web
-				experiences. I bring a creative eye, a detail-oriented mindset,
-				and a strong sense of curiosity to every project I touch.
+				experiences. I bring a creative and detail-oriented eye, a
+				growth mindset, and a strong sense of curiosity to every project
+				I touch.
 			</p>
 			<p className='mb-4'>
 				My journey into tech began after over a decade in leadership and
 				customer-facing roles, where I developed a strong foundation in
-				communication, empathy, and collaborative problem-solving. I
-				made the pivot into web development to build tools that are both
-				useful and inclusive—and that mission still guides my work every
-				day.
+				communication, empathy, emotional intelligence, and
+				collaborative problem-solving. I made the pivot into web
+				development to build tools that are both useful and
+				inclusive—and that mission still guides my work every day.
 			</p>
 			<p className='mb-4'>
 				Most recently at TechnologyAdvice, I led high-impact projects
@@ -28,21 +27,19 @@ export default function About() {
 				support global growth.
 			</p>
 			<p className='mb-4'>
-				My technical toolkit includes JavaScript, TypeScript, React,
-				Next.js, Vue, and WordPress (including custom Gutenberg block
-				development). I’m comfortable with tools like Tailwind, Vite,
-				Storybook, Splide.js, Docker, and GitHub Actions. I also have
-				experience deploying and monitoring containerized sites using
-				AWS, Datadog, and Argo CD. Whether I’m solving performance
-				bottlenecks, designing scalable component systems, or
-				implementing accessibility best practices, I’m always focused on
-				building reliable, maintainable solutions.
+				My core technical toolkit includes JavaScript, TypeScript,
+				React, Next.js, Vue, and WordPress (including custom Gutenberg
+				block development). I have experience deploying and monitoring
+				containerized sites using tools like AWS and ArgoCD. Whether I’m
+				engineering scalable component systems, or implementing
+				accessibility best practices, I’m always focused on building
+				reliable, maintainable solutions.
 			</p>
 			<p className='mb-4'>
-				I’m currently based in Kingston, NY and open to remote or
+				I’m currently based in 📍 Kingston, NY and open to remote or
 				NYC-area hybrid roles. I’m especially interested in joining a
-				mission-driven org or product team that values clean code,
-				creative problem-solving, and inclusive collaboration.
+				mission-driven orginization or product team that values clean
+				code, creative problem-solving, and inclusive collaboration.
 			</p>
 			<p className='mb-4'>
 				Outside of tech, I’m a hobbyist woodworker with a love for
