@@ -49,9 +49,9 @@ function SocialLinks() {
 
 export default function Footer() {
 	return (
-		<small className='block lg:mt-24 mt-16  text-gray-600'>
+		<small className='lg:mt-24 mt-16'>
 			<time>© {YEAR}</time>{' '}
-			Rochelle Rossman.{' '}
+			Rochelle Rossman.{' '} 
 			<SocialLinks />
 		</small>
 	)

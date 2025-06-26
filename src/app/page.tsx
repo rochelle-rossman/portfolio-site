@@ -1,5 +1,6 @@
-import Image from 'next/image'
 import About from '@/components/about'
+import StyledHeadshot from '@/components/headshot'
+import Image from 'next/image'
 
 export default function Home() {
 	return (
@@ -16,7 +17,7 @@ export default function Home() {
 						priority
 					/>
 					<h1
-						className='font-climate-crisis  text-3xl sm:text-5xl md:text-6xl text-center drop-shadow-md
+						className='font-headline text-3xl sm:text-5xl md:text-6xl text-center drop-shadow-md
 							absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
 							px-4'
 					>
@@ -24,16 +25,28 @@ export default function Home() {
 					</h1>
 				</div>
 
-				<div className='flex flex-col-reverse md:flex-row'>
-					<Image
-						src='/lightbulb-screen.png'
-						alt='A colorful laptop with a glowing lightbulb'
-						width={220}
-						height={220}
-						className='w-40 sm:w-52 md:w-60 object-contain shrink-0'
-						priority
-					/>
-					<About />
+				<div className='flex flex-col gap-4 items-center md:items-start md:flex-row'>
+					<StyledHeadshot />
+					{/* <div className='relative w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80'>
+						<Image
+							priority
+							src='/headshot.png'
+							alt='A headshot of Rochelle Rossman'
+							fill
+							className='object-top object-cover shrink-0 rounded-full shadow-2xl ring-2 ring-opacity-30 filter grayscale contrast-110 brightness-105'
+						/>
+					</div> */}
+					<div className='flex flex-col gap-4 items-center'>
+						<About />
+						<div className='relative w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80'>
+							<Image
+								src='/lightbulb-screen.png'
+								alt='A colorful laptop with a glowing lightbulb'
+								fill
+								className='object-contain'
+							/>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
