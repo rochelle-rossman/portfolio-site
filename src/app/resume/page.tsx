@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 
 export default function ResumePage() {
 	return (
-		<section className='relative z-10 max-w-3xl mx-auto px-6 py-16'>
+		<section className='flex flex-col items-center mx-auto'>
 			<h1 className='text-6xl font-headline text-center mb-10 text-foreground drop-shadow-sm'>
 				Résumé
 			</h1>
@@ -57,9 +57,28 @@ export default function ResumePage() {
 					<div className='space-y-6'>
 						<div className='flex flex-wrap gap-2'>
 							{[
-								'Amazon Web Services (AWS)' , 'Astro', 'CSS', 'Docker', 'Figma', 'Git', 'Github', 'HTML', 'JavaScript', 'Jira', 'Kubernetes',
-								'MySQL', 'Next.js', 'PHP', 'React', 'Responsive Web Design', 'SASS', 'Scrum & Agile Methodologies', 'TailwindCSS',
-								'TypeScript', 'Vue.js', 'Wordpress'
+								'Amazon Web Services (AWS)',
+								'Astro',
+								'CSS',
+								'Docker',
+								'Figma',
+								'Git',
+								'Github',
+								'HTML',
+								'JavaScript',
+								'Jira',
+								'Kubernetes',
+								'MySQL',
+								'Next.js',
+								'PHP',
+								'React',
+								'Responsive Web Design',
+								'SASS',
+								'Scrum & Agile Methodologies',
+								'TailwindCSS',
+								'TypeScript',
+								'Vue.js',
+								'Wordpress',
 							].map((skill, i) => (
 								<Badge
 									key={i}
@@ -69,7 +88,6 @@ export default function ResumePage() {
 								</Badge>
 							))}
 						</div>
-
 					</div>
 				</div>
 
