@@ -14,7 +14,7 @@ const clouds = [
 	{ top: '60%', left: '80%', size: 150 },
 	{ top: '20%', left: '5%', size: 120 },
 	{ top: '75%', left: '10%', size: 250 },
-	{ top: '50%', left: '15%', size: 180 },
+	{ top: '40%', left: '15%', size: 180 },
 ]
 
 export default function BackgroundDecor() {
@@ -40,7 +40,7 @@ export default function BackgroundDecor() {
 						fill
 						className={[
 							'object-contain',
-							`opacity-40`,
+							'opacity-30',
 							twinkle.flip ? '-scale-x-100' : '',
 						].join(' ')}
 						priority={i === 0}
@@ -62,7 +62,7 @@ export default function BackgroundDecor() {
 						src='/cloud.png'
 						alt=''
 						fill
-						className='object-contain opacity-40'
+						className='object-contain opacity-30'
 					/>
 				</div>
 			))}
