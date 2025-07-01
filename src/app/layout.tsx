@@ -38,7 +38,7 @@ export default function RootLayout({
 			<body className='relative bg-gradient-radial bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mb-12'>
 				<BackgroundDecor />
 				<main
-					className='relative z-10 flex flex-col px-6 sm:px-4 max-w-4xl w-full'
+					className='relative z-10 flex min-h-screen flex-col px-6 sm:px-4 max-w-4xl w-full'
 					role='main'
 				>
 					<Navbar />

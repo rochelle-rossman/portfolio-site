@@ -2,18 +2,16 @@
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 
-export default function ResumeIndexPage() {
+export default function ResumePage() {
 	return (
-		<section className='relative z-10 max-w-3xl mx-auto px-6 py-16'>
+		<section className='flex flex-col items-center mx-auto'>
 			<h1 className='text-6xl font-headline text-center mb-10 text-foreground drop-shadow-sm'>
 				Résumé
 			</h1>
 
 			<div className='flex flex-col md:flex-row md:items-center md:justify-between mb-10'>
 				<div>
-					<h2 className='text-4xl font-bold'>
-						Rochelle Rossman
-					</h2>
+					<h2 className='text-4xl font-bold'>Rochelle Rossman</h2>
 					<p className='text-lg'>
 						Web Developer • Kingston, NY •
 						rochelle.rossman@gmail.com •{' '}
@@ -29,7 +27,7 @@ export default function ResumeIndexPage() {
 				<div className='mt-4 md:mt-0'>
 					<Button>
 						<a
-							href='/RochelleRossmanResume.pdf'
+							href='/RochelleRossman.pdf'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
@@ -41,9 +39,7 @@ export default function ResumeIndexPage() {
 
 			<section className='space-y-12'>
 				<div>
-					<h2 className='text-2xl font-semibold mb-2'>
-						Summary
-					</h2>
+					<h2 className='text-2xl font-semibold mb-2'>Summary</h2>
 					<p className='text-lg'>
 						Innovative and results-driven Web Software Developer
 						with expertise in building scalable, high-performance
@@ -56,116 +52,48 @@ export default function ResumeIndexPage() {
 					</p>
 				</div>
 
-				<div>
-					<h2 className='text-2xl font-semibold mb-2'>
-						Skills
-					</h2>
+				<div className='bg-muted/30 rounded-lg p-6'>
+					<h2 className='text-2xl font-semibold mb-2'>Skills</h2>
 					<div className='space-y-6'>
-						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className='text-lg mb-3'>
-								🧠 Languages & Frameworks
-							</h3>
-							<div className='flex flex-wrap gap-2'>
-								{[
-									'JavaScript',
-									'TypeScript',
-									'React',
-									'Vue.js',
-									'Next.js',
-									'Astro',
-									'PHP',
-								].map((skill, i) => (
-									<Badge
-										key={i}
-										variant='outline'
-									>
-										{skill}
-									</Badge>
-								))}
-							</div>
-						</div>
-
-						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className=' text-lg mb-3'>🗄️ CMS & Back End</h3>
-							<div className='flex flex-wrap gap-2'>
-								{[
-									'WordPress',
-									'ACF',
-									'Full Site Editing',
-									'MySQL',
-								].map((skill, i) => (
-									<Badge
-										key={i}
-										variant='outline'
-									>
-										{skill}
-									</Badge>
-								))}
-							</div>
-						</div>
-
-						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className=' text-lg mb-3'>
-								🎨 Styling & Design
-							</h3>
-							<div className='flex flex-wrap gap-2'>
-								{[
-									'CSS',
-									'SASS',
-									'HTML',
-									'Responsive Design',
-									'Figma',
-								].map((skill, i) => (
-									<Badge
-										key={i}
-										variant='outline'
-									>
-										{skill}
-									</Badge>
-								))}
-							</div>
-						</div>
-
-						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className=' text-lg mb-3'>🛠️ DevOps & Tools</h3>
-							<div className='flex flex-wrap gap-2'>
-								{[
-									'Git',
-									'GitHub',
-									'Docker',
-									'AWS',
-									'Argo CD',
-								].map((skill, i) => (
-									<Badge
-										key={i}
-										variant='outline'
-									>
-										{skill}
-									</Badge>
-								))}
-							</div>
-						</div>
-
-						<div className='bg-muted/30 rounded-lg p-4'>
-							<h3 className=' text-lg mb-3'>🔄 Workflows</h3>
-							<div className='flex flex-wrap gap-2'>
-								{['Agile', 'Scrum'].map((skill, i) => (
-									<Badge
-										key={i}
-										variant='outline'
-										className='text-sm font-normal'
-									>
-										{skill}
-									</Badge>
-								))}
-							</div>
+						<div className='flex flex-wrap gap-2'>
+							{[
+								'Amazon Web Services (AWS)',
+								'Astro',
+								'CSS',
+								'Docker',
+								'Figma',
+								'Git',
+								'Github',
+								'HTML',
+								'JavaScript',
+								'Jira',
+								'Kubernetes',
+								'MySQL',
+								'Next.js',
+								'PHP',
+								'React',
+								'Responsive Web Design',
+								'SASS',
+								'Scrum & Agile Methodologies',
+								'TailwindCSS',
+								'TypeScript',
+								'Vue.js',
+								'Wordpress',
+							].map((skill, i) => (
+								<Badge
+									key={i}
+									variant='outline'
+								>
+									{skill}
+								</Badge>
+							))}
 						</div>
 					</div>
 				</div>
 
 				<div className='bg-muted/30 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold text-primary mb-4'>
-						💼 Experience
+						Experience
 					</h2>
 
 					<div className='mb-6'>
@@ -237,7 +165,7 @@ export default function ResumeIndexPage() {
 
 				<div className='bg-muted/30 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold text-primary mb-2'>
-						🎓 Education
+						Education
 					</h2>
 					<p>
 						<strong>
@@ -249,7 +177,7 @@ export default function ResumeIndexPage() {
 
 				<div className='bg-muted/30 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold text-primary mb-2'>
-						🔗 Links
+						Links
 					</h2>
 					<ul className='list-none space-y-1'>
 						<li>

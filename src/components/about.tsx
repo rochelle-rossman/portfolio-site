@@ -53,10 +53,6 @@ export default function About() {
 				<strong>Let’s build something meaningful together.</strong>
 			</p>
 
-			<p className='text-sm italic text-muted-foreground'>
-				🚧 This site is still in progress—I&apos;m currently refining
-				how I present the projects I’ve worked on professionally.{' '}
-			</p>
 		</section>
 	)
 }
