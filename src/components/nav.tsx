@@ -1,11 +1,5 @@
 import NavLink from "./nav-link"
 
-// const navItems = {
-// 	'/': { name: 'About' },
-// 	'/projects': { name: 'Projects'},
-// 	'/resume': { name: 'Résumé' },
-// }
-
 export default function Navbar() {
 	return (
 		<nav className='p-6 mb-6'>
