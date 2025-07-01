@@ -3,18 +3,19 @@ import Image from 'next/image'
 
 const twinkles = [
 	{ top: '10%', left: '5%', size: 80 },
-	{ top: '20%', left: '90%', size: 60, flip: true },
-	{ top: '35%', left: '30%', size: 50 },
-	{ top: '60%', left: '15%', size: 70 },
+	{ top: '22%', left: '87%', size: 60, flip: true },
+	{ top: '60%', left: '8%', size: 70 },
 	{ top: '75%', left: '80%', size: 55, flip: true },
-	{ top: '5%', left: '90%', size: 35 },
+	{ top: '8%', left: '85%', size: 35 },
+	{ top: '90%', left: '90%', size: 55 }
 ]
 
 const clouds = [
-	{ top: '60%', left: '80%', size: 150 },
+	{ top: '60%', left: '80%', size: 160 },
 	{ top: '20%', left: '5%', size: 120 },
 	{ top: '75%', left: '10%', size: 250 },
-	{ top: '40%', left: '15%', size: 180 },
+	{ top: '44%', left: '15%', size: 190 },
+	{ top: '30%', left: '75%', size: 125 }
 ]
 
 export default function BackgroundDecor() {
@@ -39,8 +40,7 @@ export default function BackgroundDecor() {
 						alt=''
 						fill
 						className={[
-							'object-contain',
-							'opacity-30',
+							'object-contain opacity-40',
 							twinkle.flip ? '-scale-x-100' : '',
 						].join(' ')}
 						priority={i === 0}
@@ -62,7 +62,7 @@ export default function BackgroundDecor() {
 						src='/cloud.png'
 						alt=''
 						fill
-						className='object-contain opacity-30'
+						className='object-contain opacity-40'
 					/>
 				</div>
 			))}

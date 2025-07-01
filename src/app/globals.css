@@ -49,7 +49,6 @@
 @theme inline {
   --font-sans: var(--font-sans);
   --font-headline: var(--font-headline);
-  --color-teal: var(--color-teal);
   
   --color-background: var(--background);
   --color-foreground: var(--foreground);

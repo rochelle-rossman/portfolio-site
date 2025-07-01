@@ -26,7 +26,7 @@ export default function Home() {
 
 			<div className='flex flex-col gap-4 items-center md:items-start md:flex-row'>
 				<StyledHeadshot />
-				<div className='flex flex-col gap-4 items-center bg-muted/30 rounded-lg p-4'>
+				<div className='flex flex-col gap-4 items-center bg-muted/70 rounded-lg p-4'>
 					<About />
 					<div className='relative w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80'>
 						<Image

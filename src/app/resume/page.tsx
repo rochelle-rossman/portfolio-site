@@ -1,46 +1,75 @@
 'use client'
-import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 export default function ResumePage() {
+	const skills = [
+		'Amazon Web Services (AWS)',
+		'Astro',
+		'CSS',
+		'Docker',
+		'Figma',
+		'Git',
+		'Github',
+		'HTML',
+		'JavaScript',
+		'Jira',
+		'Kubernetes',
+		'MySQL',
+		'Next.js',
+		'PHP',
+		'React',
+		'Responsive Web Design',
+		'SASS',
+		'Scrum & Agile Methodologies',
+		'TailwindCSS',
+		'TypeScript',
+		'Vue.js',
+		'Wordpress']
+	
+		const links = [
+			{
+				href: 'https://www.linkedin.com/in/rochelle-rossman',
+				label: 'linkedin.com/in/rochelle-rossman',
+			},
+			{
+				href: 'https://github.com/rochelle-rossman',
+				label: 'github.com/rochelle-rossman',
+			},
+		]
+	
 	return (
 		<section className='flex flex-col items-center mx-auto'>
-			<h1 className='text-6xl font-headline text-center mb-10 text-foreground drop-shadow-sm'>
+			<h1 className='text-5xl md:text-6xl font-headline text-center mb-10'>
 				Résumé
 			</h1>
 
-			<div className='flex flex-col md:flex-row md:items-center md:justify-between mb-10'>
+			<div className='flex flex-col md:flex-row md:items-center md:justify-between bg-muted/70 rounded-lg w-full p-6 mb-10'>
 				<div>
-					<h2 className='text-4xl font-bold'>Rochelle Rossman</h2>
-					<p className='text-lg'>
+					<h2 className='text-3xl md:text-4xl font-bold'>
+						Rochelle Rossman
+					</h2>
+					<p className='md:text-lg'>
 						Web Developer • Kingston, NY •
-						rochelle.rossman@gmail.com •{' '}
-						<a
-							href='https://github.com/rochelle-rossman'
-							className='text-primary underline hover:opacity-80'
-						>
-							github.com/rochelle-rossman
-						</a>
+						rochelle.rossman@gmail.com{' '}
 					</p>
 				</div>
 
 				<div className='mt-4 md:mt-0'>
-					<Button>
-						<a
-							href='/RochelleRossman.pdf'
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							View / Download PDF
-						</a>
-					</Button>
+					<a
+						href='/RochelleRossman.pdf'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						<Button>View / Download PDF</Button>
+					</a>
 				</div>
 			</div>
 
 			<section className='space-y-12'>
-				<div>
+				<div className='bg-muted/70 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold mb-2'>Summary</h2>
-					<p className='text-lg'>
+					<p className='md:text-lg'>
 						Innovative and results-driven Web Software Developer
 						with expertise in building scalable, high-performance
 						web applications. Combining technical proficiency with
@@ -52,52 +81,24 @@ export default function ResumePage() {
 					</p>
 				</div>
 
-				<div className='bg-muted/30 rounded-lg p-6'>
+				<div className='bg-muted/70 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold mb-2'>Skills</h2>
 					<div className='space-y-6'>
 						<div className='flex flex-wrap gap-2'>
-							{[
-								'Amazon Web Services (AWS)',
-								'Astro',
-								'CSS',
-								'Docker',
-								'Figma',
-								'Git',
-								'Github',
-								'HTML',
-								'JavaScript',
-								'Jira',
-								'Kubernetes',
-								'MySQL',
-								'Next.js',
-								'PHP',
-								'React',
-								'Responsive Web Design',
-								'SASS',
-								'Scrum & Agile Methodologies',
-								'TailwindCSS',
-								'TypeScript',
-								'Vue.js',
-								'Wordpress',
-							].map((skill, i) => (
-								<Badge
-									key={i}
-									variant='outline'
-								>
-									{skill}
-								</Badge>
+							{skills.map((skill, i) => (
+								<Badge key={i}>{skill}</Badge>
 							))}
 						</div>
 					</div>
 				</div>
 
-				<div className='bg-muted/30 rounded-lg p-6'>
+				<div className='bg-muted/70 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold text-primary mb-4'>
 						Experience
 					</h2>
 
 					<div className='mb-6'>
-						<h3 className='text-xl '>TechnologyAdvice</h3>
+						<h3 className='text-xl'>TechnologyAdvice</h3>
 						<p className='italic mb-2'>
 							Web Developer • May 2023 – Jan 2025
 						</p>
@@ -163,7 +164,7 @@ export default function ResumePage() {
 					</div>
 				</div>
 
-				<div className='bg-muted/30 rounded-lg p-6'>
+				<div className='bg-muted/70 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold text-primary mb-2'>
 						Education
 					</h2>
@@ -175,27 +176,23 @@ export default function ResumePage() {
 					</p>
 				</div>
 
-				<div className='bg-muted/30 rounded-lg p-6'>
+				<div className='bg-muted/70 rounded-lg p-6'>
 					<h2 className='text-2xl font-semibold text-primary mb-2'>
 						Links
 					</h2>
 					<ul className='list-none space-y-1'>
-						<li>
-							<a
-								href='https://www.linkedin.com/in/rochelle-rossman'
-								className='text-primary underline hover:opacity-80'
-							>
-								linkedin.com/in/rochelle-rossman
-							</a>
-						</li>
-						<li>
-							<a
-								href='https://github.com/rochelle-rossman'
-								className='text-primary underline hover:opacity-80'
-							>
-								github.com/rochelle-rossman
-							</a>
-						</li>
+						{links.map((link, i) => (
+							<li key={i}>
+								<a
+									href={link.href}
+									target='_blank'
+									rel='noopener noreferrer'
+									className='underline'
+								>
+									{link.label}
+								</a>
+							</li>
+						))}
 					</ul>
 				</div>
 			</section>

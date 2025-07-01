@@ -1,24 +1,18 @@
-import Link from 'next/link'
+import NavLink from "./nav-link"
 
-const navItems = {
-	'/': { name: 'About' },
-	'/projects': { name: 'Projects'},
-	'/resume': { name: 'Résumé' },
-}
+// const navItems = {
+// 	'/': { name: 'About' },
+// 	'/projects': { name: 'Projects'},
+// 	'/resume': { name: 'Résumé' },
+// }
 
 export default function Navbar() {
 	return (
-		<nav className='p-6'>
-			<div className='flex text-xl font-medium justify-center gap-4 mt-6 md:mt-0 md:ml-auto items-center'>
-				{Object.entries(navItems).map(([path, { name }]) => (
-					<Link
-						key={path}
-						href={path}
-						className='flex align-middle relative'
-					>
-						{name}
-					</Link>
-				))}
+		<nav className='p-6 mb-6'>
+			<div className='flex text-lg md:text-xl font-medium justify-center gap-2 md:gap-6 items-center'>
+				<NavLink href='/'>About</NavLink>
+				<NavLink href='/projects'>Projects</NavLink>
+				<NavLink href='/resume'>Résumé</NavLink>
 			</div>
 		</nav>
 	)
