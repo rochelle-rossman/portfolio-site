@@ -1,4 +1,6 @@
 'use client'
+import Carousel from "@/components/carousel"
+
 export default function Projects() {
 	return (
 		<section>
@@ -73,8 +75,8 @@ export default function Projects() {
 								WordPress block editor.
 							</li>
 							<li>
-								<strong>Accessibility-first design:</strong>
-								{' '}Splide.js was selected for its lightweight build
+								<strong>Accessibility-first design:</strong>{' '}
+								Splide.js was selected for its lightweight build
 								and out-of-the-box accessibility support (ARIA,
 								keyboard nav), which aligned with WCAG 2.1
 								standards.
@@ -101,11 +103,11 @@ export default function Projects() {
 						<ul className='list-disc list-inside space-y-1'>
 							<li>
 								<strong>Problem:</strong> Most carousel plugins
-								didn’t play nicely with Gutenberg, were lacking desired features, and added
-								unnecessary weight.
+								didn’t play nicely with Gutenberg, were lacking
+								desired features, and added unnecessary weight.
 								<br />
-								<strong>Solution:</strong> Built a block suite from
-								scratch, leveraging Splide.js only for core
+								<strong>Solution:</strong> Built a block suite
+								from scratch, leveraging Splide.js only for core
 								functionality, and created a modular React-based
 								editor interface for flexibility and future
 								enhancements.
@@ -123,7 +125,7 @@ export default function Projects() {
 						</ul>
 					</section>
 
-					<section>
+					<section className="mb-4">
 						<h2 className='text-xl font-semibold mb-1'>Impact</h2>
 						<ul className='list-disc list-inside space-y-1'>
 							<li>
@@ -146,6 +148,29 @@ export default function Projects() {
 							</li>
 						</ul>
 					</section>
+
+					<Carousel
+						images={[
+							{
+								src: '/screenshots/carousel-example-1.png',
+								alt: 'Example 1',
+								// width: 800,
+								// height: 600,
+							},
+							{
+								src: '/screenshots/carousel-example-2.png',
+								alt: 'Example 2',
+								// width: 800,
+								// height: 600,
+							},
+							{
+								src: '/screenshots/mobile-carousel-example-1.png',
+								alt: 'Mobile Example',
+								// width: 400,
+								// height: 600,
+							},
+						]}
+					/>
 				</article>
 
 				<div className='bg-muted/70 rounded-lg w-full shadow-xl p-6 mb-10'>
