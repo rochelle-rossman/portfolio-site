@@ -1,5 +1,5 @@
 'use client'
-import Carousel from "@/components/carousel"
+import Carousel from '@/components/carousel'
 
 export default function Projects() {
 	return (
@@ -14,28 +14,24 @@ export default function Projects() {
 							Modular Carousel Component with Custom Gutenberg
 							Blocks
 						</h2>
-						<dl className='flex flex-wrap gap-x-6 gap-y-2'>
+						<dl className='grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm'>
 							<div>
-								<dt className='inline font-semibold'>Role:</dt>
-								<dd className='inline ml-2'>
-									Front-End Developer
-								</dd>
+								<dt className='text-muted-foreground font-medium'>
+									Role
+								</dt>
+								<dd>Front-End Developer</dd>
 							</div>
 							<div>
-								<dt className='inline font-semibold'>
-									Company:
+								<dt className='text-muted-foreground font-medium'>
+									Company
 								</dt>
-								<dd className='inline ml-2'>
-									TechnologyAdvice
-								</dd>
+								<dd>TechnologyAdvice</dd>
 							</div>
 							<div>
-								<dt className='inline font-semibold'>
-									Tech Stack:
+								<dt className='text-muted-foreground font-medium'>
+									Tech Stack
 								</dt>
-								<dd className='inline ml-2'>
-									JavaScript, React, PHP, Splide.js, SCSS
-								</dd>
+								<dd>JavaScript, React, PHP, Splide.js, SCSS</dd>
 							</div>
 						</dl>
 					</header>
@@ -43,15 +39,15 @@ export default function Projects() {
 					<section className='mb-4'>
 						<h2 className='text-xl font-semibold mb-1'>Overview</h2>
 						<p>
-							As part of a company-wide initiative to modernize
-							and streamline our WordPress sites using Full Site
-							Editing (FSE), I built a custom Gutenberg block
-							suite designed to deliver a flexible, accessible
-							carousel component. This system allowed content
-							creators to easily add and configure carousels
-							across multiple brand sites—without relying on
-							bloated third-party plugins or additional developer
-							support.
+							At TechnologyAdvice, I built a modular, accessible
+							carousel component as a custom Gutenberg block for
+							deployment across a large portfolio of full-site
+							editing (FSE) WordPress properties with distinct
+							brands. Designed to be theme-agnostic and highly
+							configurable, it empowered content creators to add
+							and customize carousels without developer
+							support—while ensuring code maintainability, optimal
+							performance, and a consistent user experience.
 						</p>
 					</section>
 
@@ -59,7 +55,7 @@ export default function Projects() {
 						<h2 className='text-xl font-semibold mb-1'>
 							Key Features
 						</h2>
-						<ul className='list-disc list-inside'>
+						<ul>
 							<li>
 								<strong>Modular architecture:</strong> The
 								carousel block was built as a reusable,
@@ -88,7 +84,7 @@ export default function Projects() {
 								conditionally to avoid front-end bloat.
 							</li>
 							<li>
-								<strong>Reusable content structure:</strong>
+								<strong>Reusable content structure:</strong>{' '}
 								Content inside each slide was made
 								flexible—users could insert images, text,
 								buttons, or even other custom blocks.
@@ -100,7 +96,7 @@ export default function Projects() {
 						<h2 className='text-xl font-semibold mb-1'>
 							Challenges &amp; Solutions
 						</h2>
-						<ul className='list-disc list-inside space-y-1'>
+						<ul>
 							<li>
 								<strong>Problem:</strong> Most carousel plugins
 								didn’t play nicely with Gutenberg, were lacking
@@ -125,9 +121,9 @@ export default function Projects() {
 						</ul>
 					</section>
 
-					<section className="mb-4">
+					<section className='mb-4'>
 						<h2 className='text-xl font-semibold mb-1'>Impact</h2>
-						<ul className='list-disc list-inside space-y-1'>
+						<ul>
 							<li>
 								<strong>Improved editorial workflow:</strong>{' '}
 								Empowered content teams to build rich,
@@ -148,29 +144,34 @@ export default function Projects() {
 							</li>
 						</ul>
 					</section>
+					<section>
+						<h2 className='text-xl font-semibold mt-6 mb-2'>
+							Sample Screenshots
+						</h2>
 
-					<Carousel
-						images={[
-							{
-								src: '/screenshots/carousel-example-1.png',
-								alt: 'Example 1',
-								// width: 800,
-								// height: 600,
-							},
-							{
-								src: '/screenshots/carousel-example-2.png',
-								alt: 'Example 2',
-								// width: 800,
-								// height: 600,
-							},
-							{
-								src: '/screenshots/mobile-carousel-example-1.png',
-								alt: 'Mobile Example',
-								// width: 400,
-								// height: 600,
-							},
-						]}
-					/>
+						<Carousel
+							images={[
+								{
+									src: '/screenshots/carousel-example-1.png',
+									alt: 'Example 1',
+								},
+								{
+									src: '/screenshots/carousel-example-2.png',
+									alt: 'Example 2',
+								},
+								{
+									src: '/screenshots/mobile-carousel-example-1.png',
+									alt: 'Mobile Example',
+								},
+							]}
+						/>
+						<p className='mt-2 text-sm text-center italic text-muted-foreground'>
+							*This project reflects front-end work I contributed
+							to while employed at TechnologyAdvice. Screenshots
+							shown are of publicly available content and are
+							shared solely for demonstration purposes.
+						</p>
+					</section>
 				</article>
 
 				<div className='bg-muted/70 rounded-lg w-full shadow-xl p-6 mb-10'>

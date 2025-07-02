@@ -102,7 +102,7 @@ export default function ResumePage() {
 						<p className='italic mb-2'>
 							Web Developer • May 2023 – Jan 2025
 						</p>
-						<ul className='list-disc list-inside space-y-1'>
+						<ul>
 							<li>
 								Migrated 20+ legacy WordPress sites to AWS
 								containers, reducing costs by 35% and deployment
@@ -147,7 +147,7 @@ export default function ResumePage() {
 						<p className='italic mb-2'>
 							Lead Sign Artist & Crew Member • Nov 2013 – Jul 2022
 						</p>
-						<ul className='list-disc list-inside space-y-1'>
+						<ul>
 							<li>
 								Designed custom signage to increase product
 								visibility and customer engagement.
@@ -180,7 +180,7 @@ export default function ResumePage() {
 					<h2 className='text-2xl font-semibold text-primary mb-2'>
 						Links
 					</h2>
-					<ul className='list-none space-y-1'>
+					<ul className='list-none'>
 						{links.map((link, i) => (
 							<li key={i}>
 								<a

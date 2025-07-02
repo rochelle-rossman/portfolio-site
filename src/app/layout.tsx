@@ -1,6 +1,7 @@
 import { Montserrat, Climate_Crisis } from 'next/font/google'
 import type { Metadata } from 'next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import Navbar from '@/components/nav'
 import Footer from '@/components/footer'
@@ -46,6 +47,7 @@ export default function RootLayout({
 					<Footer />
 				</main>
 				<SpeedInsights />
+				<Analytics />
 			</body>
 		</html>
 	)
