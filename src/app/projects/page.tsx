@@ -124,10 +124,9 @@ export default function Projects() {
 					</section>
 					<section>
 						<h3>Sample Screenshots</h3>
-
-						<Carousel
-							images={carouselScreenshots}
-						/>
+						<div className='px-2'>
+							<Carousel images={carouselScreenshots} />
+						</div>
 						<p className='mt-2 text-sm text-center text-muted-foreground'>
 							This project reflects work I contributed to while
 							employed at TechnologyAdvice. Screenshots shown are
