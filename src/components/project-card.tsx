@@ -6,9 +6,9 @@ type ProjectData = {
 	company: string
 	techStack: string
 	overview: string
-	keyFeatures: string[]
-	challenges: string[]
-	impact: string[]
+	keyFeatures: { title: string; description: string }[]
+	challenges: { challenge: string; solution: string }[]
+	impact: { title: string; description: string }[]
 	screenshots?: { src: string; alt: string }[]
 }
 
@@ -58,7 +58,11 @@ export default function ProjectCard({
 				<h3>Key Features</h3>
 				<ul>
 					{keyFeatures.map((feature, i) => (
-						<li key={i}>{feature}</li>
+						<li key={i}>
+							<strong>{feature.title}</strong>
+							{''}
+							{feature.description}
+						</li>
 					))}
 				</ul>
 			</section>
@@ -67,7 +71,11 @@ export default function ProjectCard({
 				<h3>Challenges &amp; Solutions</h3>
 				<ul>
 					{challenges.map((challenge, i) => (
-						<li key={i}>{challenge}</li>
+						<li key={i}>
+							<strong>{challenge.challenge}</strong>
+							{''}
+							{challenge.solution}
+						</li>
 					))}
 				</ul>
 			</section>
@@ -76,7 +84,11 @@ export default function ProjectCard({
 				<h3>Impact</h3>
 				<ul>
 					{impact.map((item, i) => (
-						<li key={i}>{item}</li>
+						<li key={i}>
+							<strong>{item.title}</strong>
+							{''}
+							{item.description}
+						</li>
 					))}
 				</ul>
 			</section>
