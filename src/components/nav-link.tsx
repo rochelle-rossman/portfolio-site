@@ -21,7 +21,7 @@ export default function NavLink({ href, children, className }: NavLinkProps) {
 				'after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:w-full after:rounded-xl after:shadow-2xl',
 				'after:origin-left after:scale-x-0 after:transition-transform after:duration-300',
 				'after:bg-gradient-to-r after:from-[var(--color-gold)] after:via-[var(--color-teal)] after:to-[var(--color-coral)]',
-				'hover:after:scale-x-100',
+				'hover:after:scale-x-100 focus:after:scale-x-100 active:after:scale-x-100',
 				isActive && 'font-semibold',
 				className
 			)}
