@@ -1,0 +1,34 @@
+// AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+// Run `npm run generate:screenshots` to update
+
+export const carouselScreenshots = [
+  {
+    src: '/screenshots/carousel/solutions.technologyadvice.com_audience_ (1).png',
+    alt: 'solutions.technologyadvice.com audience  (1)',
+  },
+  {
+    src: '/screenshots/carousel/solutions.technologyadvice.com_audience_.png',
+    alt: 'solutions.technologyadvice.com audience ',
+  },
+  {
+    src: '/screenshots/carousel/technologyadvice.com_ (1).png',
+    alt: 'technologyadvice.com  (1)',
+  },
+  {
+    src: '/screenshots/carousel/technologyadvice.com_ (2).png',
+    alt: 'technologyadvice.com  (2)',
+  },
+  {
+    src: '/screenshots/carousel/technologyadvice.com_ (3).png',
+    alt: 'technologyadvice.com  (3)',
+  },
+  {
+    src: '/screenshots/carousel/technologyadvice.com_.png',
+    alt: 'technologyadvice.com ',
+  },
+  {
+    src: '/screenshots/carousel/www.cioinsight.com.png',
+    alt: 'www.cioinsight.com',
+  },
+]
+

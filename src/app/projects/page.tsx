@@ -1,5 +1,6 @@
 'use client'
 import Carousel from '@/components/carousel'
+import { carouselScreenshots } from '@/lib/screenshot-data'
 
 export default function Projects() {
 	return (
@@ -125,20 +126,7 @@ export default function Projects() {
 						<h3>Sample Screenshots</h3>
 
 						<Carousel
-							images={[
-								{
-									src: '/screenshots/carousel-example-1.png',
-									alt: 'Example 1',
-								},
-								{
-									src: '/screenshots/carousel-example-2.png',
-									alt: 'Example 2',
-								},
-								{
-									src: '/screenshots/mobile-carousel-example-1.png',
-									alt: 'Mobile Example',
-								},
-							]}
+							images={carouselScreenshots}
 						/>
 						<p className='mt-2 text-sm text-center text-muted-foreground'>
 							This project reflects work I contributed to while
