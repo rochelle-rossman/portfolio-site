@@ -40,16 +40,16 @@ export default function ResumePage() {
 	
 	return (
 		<section className='flex flex-col items-center mx-auto'>
-			<h1 className='text-5xl md:text-6xl font-headline text-center mb-10'>
+			<h1>
 				Résumé
 			</h1>
 
 			<div className='flex flex-col md:flex-row md:items-center md:justify-between bg-muted/70 rounded-lg shadow-xl p-6 w-full mb-10'>
 				<div>
-					<h2 className='text-3xl md:text-4xl font-bold'>
+					<h2>
 						Rochelle Rossman
 					</h2>
-					<p className='md:text-lg'>
+					<p className='text-lg'>
 						Web Developer • Kingston, NY •
 						rochelle.rossman@gmail.com{' '}
 					</p>
@@ -68,7 +68,7 @@ export default function ResumePage() {
 
 			<section className='space-y-12'>
 				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h2 className='text-2xl font-semibold mb-2'>Summary</h2>
+					<h3>Summary</h3>
 					<p className='md:text-lg'>
 						Innovative and results-driven Web Software Developer
 						with expertise in building scalable, high-performance
@@ -82,7 +82,7 @@ export default function ResumePage() {
 				</div>
 
 				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h2 className='text-2xl font-semibold mb-2'>Skills</h2>
+					<h3>Skills</h3>
 					<div className='space-y-6'>
 						<div className='flex flex-wrap gap-2'>
 							{skills.map((skill, i) => (
@@ -93,9 +93,9 @@ export default function ResumePage() {
 				</div>
 
 				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h2 className='text-2xl font-semibold text-primary mb-4'>
+					<h3>
 						Experience
-					</h2>
+					</h3>
 
 					<div className='mb-6'>
 						<h3 className='text-xl'>TechnologyAdvice</h3>
@@ -165,9 +165,9 @@ export default function ResumePage() {
 				</div>
 
 				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h2 className='text-2xl font-semibold text-primary mb-2'>
+					<h3>
 						Education
-					</h2>
+					</h3>
 					<p>
 						<strong>
 							Certificate in Full Stack Web Development
@@ -177,10 +177,10 @@ export default function ResumePage() {
 				</div>
 
 				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h2 className='text-2xl font-semibold text-primary mb-2'>
+					<h3>
 						Links
-					</h2>
-					<ul className='list-none'>
+					</h3>
+					<ul>
 						{links.map((link, i) => (
 							<li key={i}>
 								<a

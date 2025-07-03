@@ -15,10 +15,7 @@ export default function Home() {
 					className='object-contain'
 					priority
 				/>
-				<h1
-					className='font-headline text-4xl sm:text-5xl md:text-6xl text-center drop-shadow-md
-							absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-							px-2'
+				<h1 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
 				>
 					Rochelle Rossman
 				</h1>
