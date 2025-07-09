@@ -5,23 +5,25 @@ import { TbMailFilled } from 'react-icons/tb'
 
 const YEAR = new Date().getFullYear()
 
-const socialLinks = {
-	github: 'https://github.com/rochelle-rossman',
-	linkedin: 'https://www.linkedin.com/in/rochelle-rossman/',
-	email: 'mailto:rochelle.rossman@gmail.com',
-}
+const socialLinks = [
+	{ href: 'https://github.com/rochelle-rossman', icon: FaGithub, label: 'GitHub' },
+	{ href: 'https://www.linkedin.com/in/rochelle-rossman/', icon: FaLinkedinIn, label: 'LinkedIn' },
+	{ href: 'mailto:rochelle.rossman@gmail.com', icon: TbMailFilled, label: 'Email' },
+]
 
 type SocialLinkProps = {
 	href: string
 	icon: React.ComponentType
+	ariaLabel: string
 }
 
-function SocialLink({ href, icon: Icon }: SocialLinkProps) {
+function SocialLink({ href, icon: Icon, ariaLabel }: SocialLinkProps) {
 	return (
 		<a
 			href={href}
 			target='_blank'
 			rel='noopener noreferrer'
+			aria-label={ariaLabel}
 		>
 			<Icon />
 		</a>
@@ -31,18 +33,14 @@ function SocialLink({ href, icon: Icon }: SocialLinkProps) {
 function SocialLinks() {
 	return (
 		<div className='flex text-xl gap-3.5 float-right'>
-			<SocialLink
-				href={socialLinks.github}
-				icon={FaGithub}
-			/>
-			<SocialLink
-				href={socialLinks.linkedin}
-				icon={FaLinkedinIn}
-			/>
-			<SocialLink
-				href={socialLinks.email}
-				icon={TbMailFilled}
-			/>
+			{socialLinks.map((link, index) => (
+				<SocialLink
+					key={index}
+					href={link.href}
+					icon={link.icon}
+					ariaLabel={link.label}
+				/>
+			))}
 		</div>
 	)
 }
