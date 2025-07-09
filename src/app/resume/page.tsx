@@ -86,7 +86,7 @@ export default function ResumePage() {
 					<div className='space-y-6'>
 						<div className='flex flex-wrap gap-2'>
 							{skills.map((skill, i) => (
-								<Badge key={i}>{skill}</Badge>
+								<Badge variant='secondary' key={i}>{skill}</Badge>
 							))}
 						</div>
 					</div>

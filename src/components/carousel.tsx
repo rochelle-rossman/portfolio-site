@@ -70,7 +70,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					{images.map((img: CarouselImage, idx: number) => (
 						<SplideSlide
 							key={idx}
-							className='aspect-video overflow-hidden bg-accent rounded-lg shadow cursor-zoom-in outline-none'
+							className='aspect-video overflow-hidden bg-accent/70 rounded-lg cursor-zoom-in outline-none'
 							tabIndex={0}
 							role='button'
 							aria-label={`View image ${idx + 1}`}
@@ -100,7 +100,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					type='button'
 					onClick={() => splideRef.current?.go('<')}
 					aria-label='Previous slide'
-					className='absolute top-1/2 -left-4 z-10 -translate-y-1/2 p-2 w-[48px] h-[48px] rounded-full hover:scale-105 cursor-pointer'
+					className='absolute top-1/2 -left-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] rounded-full hover:scale-105 cursor-pointer'
 				>
 					{/* eslint-disable-next-line @next/next/no-img-element */}
 					<img
@@ -114,7 +114,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					type='button'
 					onClick={() => splideRef.current?.go('>')}
 					aria-label='Next slide'
-					className='absolute top-1/2 -right-4 z-10 -translate-y-1/2 p-2 w-[48px] h-[48px] hover:scale-105 rounded-full cursor-pointer'
+					className='absolute top-1/2 -right-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] hover:scale-105 rounded-full cursor-pointer'
 				>
 					{/* eslint-disable-next-line @next/next/no-img-element */}
 					<img

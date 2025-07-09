@@ -26,14 +26,20 @@ export default function Home() {
 				<StyledHeadshot />
 				<div className='flex flex-col gap-4 items-center bg-muted/70 rounded-lg shadow-xl p-6'>
 					<About />
-					<div className='flex flex-col md:flex-row gap-4'>
-						<Link href='/projects'>
-							<Button className='cursor-pointer underline-offset-4 hover:underline'>
-								View My Projects
+					<div className='w-full flex flex-col items-center justify-center sm:flex-row gap-4'>
+						<Link
+							href='/projects'
+							className='w-full'
+						>
+							<Button className='w-full cursor-pointer text-md underline-offset-4 hover:underline'>
+								View My Work
 							</Button>
 						</Link>
-						<Link href='/resume'>
-							<Button className='cursor-pointer underline-offset-4 hover:underline'>
+						<Link
+							href='/resume'
+							className='w-full'
+						>
+							<Button className='w-full cursor-pointer text-md underline-offset-4 hover:underline'>
 								View My Résumé
 							</Button>
 						</Link>
