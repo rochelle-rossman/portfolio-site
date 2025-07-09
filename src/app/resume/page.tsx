@@ -61,7 +61,7 @@ export default function ResumePage() {
 						target='_blank'
 						rel='noopener noreferrer'
 					>
-						<Button>View / Download PDF</Button>
+						<Button className='cursor-pointer'>View / Download PDF</Button>
 					</a>
 				</div>
 			</div>
