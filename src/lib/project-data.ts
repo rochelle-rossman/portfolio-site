@@ -1,4 +1,4 @@
-import { carouselScreenshots, productselectionpluginScreenshots } from './screenshot-data'
+import { carouselScreenshots, productselectionpluginScreenshots, redesignsScreenshots } from './screenshot-data'
 
 export const projects = [
 	{
@@ -85,6 +85,61 @@ export const projects = [
 			}
 		],
 		screenshots: productselectionpluginScreenshots,
+	},
+	{
+		title: "FSE Theme & Platform Migrations for Redesign Launches",
+		role: "Frontend Developer",
+		company: "TechnologyAdvice",
+		techStack: "WordPress, PHP, HTML, CSS, Gutenberg (FSE), ACF, Docker, AWS, Argo CD",
+		overview:
+			"Led front-end development and platform migration efforts for several WordPress site redesigns. This work included building custom Full Site Editing (FSE) themes and migrating sites from third-party hosts (like WP Engine) to a containerized AWS platform—resulting in faster, more flexible deployments and reduced technical debt across the organization.",
+		keyFeatures: [
+			{
+				title: "Custom FSE Theme Development",
+				description:
+					"Built full-site editing themes using block-based templates, template parts, global styles, and theme JSON—aligned with new branding systems."
+			},
+			{
+				title: "Infrastructure Migration",
+				description:
+					"Assisted in migrating sites from external hosts to an internal AWS platform using Docker containers and Argo CD for automated deployments."
+			},
+			{
+				title: "Editor-Centered Design",
+				description:
+					"Improved the WordPress editing experience through reusable layout blocks, ACF field groups, and consistent design components."
+			}
+		],
+		challenges: [
+			{
+				title: "Legacy to Modern Codebase",
+				description:
+					"Refactored legacy themes using PHP templates, widgets, and custom shortcodes into scalable block-based themes while preserving editor workflows."
+			},
+			{
+				title: "Infrastructure Coordination",
+				description:
+					"Worked closely with DevOps to test and deploy migrated sites into a containerized AWS environment without downtime or content loss."
+			}
+		],
+		impact: [
+			{
+				title: "Future-Ready Architecture",
+				description:
+					"Rebuilt sites with modern FSE architecture and deployed to an internal cloud-native platform, reducing reliance on third-party services and plugin bloat."
+			},
+			{
+				title: "Improved Site Performance & Stability",
+				description:
+					"Containerized hosting and optimized themes resulted in faster load times, fewer outages, and easier rollbacks and QA environments."
+			},
+			{
+				title: "Faster Time to Launch",
+				description:
+					"Streamlined delivery of site redesigns through automated deployment workflows and component-driven front-end architecture."
+			}
+		],
+		screenshots: redesignsScreenshots,
 	}
 
 ]
