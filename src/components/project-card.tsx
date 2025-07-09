@@ -7,7 +7,7 @@ type ProjectData = {
 	techStack: string
 	overview: string
 	keyFeatures: { title: string; description: string }[]
-	challenges: { challenge: string; solution: string }[]
+	challenges: { title: string; description: string }[]
 	impact: { title: string; description: string }[]
 	screenshots?: { src: string; alt: string }[]
 }
@@ -59,7 +59,7 @@ export default function ProjectCard({
 				<ul>
 					{keyFeatures.map((feature, i) => (
 						<li key={i}>
-							<strong>{feature.title}</strong>
+							<strong>{feature.title}: </strong>
 							{''}
 							{feature.description}
 						</li>
@@ -72,9 +72,9 @@ export default function ProjectCard({
 				<ul>
 					{challenges.map((challenge, i) => (
 						<li key={i}>
-							<strong>{challenge.challenge}</strong>
+							<strong>{challenge.title}: </strong>
 							{''}
-							{challenge.solution}
+							{challenge.description}
 						</li>
 					))}
 				</ul>
@@ -85,7 +85,7 @@ export default function ProjectCard({
 				<ul>
 					{impact.map((item, i) => (
 						<li key={i}>
-							<strong>{item.title}</strong>
+							<strong>{item.title}: </strong>
 							{''}
 							{item.description}
 						</li>
@@ -100,7 +100,7 @@ export default function ProjectCard({
 						<Carousel images={screenshots} />
 					</div>
 
-					<p className='mt-2 text-sm text-center text-muted-foreground'>
+					<p className='mt-2 text-xs text-center text-muted-foreground'>
 						This project reflects work I contributed to while
 						employed at TechnologyAdvice. Screenshots shown are of
 						publicly available content and are shared solely for
