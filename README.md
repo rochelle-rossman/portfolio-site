@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💻 Rochelle Rossman's Developer Portfolio
 
-## Getting Started
+A custom-built site to showcase my work as a web developer and front-end software engineer. This project reflects my values: accessible, performant, and thoughtfully crafted web experiences.
 
-First, run the development server:
+## ✨ Live Site
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[https://rochellerossman.dev](https://rochellerossman.dev)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[![Portfolio Screenshot](./public/desktop-lighthouse-score.jpeg)](https://rochellerossman.dev)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js](https://nextjs.org/), React, TypeScript
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [ShadCN/UI](https://ui.shadcn.com/)
+- **Components**: Custom-built project cards, carousel, modals, and lightbox viewer
+- **Hosting**: Deployed via [Vercel](https://vercel.com/)
+- **Accessibility**: Focus management, keyboard navigation, semantic HTML, ARIA attributes
 
-## Learn More
+## 🧠 Purpose
 
-To learn more about Next.js, take a look at the following resources:
+This portfolio was built to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Move beyond CMS-based projects and showcase my frontend capabilities using modern tools
+- Reflect the care and intention I bring to every build — especially around usability and accessibility
+- Support my job search and professional presence
+- Share my personality and values as a developer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎯 Features
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Mobile-first, responsive layout with consistent design system
+- Accessible custom carousel and screenshot lightbox using [Splide.js](https://splidejs.com/) and [ShadCN/UI](https://ui.shadcn.com/)
+- Modular project showcase with detailed overviews and impact statements
+- Clean, semantic markup for SEO and screen readers
+- Easy-to-update structure for ongoing content improvements
