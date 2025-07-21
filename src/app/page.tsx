@@ -15,7 +15,6 @@ export default function Home() {
 					width={600}
 					height={300}
 					className='object-contain'
-					priority
 				/>
 				<h1 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
 					Rochelle Rossman

@@ -11,7 +11,6 @@ export default function StyledHeadshot() {
 						alt='A headshot of Rochelle Rossman'
 						fill
 						className='object-top object-cover filter brightness-120 contrast-110'
-						priority
 					/>
 				</div>
 			</div>
