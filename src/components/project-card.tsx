@@ -1,113 +1,96 @@
-import Carousel from '@/components/carousel'
+// import Carousel from '@/components/carousel'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { cn } from '@/lib/utils'
 
 type ProjectData = {
 	title: string
+	featuredImage?: {
+		src: string
+		alt: string
+		caption?: string
+	}
 	role: string
 	company: string
 	techStack: string
 	overview: string
-	keyFeatures: { title: string; description: string }[]
-	challenges: { title: string; description: string }[]
-	impact: { title: string; description: string }[]
-	screenshots?: { src: string; alt: string }[]
 }
 
 export default function ProjectCard({
 	title,
+	featuredImage,
 	role,
 	company,
 	techStack,
 	overview,
-	keyFeatures,
-	challenges,
-	impact,
-	screenshots,
 }: ProjectData) {
 	return (
-		<article className='bg-muted/70 rounded-lg shadow-xl p-6'>
-			<header className='mb-4'>
-				<h2>{title}</h2>
-				<dl className='grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm'>
-					<div>
-						<dt className='text-muted-foreground font-medium'>
-							Role
-						</dt>
-						<dd>{role}</dd>
+		<Link
+			href={`/projects/${title.toLowerCase().replace(/\s+/g, '-')}`}
+			className='group'
+		>
+			<article className='bg-muted/70 rounded-lg shadow-xl p-6'>
+				<header>
+					<h2
+						className={cn(
+							'relative inline-block transition-transform duration-200 w-full',
+							'before:absolute before:left-0 before:-top-2 before:h-[3px]  before:w-full before:rounded-xl ',
+							'before:origin-center before:scale-x-0 before:transition-transform before:duration-300',
+							'before:bg-gradient-to-r before:from-[var(--color-gold)] before:via-[var(--color-teal)] before:to-[var(--color-coral)]',
+							'group-hover:before:scale-x-100 group-focus:before:scale-x-100 group-active:before:scale-x-100'
+						)}
+					>
+						{title}
+					</h2>
+				</header>
+				<div className='flex flex-col-reverse md:flex-row gap-6'>
+					{featuredImage && (
+						<div className='md:w-1/3 w-full p-4 flex items-center bg-muted/70 rounded-lg shadow-xl'>
+							<figure className=''>
+								<Image
+									src={featuredImage.src}
+									alt={featuredImage.alt}
+									width={600}
+									height={400}
+									className='object-cover rounded-lg w-full h-auto'
+								/>
+								{featuredImage.caption && (
+									<figcaption className='text-xs text-muted-foreground mt-4'>
+										{featuredImage.caption}
+									</figcaption>
+								)}
+							</figure>
+						</div>
+					)}
+					<div className='flex-1'>
+						<section>
+							<dl className='grid grid-cols-1 lg:grid-cols-2 gap-2 text-sm'>
+								<div>
+									<dt className='text-muted-foreground font-medium'>
+										Role
+									</dt>
+									<dd>{role}</dd>
+								</div>
+								<div>
+									<dt className='text-muted-foreground font-medium'>
+										Company
+									</dt>
+									<dd>{company}</dd>
+								</div>
+								<div>
+									<dt className='text-muted-foreground font-medium'>
+										Tech Stack
+									</dt>
+									<dd>{techStack}</dd>
+								</div>
+							</dl>
+							<h3 className='mt-4'>Overview</h3>
+							<p className='line-clamp-4'>{overview}</p>
+						</section>
 					</div>
-					<div>
-						<dt className='text-muted-foreground font-medium'>
-							Company
-						</dt>
-						<dd>{company}</dd>
-					</div>
-					<div>
-						<dt className='text-muted-foreground font-medium'>
-							Tech Stack
-						</dt>
-						<dd>{techStack}</dd>
-					</div>
-				</dl>
-			</header>
-
-			<section className='mb-4'>
-				<h3>Overview</h3>
-				<p>{overview}</p>
-			</section>
-
-			<section className='mb-6'>
-				<h3>Key Features</h3>
-				<ul>
-					{keyFeatures.map((feature, i) => (
-						<li key={i}>
-							<strong>{feature.title}: </strong>
-							{''}
-							{feature.description}
-						</li>
-					))}
-				</ul>
-			</section>
-
-			<section className='mb-6'>
-				<h3>Challenges &amp; Solutions</h3>
-				<ul>
-					{challenges.map((challenge, i) => (
-						<li key={i}>
-							<strong>{challenge.title}: </strong>
-							{''}
-							{challenge.description}
-						</li>
-					))}
-				</ul>
-			</section>
-
-			<section className='mb-6'>
-				<h3>Impact</h3>
-				<ul>
-					{impact.map((item, i) => (
-						<li key={i}>
-							<strong>{item.title}: </strong>
-							{''}
-							{item.description}
-						</li>
-					))}
-				</ul>
-			</section>
-
-			{screenshots && (
-				<section>
-					<h3>Sample Screenshots</h3>
-					<div className='px-2'>
-						<Carousel images={screenshots} />
-					</div>
-
-					<p className='mt-2 text-xs text-center text-muted-foreground'>
-						This project reflects work I contributed to while
-						employed at TechnologyAdvice. Screenshots shown are of
-						publicly available content and are shared solely for
-						demonstration purposes.
-					</p>
-				</section>
-			)}
-		</article>
+				</div>
+			</article>
+		</Link>
 	)
 }
