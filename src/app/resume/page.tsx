@@ -40,15 +40,11 @@ export default function ResumePage() {
 	
 	return (
 		<section className='flex flex-col items-center mx-auto'>
-			<h1>
-				Résumé
-			</h1>
+			<h1>Résumé</h1>
 
 			<div className='flex flex-col md:flex-row md:items-center md:justify-between bg-muted/70 rounded-lg shadow-xl p-6 w-full mb-10'>
 				<div>
-					<h2>
-						Rochelle Rossman
-					</h2>
+					<h2>Rochelle Rossman</h2>
 					<p className='text-lg'>
 						Web Developer • Kingston, NY •
 						rochelle.rossman@gmail.com{' '}
@@ -61,7 +57,18 @@ export default function ResumePage() {
 						target='_blank'
 						rel='noopener noreferrer'
 					>
-						<Button className='cursor-pointer'>View / Download PDF</Button>
+						<Button className='cursor-pointer'>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								height='24px'
+								viewBox='0 -960 960 960'
+								width='24px'
+								fill='#FFFFFF'
+							>
+								<path d='M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z' />
+							</svg>
+							View / Download PDF
+						</Button>
 					</a>
 				</div>
 			</div>
@@ -86,16 +93,19 @@ export default function ResumePage() {
 					<div className='space-y-6'>
 						<div className='flex flex-wrap gap-2'>
 							{skills.map((skill, i) => (
-								<Badge variant='secondary' key={i}>{skill}</Badge>
+								<Badge
+									variant='secondary'
+									key={i}
+								>
+									{skill}
+								</Badge>
 							))}
 						</div>
 					</div>
 				</div>
 
 				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h3>
-						Experience
-					</h3>
+					<h3>Experience</h3>
 
 					<div className='mb-6'>
 						<h3 className='text-xl'>TechnologyAdvice</h3>
@@ -165,9 +175,7 @@ export default function ResumePage() {
 				</div>
 
 				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h3>
-						Education
-					</h3>
+					<h3>Education</h3>
 					<p>
 						<strong>
 							Certificate in Full Stack Web Development
@@ -177,9 +185,7 @@ export default function ResumePage() {
 				</div>
 
 				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h3>
-						Links
-					</h3>
+					<h3>Links</h3>
 					<ul>
 						{links.map((link, i) => (
 							<li key={i}>

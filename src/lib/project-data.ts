@@ -3,6 +3,11 @@ import { carouselScreenshots, productselectionpluginScreenshots, redesignsScreen
 export const projects = [
 	{
 		title: 'Modular Carousel Component with Custom Gutenberg Blocks',
+		featuredImage: {
+			src: carouselScreenshots[0].src,
+			alt: 'Screenshot of Modular Carousel Component',
+			caption: 'A modular carousel component built with accessibility in mind.'
+		},
 		role: 'Web Developer',
 		company: 'TechnologyAdvice',
 		techStack: 'JavaScript, React, PHP, Splide.js, SCSS',
@@ -28,6 +33,11 @@ export const projects = [
 	},
 	{
 		title: "Product Selection Plugin Revamp",
+		featuredImage: {
+			src: productselectionpluginScreenshots[0].src,
+			alt: 'Screenshot of Product Selection Plugin',
+			caption: 'A revamped product selection plugin for TechnologyAdvice.'
+		},
 		role: "Frontend Developer",
 		company: "TechnologyAdvice",
 		techStack: "Vue.js, WordPress, PHP, REST APIs, SCSS",
@@ -88,6 +98,11 @@ export const projects = [
 	},
 	{
 		title: "FSE Theme & Platform Migrations for Redesign Launches",
+		featuredImage: {
+			src: redesignsScreenshots[0].src,
+			alt: 'Screenshot of FSE Theme and Platform Migration',
+			caption: 'A screenshot showcasing a redesigned FSE theme for TechnologyAdvice.'
+		},
 		role: "Frontend Developer",
 		company: "TechnologyAdvice",
 		techStack: "WordPress, PHP, HTML, CSS, Gutenberg (FSE), ACF, Docker, AWS, Argo CD",

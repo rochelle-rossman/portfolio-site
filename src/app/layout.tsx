@@ -37,7 +37,6 @@ export default function RootLayout({
 			className={`${climate_crisis.variable} ${montserrat.variable} antialiased`}
 		>
 			<body className='relative bg-gradient-radial bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mb-12'>
-				<BackgroundDecor />
 				<main
 					className='relative z-10 min-h-screen px-4 max-w-4xl w-full'
 					role='main'
@@ -48,6 +47,7 @@ export default function RootLayout({
 				</main>
 				<SpeedInsights />
 				<Analytics />
+				<BackgroundDecor />
 			</body>
 		</html>
 	)
