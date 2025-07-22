@@ -26,10 +26,6 @@ export const carouselScreenshots = [
     src: '/screenshots/carousel/technologyadvice.com_.png',
     alt: 'technologyadvice.com ',
   },
-  {
-    src: '/screenshots/carousel/www.cioinsight.com.png',
-    alt: 'www.cioinsight.com',
-  },
 ]
 
 export const productselectionpluginScreenshots = [

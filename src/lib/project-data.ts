@@ -97,7 +97,7 @@ export const projects = [
 		screenshots: productselectionpluginScreenshots,
 	},
 	{
-		title: "FSE Theme & Platform Migrations for Redesign Launches",
+		title: "FSE Theme and Platform Migrations for Redesign Launches",
 		featuredImage: {
 			src: redesignsScreenshots[0].src,
 			alt: 'Screenshot of FSE Theme and Platform Migration',
