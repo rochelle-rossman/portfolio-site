@@ -139,7 +139,7 @@ const Carousel = ({ images }: CarouselProps) => {
 						<div>
 							<Image
 								src={selectedImage}
-								alt='Enlarged project screenshot'
+								alt={`Enlarged project screenshot: ${images[selectedIndex!].alt}`}
 								fill
 								className='object-contain'
 							/>
