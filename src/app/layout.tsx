@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 import Navbar from '@/components/nav'
 import Footer from '@/components/footer'
 import BackgroundDecor from '@/components/background'
@@ -36,19 +37,23 @@ export default function RootLayout({
 			lang='en'
 			className={`${climate_crisis.variable} ${montserrat.variable} antialiased`}
 		>
-			<body className='relative bg-gradient-radial bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mb-12'>
+			
+				<body className='relative bg-gradient-radial bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mb-12'>
 				<main
 					className='relative z-10 min-h-screen px-4 max-w-4xl w-full'
 					role='main'
 				>
-					<Navbar />
-					{children}
-					<Footer />
+					<ThemeProvider attribute='class' defaultTheme='system'>
+						<Navbar />
+						{children}
+						<Footer />
+					</ThemeProvider>
 				</main>
 				<SpeedInsights />
 				<Analytics />
 				<BackgroundDecor />
-			</body>
+				</body>
+
 		</html>
 	)
 }
