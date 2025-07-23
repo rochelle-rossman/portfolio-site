@@ -11,10 +11,10 @@
   --color-purple: oklch(0.572 0.244 295.3);
   --color-gold: oklch(0.827 0.2 79.6);
   --color-teal: oklch(0.791 0.159 189.5);
-  --color-navy: oklch(0.241 0.048 261.5);
+  --color-navy: oklch(9.237% 0.02109 239.797);
 
   --breakpoint-xs: var(--breakpoint-xs);
-  
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
@@ -132,6 +132,14 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     animation: radial-drift 18s ease-in-out infinite;
+  }
+
+  .dark .bg-gradient-radial {
+    background-image: radial-gradient(circle at 20% 25%,
+        oklch(22.526% 0.06574 262.439),
+        oklch(28.944% 0.11837 293.013),
+        oklch(0.32 0.15 20.62),
+        oklch(0.18 0.09 189.5));
   }
 
   @media (prefers-reduced-motion: no-preference) {
