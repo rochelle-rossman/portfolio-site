@@ -25,39 +25,37 @@ export default function ResumePage() {
 		'TailwindCSS',
 		'TypeScript',
 		'Vue.js',
-		'Wordpress']
-	
-		const links = [
-			{
-				href: 'https://www.linkedin.com/in/rochelle-rossman',
-				label: 'linkedin.com/in/rochelle-rossman',
-			},
-			{
-				href: 'https://github.com/rochelle-rossman',
-				label: 'github.com/rochelle-rossman',
-			},
-		]
-	
+		'Wordpress',
+	]
+
 	return (
 		<section className='flex flex-col items-center mx-auto'>
-			<h1>Résumé</h1>
+			<h1 className='dark:drop-shadow-lg/100 dark:drop-shadow-purple-700'>
+				Résumé
+			</h1>
 
 			<div className='flex flex-col md:flex-row md:items-center md:justify-between bg-muted/70 rounded-lg shadow-xl p-6 w-full mb-10'>
 				<div>
-					<h2>Rochelle Rossman</h2>
-					<p className='text-lg'>
+					<h2 className='text-4xl text-center md:text-left'>
+						Rochelle Rossman
+					</h2>
+					<p className='text-lg text-center md:text-left'>
 						Web Developer • Kingston, NY •
 						rochelle.rossman@gmail.com{' '}
 					</p>
 				</div>
 
-				<div className='mt-4 md:mt-0'>
+				<div className='mt-4 md:mt-0 flex flex-col gap-4'>
 					<a
-						href='/RochelleRossman.pdf'
+						href='/rochelle-rossman-resume.pdf'
 						target='_blank'
 						rel='noopener noreferrer'
+						title='Opens a PDF file in a new tab'
 					>
-						<Button className='cursor-pointer'>
+						<Button
+							className='cursor-pointer w-full'
+							role='link'
+						>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								height='24px'
@@ -67,7 +65,29 @@ export default function ResumePage() {
 							>
 								<path d='M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z' />
 							</svg>
-							View / Download PDF
+							View PDF
+						</Button>
+					</a>
+					<a
+						href='/rochelle-rossman-resume.html'
+						target='_blank'
+						rel='noopener noreferrer'
+						title='Opens an HTML file in a new tab'
+					>
+						<Button
+							className='cursor-pointer w-full'
+							role='link'
+						>
+							<svg
+								xmlns='http://www.w3.org/2000/svg'
+								height='24px'
+								viewBox='0 -960 960 960'
+								width='24px'
+								fill='currentColor'
+							>
+								<path d='M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z' />
+							</svg>
+							View HTML
 						</Button>
 					</a>
 				</div>
@@ -182,24 +202,6 @@ export default function ResumePage() {
 						</strong>
 						, Nashville Software School — Apr 2022 – Mar 2023
 					</p>
-				</div>
-
-				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
-					<h3>Links</h3>
-					<ul>
-						{links.map((link, i) => (
-							<li key={i}>
-								<a
-									href={link.href}
-									target='_blank'
-									rel='noopener noreferrer'
-									className='underline'
-								>
-									{link.label}
-								</a>
-							</li>
-						))}
-					</ul>
 				</div>
 			</section>
 		</section>

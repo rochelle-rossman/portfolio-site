@@ -26,22 +26,20 @@ export default function ProjectDetails({
 	return (
 		<article>
 			<header>
-				<h1 className='text-3xl md:text-4xl'>{title}</h1>
+				<h1 className='text-3xl md:text-4xl dark:text-shadow-lg/100'>
+					{title}
+				</h1>
 			</header>
 			<div className='flex flex-col gap-6'>
 				<section className='bg-muted/70 rounded-lg shadow-xl p-6'>
 					<h2>Overview</h2>
 					<dl className='grid grid-cols-1 gap-2 text-sm font-semibold mb-4'>
 						<div>
-							<dt className='text-muted-foreground'>
-								Role
-							</dt>
+							<dt className='text-muted-foreground'>Role</dt>
 							<dd>{role}</dd>
 						</div>
 						<div>
-							<dt className='text-muted-foreground'>
-								Company
-							</dt>
+							<dt className='text-muted-foreground'>Company</dt>
 							<dd>{company}</dd>
 						</div>
 						<div>

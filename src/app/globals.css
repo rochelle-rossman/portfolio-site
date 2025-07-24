@@ -90,6 +90,25 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+.dark {
+  --background: oklch(0.147 0.004 49.25);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.147 0.004 49.25);
+  --card-foreground: oklch(1 0 0);
+  --popover: var(--color-navy);
+  --popover-foreground: oklch(0.985 0.001 106.423);
+  --primary: oklch(0.985 0.001 106.423);
+  --primary-foreground: oklch(0.216 0.006 56.043);
+  --secondary: oklch(0.97 0.001 106.424);
+  --secondary-foreground: oklch(0.216 0.006 56.043);
+  --muted: var(--color-navy);
+  --muted-foreground: oklch(0.8 0.12 79.6);
+  --accent: oklch(0.216 0.006 56.043);
+  --accent-foreground: oklch(0.985 0.001 106.423);
+  --border: rgb(69, 36, 123);
+  --input: oklch(0.8 0.12 79.6);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -101,7 +120,7 @@
   }
   
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center drop-shadow-md mb-10
+    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center drop-shadow-md mb-8
   }
   
   h2 {
