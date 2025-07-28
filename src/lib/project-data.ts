@@ -6,7 +6,7 @@ export const projects = [
 		featuredImage: {
 			src: carouselScreenshots[0].src,
 			alt: 'Screenshot of Modular Carousel Component',
-			caption: 'A modular carousel component built with accessibility in mind.'
+			caption: 'A modular carousel component built with flexibility and accessibility in mind.'
 		},
 		role: 'Web Developer',
 		company: 'TechnologyAdvice',

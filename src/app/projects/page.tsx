@@ -6,7 +6,9 @@ import { projects } from '@/lib/project-data'
 export default function Projects() {
 	return (
 		<section>
-			<h1>Project Samples</h1>
+			<h1 className='dark:drop-shadow-lg/100 dark:drop-shadow-purple-700'>
+				Project Samples
+			</h1>
 			<div className='flex flex-col gap-8'>
 				{projects.map((project, i) => (
 					<ProjectCard
@@ -19,7 +21,6 @@ export default function Projects() {
 						overview={project.overview}
 					/>
 				))}
-
 			</div>
 		</section>
 	)

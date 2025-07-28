@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --font-sans: var(--font-montserrat);
@@ -10,10 +11,10 @@
   --color-purple: oklch(0.572 0.244 295.3);
   --color-gold: oklch(0.827 0.2 79.6);
   --color-teal: oklch(0.791 0.159 189.5);
-  --color-navy: oklch(0.241 0.048 261.5);
+  --color-navy: oklch(9.237% 0.02109 239.797);
 
   --breakpoint-xs: var(--breakpoint-xs);
-  
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
@@ -89,6 +90,25 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+.dark {
+  --background: oklch(0.147 0.004 49.25);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.147 0.004 49.25);
+  --card-foreground: oklch(1 0 0);
+  --popover: var(--color-navy);
+  --popover-foreground: oklch(0.985 0.001 106.423);
+  --primary: oklch(0.985 0.001 106.423);
+  --primary-foreground: oklch(0.216 0.006 56.043);
+  --secondary: oklch(0.97 0.001 106.424);
+  --secondary-foreground: oklch(0.216 0.006 56.043);
+  --muted: var(--color-navy);
+  --muted-foreground: oklch(0.8 0.12 79.6);
+  --accent: oklch(0.216 0.006 56.043);
+  --accent-foreground: oklch(0.985 0.001 106.423);
+  --border:oklch(42.142% 0.19215 293.758);
+  --input: oklch(0.8 0.12 79.6);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -100,7 +120,7 @@
   }
   
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center drop-shadow-md mb-10
+    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center drop-shadow-md mb-8
   }
   
   h2 {
@@ -133,6 +153,14 @@
     animation: radial-drift 18s ease-in-out infinite;
   }
 
+  .dark .bg-gradient-radial {
+    background-image: radial-gradient(circle at 20% 25%,
+        oklch(22.526% 0.06574 262.439),
+        oklch(28.944% 0.11837 293.013),
+        oklch(0.32 0.15 20.62),
+        oklch(0.18 0.09 189.5));
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     @keyframes radial-drift {
 
@@ -162,5 +190,9 @@
 
   .bg-radial-blend::before {
     mix-blend-mode: overlay;
+  }
+
+  .bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--color-purple), var(--color-gold), var(--color-coral));
   }
 }

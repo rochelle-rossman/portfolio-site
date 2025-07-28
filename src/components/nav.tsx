@@ -1,4 +1,5 @@
 import NavLink from "./nav-link"
+import { ModeToggle } from '@/components/mode-toggle'
 
 export default function Navbar() {
 	return (
@@ -7,6 +8,7 @@ export default function Navbar() {
 				<NavLink href='/'>About</NavLink>
 				<NavLink href='/projects'>Projects</NavLink>
 				<NavLink href='/resume'>Résumé</NavLink>
+				<ModeToggle />
 			</div>
 		</nav>
 	)
