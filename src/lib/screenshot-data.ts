@@ -3,74 +3,74 @@
 
 export const carouselScreenshots = [
   {
-    src: '/screenshots/carousel/solutions.technologyadvice.com_audience_ (1).png',
-    alt: 'solutions.technologyadvice.com audience  (1)',
+    src: '/screenshots/carousel/solutions.technologyadvice.com-desktop-carousel.png',
+    alt: 'solutions.technologyadvice.com desktop carousel',
   },
   {
-    src: '/screenshots/carousel/solutions.technologyadvice.com_audience_.png',
-    alt: 'solutions.technologyadvice.com audience ',
+    src: '/screenshots/carousel/solutions.technologyadvice.com-mobile-carousel.png',
+    alt: 'solutions.technologyadvice.com mobile carousel',
   },
   {
-    src: '/screenshots/carousel/technologyadvice.com_ (1).png',
-    alt: 'technologyadvice.com  (1)',
+    src: '/screenshots/carousel/technologyadvice.com_(1)desktop.png',
+    alt: 'technologyadvice.com (1)desktop',
   },
   {
-    src: '/screenshots/carousel/technologyadvice.com_ (2).png',
-    alt: 'technologyadvice.com  (2)',
+    src: '/screenshots/carousel/technologyadvice.com_(2)mobile.png',
+    alt: 'technologyadvice.com (2)mobile',
   },
   {
-    src: '/screenshots/carousel/technologyadvice.com_ (3).png',
-    alt: 'technologyadvice.com  (3)',
+    src: '/screenshots/carousel/technologyadvice.com_(3)desktop.png',
+    alt: 'technologyadvice.com (3)desktop',
   },
   {
-    src: '/screenshots/carousel/technologyadvice.com_.png',
-    alt: 'technologyadvice.com ',
+    src: '/screenshots/carousel/technologyadvice.com_mobile.png',
+    alt: 'technologyadvice.com mobile',
   },
 ]
 
 export const productselectionpluginScreenshots = [
   {
-    src: '/screenshots/product-selection-plugin/technologyadvice.com_agile-project-management-software_.png',
-    alt: 'technologyadvice.com agile project management software ',
-  },
-  {
     src: '/screenshots/product-selection-plugin/technologyadvice.com_browse-categories_.png',
     alt: 'technologyadvice.com browse categories ',
   },
   {
-    src: '/screenshots/product-selection-plugin/technologyadvice.com_human-resources-software_.png',
-    alt: 'technologyadvice.com human resources software ',
+    src: '/screenshots/product-selection-plugin/technologyadvice.com_product-profile.png',
+    alt: 'technologyadvice.com product profile',
   },
   {
-    src: '/screenshots/product-selection-plugin/technologyadvice.com_products_asana-reviews_.png',
-    alt: 'technologyadvice.com products asana reviews ',
+    src: '/screenshots/product-selection-plugin/technologyadvice.com_product-selection-list-filters.png',
+    alt: 'technologyadvice.com product selection list filters',
+  },
+  {
+    src: '/screenshots/product-selection-plugin/technologyadvice.com_product-selection-list.png',
+    alt: 'technologyadvice.com product selection list',
   },
 ]
 
 export const redesignsScreenshots = [
   {
-    src: '/screenshots/redesigns/solutions.technologyadvice.com_.png',
-    alt: 'solutions.technologyadvice.com ',
+    src: '/screenshots/redesigns/solutions.technologyadvice.com_after.png',
+    alt: 'solutions.technologyadvice.com after',
   },
   {
-    src: '/screenshots/redesigns/web.archive.org_web_20230225134601_https___technologyadvice.com_.png',
-    alt: 'web.archive.org web 20230225134601 https   technologyadvice.com ',
+    src: '/screenshots/redesigns/solutions.technologyadvice.com_before.png',
+    alt: 'solutions.technologyadvice.com before',
   },
   {
-    src: '/screenshots/redesigns/web.archive.org_web_20230302005432_https___www.techrepublic.com_.png',
-    alt: 'web.archive.org web 20230302005432 https   www.techrepublic.com ',
+    src: '/screenshots/redesigns/techrepublic.com_latest-before.png',
+    alt: 'techrepublic.com latest before',
   },
   {
-    src: '/screenshots/redesigns/web.archive.org_web_20230306070804_https___www.techrepublic.com_topic_top-products_.png',
-    alt: 'web.archive.org web 20230306070804 https   www.techrepublic.com topic top products ',
+    src: '/screenshots/redesigns/techrepublic.com_topic_top-products_before.png',
+    alt: 'techrepublic.com topic top products before',
   },
   {
-    src: '/screenshots/redesigns/www.techrepublic.com_.png',
-    alt: 'www.techrepublic.com ',
+    src: '/screenshots/redesigns/www.techrepublic.com_latest-after.png',
+    alt: 'www.techrepublic.com latest after',
   },
   {
-    src: '/screenshots/redesigns/www.techrepublic.com_topic_top-products_.png',
-    alt: 'www.techrepublic.com topic top products ',
+    src: '/screenshots/redesigns/www.techrepublic.com_topic_top-products_after.png',
+    alt: 'www.techrepublic.com topic top products after',
   },
 ]
 
