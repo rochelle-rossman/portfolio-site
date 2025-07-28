@@ -1,6 +1,8 @@
 'use client'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 
 export default function ResumePage() {
 	const skills = [
@@ -45,51 +47,35 @@ export default function ResumePage() {
 					</p>
 				</div>
 
-				<div className='mt-4 md:mt-0 flex flex-col gap-4'>
-					<a
+				<div className='mt-4 md:mt-0 flex flex-col gap-2'>
+					<Link
 						href='/rochelle-rossman-resume.pdf'
 						target='_blank'
 						rel='noopener noreferrer'
 						title='Opens a PDF file in a new tab'
 					>
 						<Button
-							className='cursor-pointer w-full'
+							className='cursor-pointer w-full underline-offset-4 hover:underline'
 							role='link'
 						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								height='24px'
-								viewBox='0 -960 960 960'
-								width='24px'
-								fill='currentColor'
-							>
-								<path d='M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z' />
-							</svg>
+							<ExternalLink />
 							View PDF
 						</Button>
-					</a>
-					<a
+					</Link>
+					<Link
 						href='/rochelle-rossman-resume.html'
 						target='_blank'
 						rel='noopener noreferrer'
 						title='Opens an HTML file in a new tab'
 					>
 						<Button
-							className='cursor-pointer w-full'
+							className='cursor-pointer w-full underline-offset-4 hover:underline'
 							role='link'
 						>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								height='24px'
-								viewBox='0 -960 960 960'
-								width='24px'
-								fill='currentColor'
-							>
-								<path d='M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z' />
-							</svg>
+							<ExternalLink />
 							View HTML
 						</Button>
-					</a>
+					</Link>
 				</div>
 			</div>
 
@@ -114,7 +100,7 @@ export default function ResumePage() {
 						<div className='flex flex-wrap gap-2'>
 							{skills.map((skill, i) => (
 								<Badge
-									variant='secondary'
+									variant='outline'
 									key={i}
 								>
 									{skill}

@@ -14,6 +14,7 @@ import {
 type CarouselImage = {
 	src: string
 	alt: string
+	caption?: string
 }
 
 type CarouselProps = {
@@ -70,7 +71,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					{images.map((img: CarouselImage, idx: number) => (
 						<SplideSlide
 							key={idx}
-							className='aspect-video overflow-hidden bg-accent/70 rounded-lg cursor-zoom-in outline-none'
+							className='relative aspect-video overflow-hidden bg-accent/70 rounded-lg cursor-zoom-in outline-none'
 							tabIndex={0}
 							role='button'
 							aria-label={`View image ${idx + 1}`}
@@ -92,6 +93,11 @@ const Carousel = ({ images }: CarouselProps) => {
 								className='object-contain p-6'
 								priority={idx === 0}
 							/>
+							{img.caption && (
+								<figcaption className='text-xs absolute w-full bottom-0 text-center bg-muted/80 p-2 rounded'>
+									{img.caption}
+								</figcaption>
+							)}
 						</SplideSlide>
 					))}
 				</Splide>
@@ -136,13 +142,20 @@ const Carousel = ({ images }: CarouselProps) => {
 						Enlarged project screenshot
 					</DialogTitle>
 					{selectedImage && (
-						<div>
+						<div className='relative'>
 							<Image
 								src={selectedImage}
-								alt={`Enlarged project screenshot: ${images[selectedIndex!].alt}`}
+								alt={`Enlarged project screenshot: ${
+									images[selectedIndex!].alt
+								}`}
 								fill
 								className='object-contain'
 							/>
+							{images[selectedIndex!].caption && (
+								<figcaption className='text-xs text-muted-foreground absolute w-full bottom-2 text-center bg-muted/70 p-2 rounded'>
+									{images[selectedIndex!].caption}
+								</figcaption>
+							)}
 						</div>
 					)}
 				</DialogContent>

@@ -1,6 +1,7 @@
 import About from '@/components/about'
 import StyledHeadshot from '@/components/headshot'
 import { Button } from '@/components/ui/button'
+import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -30,16 +31,18 @@ export default function Home() {
 							href='/projects'
 							className='w-full'
 						>
-							<Button className='w-full cursor-pointer text-md underline-offset-4 hover:underline'>
+							<Button className='w-full cursor-pointer underline-offset-4 hover:underline'>
 								View My Work
+								<ChevronRight />
 							</Button>
 						</Link>
 						<Link
 							href='/resume'
 							className='w-full'
 						>
-							<Button className='w-full cursor-pointer text-md underline-offset-4 hover:underline'>
+							<Button className='w-full cursor-pointer underline-offset-4 hover:underline'>
 								View My Résumé
+								<ChevronRight />
 							</Button>
 						</Link>
 					</div>
