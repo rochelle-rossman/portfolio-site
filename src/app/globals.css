@@ -105,7 +105,7 @@
   --muted-foreground: oklch(0.8 0.12 79.6);
   --accent: oklch(0.216 0.006 56.043);
   --accent-foreground: oklch(0.985 0.001 106.423);
-  --border: rgb(69, 36, 123);
+  --border:oklch(42.142% 0.19215 293.758);
   --input: oklch(0.8 0.12 79.6);
 }
 
@@ -190,5 +190,9 @@
 
   .bg-radial-blend::before {
     mix-blend-mode: overlay;
+  }
+
+  .bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--color-purple), var(--color-gold), var(--color-coral));
   }
 }

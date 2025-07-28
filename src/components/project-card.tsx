@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { cn } from '@/lib/utils'
+// import { cn } from '@/lib/utils'
 
 type ProjectData = {
 	title: string
@@ -30,23 +30,14 @@ export default function ProjectCard({
 			href={`/projects/${title.toLowerCase().replace(/\s+/g, '-')}`}
 			className='group'
 		>
-			<article className='bg-muted/70 rounded-lg shadow-xl p-6'>
+			<article className='relative bg-muted/70 rounded-lg shadow-xl p-6 dark:border lg:group-hover:scale-105 transition-transform duration-300'>
+				<span className='absolute inset-0 rounded-t-lg h-2 bg-gradient-to-r  opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
 				<header>
-					<h2
-						className={cn(
-							'relative inline-block transition-transform duration-200 w-full',
-							'before:absolute before:left-0 before:-top-2 before:h-[3px]  before:w-full before:rounded-xl ',
-							'before:origin-center before:scale-x-0 before:transition-transform before:duration-300',
-							'before:bg-gradient-to-r before:from-[var(--color-gold)] before:via-[var(--color-teal)] before:to-[var(--color-coral)]',
-							'group-hover:before:scale-x-100 group-focus:before:scale-x-100 group-active:before:scale-x-100'
-						)}
-					>
-						{title}
-					</h2>
+					<h2>{title}</h2>
 				</header>
 				<div className='flex flex-col-reverse md:flex-row gap-6'>
 					{featuredImage && (
-						<div className='md:w-1/3 w-full p-4 flex items-center bg-muted/70 rounded-lg shadow-xl'>
+						<div className='md:w-1/3 w-full p-4 flex items-center bg-muted/70 dark:bg-border/40 rounded-lg shadow-xl'>
 							<figure className=''>
 								<Image
 									src={featuredImage.src}
