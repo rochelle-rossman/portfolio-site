@@ -32,7 +32,7 @@ export default function ResumePage() {
 
 	return (
 		<section className='flex flex-col items-center mx-auto'>
-			<h1 className='dark:drop-shadow-lg/100 dark:drop-shadow-purple-700'>
+			<h1 >
 				Résumé
 			</h1>
 

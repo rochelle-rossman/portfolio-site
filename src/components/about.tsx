@@ -1,8 +1,8 @@
 export default function About() {
 	return (
 		<section className='mx-auto max-w-3xl '>
-			<div className='max-w-min text-3xl font-bold motion-safe:animate-typing whitespace-nowrap border-primary pr-2'>
-				<span className='inline-block mr-2 motion-safe:animate-wiggle animate-infinite'>
+			<div className='text-3xl font-bold'>
+				<span className='inline-block mr-2' role='img' aria-label='Waving hand'>
 					👋
 				</span>
 				I’m Rochelle...

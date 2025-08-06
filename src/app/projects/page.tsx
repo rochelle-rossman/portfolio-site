@@ -6,7 +6,7 @@ import { projects } from '@/lib/project-data'
 export default function Projects() {
 	return (
 		<section>
-			<h1 className='dark:drop-shadow-lg/100 dark:drop-shadow-purple-700'>
+			<h1>
 				Project Samples
 			</h1>
 			<div className='flex flex-col gap-8'>
