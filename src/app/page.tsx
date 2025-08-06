@@ -17,7 +17,7 @@ export default function Home() {
 					height={300}
 					className='object-contain'
 				/>
-				<h1 className='absolute dark:text-background top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+				<h1 className='motion-safe:animate-fade-down absolute dark:text-background top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
 					Rochelle Rossman
 				</h1>
 			</div>
@@ -29,20 +29,20 @@ export default function Home() {
 					<div className='w-full flex flex-col items-center justify-center sm:flex-row gap-4'>
 						<Link
 							href='/projects'
-							className='w-full'
+							className='w-full group'
 						>
-							<Button className='w-full cursor-pointer underline-offset-4 hover:underline'>
+							<Button className='relative w-full p-6 rounded-full cursor-pointer underline-offset-4 hover:underline hover:bg-primary'>
 								View My Work
-								<ChevronRight />
+								<ChevronRight className='motion-safe:animate-bounce' />
 							</Button>
 						</Link>
 						<Link
 							href='/resume'
 							className='w-full'
 						>
-							<Button className='w-full cursor-pointer underline-offset-4 hover:underline'>
+							<Button className='w-full p-6 rounded-full cursor-pointer underline-offset-4 hover:underline hover:bg-primary'>
 								View My Résumé
-								<ChevronRight />
+								<ChevronRight className='motion-safe:animate-bounce' />
 							</Button>
 						</Link>
 					</div>

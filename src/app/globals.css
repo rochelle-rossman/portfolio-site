@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+@import "tailwindcss-animated";
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
@@ -14,6 +14,8 @@
   --color-navy: oklch(9.237% 0.02109 239.797);
 
   --breakpoint-xs: var(--breakpoint-xs);
+  
+  --gradient-gold-teal-coral: linear-gradient(to right, var(--color-gold), var(--color-teal), var(--color-coral));
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -191,8 +193,69 @@
   .bg-radial-blend::before {
     mix-blend-mode: overlay;
   }
-
-  .bg-gradient-to-r {
-    background-image: linear-gradient(to right, var(--color-purple), var(--color-gold), var(--color-coral));
+  
+  .nav-link {
+    @apply relative inline-block px-2 py-1 transition-transform duration-200 hover:scale-105;
   }
+  
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      height: 3px;
+      width: 100%;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+      background-image: var(--gradient-gold-teal-coral);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s;
+      z-index: 1;
+    }
+  
+    .nav-link:hover::after,
+    .nav-link:focus::after,
+    .nav-link:active::after {
+      transform: scaleX(1);
+    }
+
+  
+    @keyframes typing {
+      0% {
+        width: 0;
+        visibility: hidden;
+      }
+  
+      1% {
+        visibility: visible;
+      }
+  
+      100% {
+        width: 100%;
+      }
+    }
+  
+    @keyframes blink {
+  
+      0%,
+      100% {
+        border-color: var(--color-foreground);
+      }
+  
+      50% {
+        border-color: transparent;
+      }
+    }
+  
+    .animate-typing {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid var(--color-foreground);
+      width: 0;
+      animation:
+        typing 2s steps(20, end) forwards,
+        blink 0.7s step-end infinite;
+      display: inline-block;
+    }
 }

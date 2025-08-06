@@ -47,7 +47,7 @@ export default function ResumePage() {
 					</p>
 				</div>
 
-				<div className='mt-4 md:mt-0 flex flex-col gap-2'>
+				<div className='mt-4 md:mt-0 flex flex-col gap-4'>
 					<Link
 						href='/rochelle-rossman-resume.pdf'
 						target='_blank'
@@ -55,7 +55,7 @@ export default function ResumePage() {
 						title='Opens a PDF file in a new tab'
 					>
 						<Button
-							className='cursor-pointer w-full underline-offset-4 hover:underline'
+							className='cursor-pointer w-full underline-offset-4 hover:underline hover:bg-primary'
 							role='link'
 						>
 							<ExternalLink />
@@ -69,7 +69,7 @@ export default function ResumePage() {
 						title='Opens an HTML file in a new tab'
 					>
 						<Button
-							className='cursor-pointer w-full underline-offset-4 hover:underline'
+							className='cursor-pointer w-full underline-offset-4 hover:underline hover:bg-primary'
 							role='link'
 						>
 							<ExternalLink />

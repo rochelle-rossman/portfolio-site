@@ -31,7 +31,6 @@ export default function ProjectCard({
 			className='group'
 		>
 			<article className='relative bg-muted/70 rounded-lg shadow-xl p-6 dark:border lg:group-hover:scale-105 transition-transform duration-300'>
-				<span className='absolute inset-0 rounded-t-lg h-2 bg-gradient-to-r  opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
 				<header>
 					<h2>{title}</h2>
 				</header>
