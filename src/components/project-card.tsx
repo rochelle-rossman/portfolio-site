@@ -75,8 +75,8 @@ export default function ProjectCard({
 								.replace(/\s+/g, '-')}`}
 						>
 							<Button
-								variant={'outline'}
-								className='cursor-pointer w-full'
+								className='cursor-pointer w-full underline-offset-4 hover:underline hover:bg-primary'
+								role='link'
 							>
 								View More
 								<ChevronRight />
