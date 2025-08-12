@@ -155,6 +155,28 @@ export const projects = [
 			}
 		],
 		screenshots: redesignsScreenshots,
-	}
+	},
 
+	{
+		title: 'Personal Portfolio Site',
+		role: 'Designer & Developer',
+		company: 'Personal Project',
+		techStack: 'Next.js, React, TypeScript, Tailwind CSS, Vercel, Shadcn UI',
+		overview:
+			'This portfolio site features a modern, fully responsive design to showcase my work and skills. Built with a focus on accessibility, performance, and maintainability, it features dynamic project pages powered by a custom TypeScript data system. The site uses utility-first styling with Tailwind CSS, leverages Vercel for deployment and analytics, and is structured for easy updates and scalability. Accessibility is prioritized through color contrast, keyboard navigation, and responsive layouts. Continuous integration and deployment are enabled via Vercel for GitHub.',
+		keyFeatures: [
+			{ title: 'Dynamic Project Pages', description: 'All projects are managed in a TypeScript data file, making it simple to add, update, or highlight work.' },
+			{ title: 'Modern, Accessible Design', description: 'Emphasizes clarity, color contrast, keyboard navigation, and responsive layouts for all users.' },
+			{ title: 'Performance Optimized', description: 'Optimized for speed with image optimization, code splitting, and minimal dependencies, deployed on Vercel.' },
+			{ title: 'Dark/Light Mode', description: 'Includes a theme toggle for user preference, with smooth transitions.' },
+		],
+		challenges: [
+			{ title: 'Showcasing Diverse Work', description: 'Created a flexible data structure to accommodate a wide range of project types and details.' },
+			{ title: 'Balancing Design & Performance', description: 'Maintained a visually engaging UI while ensuring fast load times and accessibility.' },
+		],
+		impact: [
+			{ title: 'Professional Branding', description: 'Established a strong, personal web presence to support career growth and networking.' },
+			{ title: 'Easy Content Updates', description: 'Project data and content can be updated without modifying layout code.' }
+		],
+	}
 ]
