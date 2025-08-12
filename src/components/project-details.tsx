@@ -1,6 +1,4 @@
 import Carousel from '@/components/carousel'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 
 type ProjectData = {
 	title: string
@@ -31,7 +29,7 @@ export default function ProjectDetails({
 				<header>
 					<h1 className='text-3xl md:text-4xl'>{title}</h1>
 				</header>
-				<div className='flex flex-col gap-6 bg-background/70 dark:bg-background/90 rounded-lg shadow-xl p-6'>
+				<div className='flex flex-col gap-6 bg-background/80 dark:bg-background/90 rounded-lg shadow-xl p-6'>
 					<section>
 						<h2>Project Overview</h2>
 						<dl className='grid grid-cols-2 gap-4 text-sm font-semibold mb-6'>
@@ -101,7 +99,7 @@ export default function ProjectDetails({
 								<Carousel images={screenshots} />
 							</div>
 
-							<p className='mt-2 text-xs text-center text-muted-foreground'>
+							<p className='mt-2 text-xs text-center text-muted-foreground italic'>
 								This project reflects work I contributed to
 								while employed at TechnologyAdvice. Screenshots
 								shown are of publicly available content and are
@@ -111,21 +109,6 @@ export default function ProjectDetails({
 					)}
 				</div>
 			</article>
-			<div className='flex justify-center'>
-				<Link
-					href='/projects'
-					className=''
-				>
-					<Button
-						// variant='outline'
-						className='w-full md:w-auto'
-					>
-						Back to Projects
-					</Button>
-				</Link>
-				{/* View Next Project */}
-				
-			</div>
 		</div>
 	)
 }

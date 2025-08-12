@@ -24,14 +24,14 @@ export default function Home() {
 
 			<div className='flex flex-col gap-4 items-center md:items-start md:flex-row'>
 				<StyledHeadshot />
-				<div className='flex flex-col gap-4 items-center bg-background/70 rounded-lg shadow-xl p-6'>
+				<div className='flex flex-col gap-4 items-center bg-background/80 rounded-lg shadow-xl p-6'>
 					<About />
 					<div className='w-full flex flex-col items-center justify-center sm:flex-row gap-4'>
 						<Link
 							href='/projects'
-							className='w-full group'
+							className='w-full'
 						>
-							<Button className='relative w-full p-6 rounded-full cursor-pointer underline-offset-4 hover:underline hover:bg-primary'>
+							<Button className='w-full p-6 rounded-full cursor-pointer underline-offset-6 hover:underline hover:bg-primary'>
 								View My Work
 								<ChevronRight />
 							</Button>
@@ -40,7 +40,7 @@ export default function Home() {
 							href='/resume'
 							className='w-full'
 						>
-							<Button className='w-full p-6 rounded-full cursor-pointer underline-offset-4 hover:underline hover:bg-primary'>
+							<Button className='w-full p-6 rounded-full cursor-pointer underline-offset-6 hover:underline hover:bg-primary'>
 								View My Résumé
 								<ChevronRight />
 							</Button>

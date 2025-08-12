@@ -1,15 +1,15 @@
 'use client'
-import React, { FormEvent, useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Textarea } from '@/components/ui/textarea'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
+import React, { FormEvent, useState } from 'react'
 
 // Public API key for Web3Forms - Safe to expose in client-side code
 const PUBLIC_ACCESS_KEY = '7b180ee6-5064-448a-b2b5-51ea72d496b4'
 
 export default function ContactForm() {
-	const [submitted, setSubmitted] = useState(true)
+	const [submitted, setSubmitted] = useState(false)
 	const [formValues, setFormValues] = useState({
 		name: '',
 		email: '',
@@ -56,7 +56,7 @@ export default function ContactForm() {
 	}
 
 	return (
-		<div className='bg-background/70 rounded-lg shadow-xl p-6 mb-12'>
+		<div className='bg-background/80 rounded-lg shadow-xl p-6 mb-12'>
 			{!submitted ? (
 				<form
 					onSubmit={handleSubmit}
@@ -139,21 +139,21 @@ export default function ContactForm() {
 			) : (
 				<div className='text-center py-10'>
 					<h2 className='text-2xl mb-4'>Thank you!</h2>
-						<p>Your message has been sent successfully.</p>
-						<Button
-							className='mt-6 underline-offset-4 hover:underline hover:bg-primary'
-							onClick={() => {
-								setSubmitted(false)
-								setFormValues({
-									name: '',
-									email: '',
-									subject: '',
-									message: '',
-								})
-							}}
-						>
-							Send another message
-						</Button>
+					<p>Your message has been sent successfully.</p>
+					<Button
+						className='mt-6 underline-offset-4 hover:underline hover:bg-primary'
+						onClick={() => {
+							setSubmitted(false)
+							setFormValues({
+								name: '',
+								email: '',
+								subject: '',
+								message: '',
+							})
+						}}
+					>
+						Send another message
+					</Button>
 				</div>
 			)}
 		</div>

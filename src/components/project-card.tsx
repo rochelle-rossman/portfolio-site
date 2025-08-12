@@ -25,13 +25,10 @@ export default function ProjectCard({
 	overview,
 }: ProjectData) {
 	return (
-		<article className='relative bg-background/70 dark:bg-background/90 rounded-lg shadow-xl p-6 lg:group-hover:scale-105 transition-transform duration-300'>
-			<header>
-				<h2>{title}</h2>
-			</header>
+		<article className='relative bg-background/80 dark:bg-background/90 rounded-lg shadow-xl p-6 lg:group-hover:scale-105 transition-transform duration-300'>
 			<div className='flex flex-col-reverse md:flex-row gap-6'>
 				{featuredImage && (
-					<div className='md:w-1/3 w-full p-4 flex items-center bg-muted/70  rounded-lg shadow-xl'>
+					<div className='md:w-1/3 w-full p-4 flex items-center bg-accent/70  rounded-lg shadow-xl'>
 						<figure className=''>
 							<Image
 								src={featuredImage.src}
@@ -40,15 +37,13 @@ export default function ProjectCard({
 								height={400}
 								className='object-cover rounded-lg w-full h-auto'
 							/>
-							{featuredImage.caption && (
-								<figcaption className='text-xs text-muted-foreground mt-4'>
-									{featuredImage.caption}
-								</figcaption>
-							)}
 						</figure>
 					</div>
 				)}
 				<div className='flex-1'>
+					<header>
+						<h2>{title}</h2>
+					</header>
 					<section>
 						<dl className='grid grid-cols-1 lg:grid-cols-2 gap-2 text-sm'>
 							<div>
@@ -80,11 +75,11 @@ export default function ProjectCard({
 								.replace(/\s+/g, '-')}`}
 						>
 							<Button
-								variant='outline'
-								className='w-full'
+								variant={'outline'}
+								className='cursor-pointer w-full'
 							>
 								View More
-								<ChevronRight className='ml-2' />
+								<ChevronRight />
 							</Button>
 						</Link>
 					</footer>

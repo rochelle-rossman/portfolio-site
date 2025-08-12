@@ -122,7 +122,7 @@
   }
 
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center drop-shadow-md mb-8 dark:drop-shadow-lg/100 dark:drop-shadow-purple-700
+    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center mb-8 drop-shadow-lg dark:drop-shadow-purple-700
   }
 
   h2 {

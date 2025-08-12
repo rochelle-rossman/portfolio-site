@@ -32,11 +32,9 @@ export default function ResumePage() {
 
 	return (
 		<section className='flex flex-col items-center mx-auto'>
-			<h1 >
-				Résumé
-			</h1>
+			<h1>Résumé</h1>
 
-			<div className='flex flex-col md:flex-row md:items-center md:justify-between bg-muted/70 rounded-lg shadow-xl p-6 w-full mb-10'>
+			<div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between bg-background/80 rounded-lg shadow-xl p-6 w-full mb-10'>
 				<div>
 					<h2 className='text-4xl text-center md:text-left'>
 						Rochelle Rossman
@@ -47,7 +45,7 @@ export default function ResumePage() {
 					</p>
 				</div>
 
-				<div className='mt-4 md:mt-0 flex flex-col gap-4'>
+				<div className='flex flex-col gap-4'>
 					<Link
 						href='/rochelle-rossman-resume.pdf'
 						target='_blank'
@@ -80,7 +78,7 @@ export default function ResumePage() {
 			</div>
 
 			<section className='space-y-12'>
-				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
+				<div className='bg-background/80 rounded-lg shadow-xl p-6'>
 					<h3>Summary</h3>
 					<p className='md:text-lg'>
 						Innovative and results-driven Web Software Developer
@@ -94,7 +92,7 @@ export default function ResumePage() {
 					</p>
 				</div>
 
-				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
+				<div className='bg-background/80 rounded-lg shadow-xl p-6'>
 					<h3>Skills</h3>
 					<div className='space-y-6'>
 						<div className='flex flex-wrap gap-2'>
@@ -110,7 +108,7 @@ export default function ResumePage() {
 					</div>
 				</div>
 
-				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
+				<div className='bg-background/80 rounded-lg shadow-xl p-6'>
 					<h3>Experience</h3>
 
 					<div className='mb-6'>
@@ -180,7 +178,7 @@ export default function ResumePage() {
 					</div>
 				</div>
 
-				<div className='bg-muted/70 rounded-lg shadow-xl p-6'>
+				<div className='bg-background/80 rounded-lg shadow-xl p-6'>
 					<h3>Education</h3>
 					<p>
 						<strong>
