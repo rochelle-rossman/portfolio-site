@@ -5,17 +5,14 @@ export const carouselScreenshots = [
   {
     src: '/screenshots/carousel/solutions.technologyadvice.com-desktop-carousel.png',
     alt: 'solutions.technologyadvice.com desktop carousel',
-    caption: 'Desktop carousel example as viewed on solutions.technologyadvice.com',
   },
   {
     src: '/screenshots/carousel/solutions.technologyadvice.com-mobile-carousel.png',
     alt: 'solutions.technologyadvice.com mobile carousel',
-    caption: 'Mobile carousel example as viewed on solutions.technologyadvice.com',
   },
   {
     src: '/screenshots/carousel/technologyadvice.com_(1)desktop.png',
     alt: 'technologyadvice.com (1)desktop',
-    caption: 'Desktop view of technologyadvice.com (1)',
   },
   {
     src: '/screenshots/carousel/technologyadvice.com_(2)mobile.png',
@@ -28,6 +25,21 @@ export const carouselScreenshots = [
   {
     src: '/screenshots/carousel/technologyadvice.com_mobile.png',
     alt: 'technologyadvice.com mobile',
+  },
+]
+
+export const portfolioScreenshots = [
+  {
+    src: '/screenshots/portfolio/LighthouseReport-Mobile.png',
+    alt: 'LighthouseReport Mobile',
+  },
+  {
+    src: '/screenshots/portfolio/SpeedInsights-Desktop.png',
+    alt: 'SpeedInsights Desktop',
+  },
+  {
+    src: '/screenshots/portfolio/SpeedInsights-Mobile.png',
+    alt: 'SpeedInsights Mobile',
   },
 ]
 

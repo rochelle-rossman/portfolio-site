@@ -1,4 +1,4 @@
-import { carouselScreenshots, productselectionpluginScreenshots, redesignsScreenshots } from './screenshot-data'
+import { carouselScreenshots, productselectionpluginScreenshots, redesignsScreenshots, portfolioScreenshots } from './screenshot-data'
 
 export const projects = [
 	{
@@ -159,11 +159,15 @@ export const projects = [
 
 	{
 		title: 'Personal Portfolio Site',
+		featuredImage: {
+			src: '/lightbulb-screen.png',
+			alt: 'A colorful laptop with a glowing lightbulb',
+		},
 		role: 'Designer & Developer',
 		company: 'Personal Project',
 		techStack: 'Next.js, React, TypeScript, Tailwind CSS, Vercel, Shadcn UI',
 		overview:
-			'This portfolio site features a modern, fully responsive design to showcase my work and skills. Built with a focus on accessibility, performance, and maintainability, it features dynamic project pages powered by a custom TypeScript data system. The site uses utility-first styling with Tailwind CSS, leverages Vercel for deployment and analytics, and is structured for easy updates and scalability. Accessibility is prioritized through color contrast, keyboard navigation, and responsive layouts. Continuous integration and deployment are enabled via Vercel for GitHub.',
+			`This portfolio site features a modern, fully responsive design to showcase my work and skills. Built with a focus on accessibility, performance, and maintainability, it features dynamic project pages powered by a custom TypeScript data system. The site uses utility-first styling with Tailwind CSS, leverages Vercel for deployment and analytics, and is structured for easy updates and scalability. Accessibility is prioritized through color contrast, keyboard navigation, and responsive layouts. Continuous integration and deployment are enabled via Vercel for GitHub.`,
 		keyFeatures: [
 			{ title: 'Dynamic Project Pages', description: 'All projects are managed in a TypeScript data file, making it simple to add, update, or highlight work.' },
 			{ title: 'Modern, Accessible Design', description: 'Emphasizes clarity, color contrast, keyboard navigation, and responsive layouts for all users.' },
@@ -178,5 +182,9 @@ export const projects = [
 			{ title: 'Professional Branding', description: 'Established a strong, personal web presence to support career growth and networking.' },
 			{ title: 'Easy Content Updates', description: 'Project data and content can be updated without modifying layout code.' }
 		],
+		screenshots: portfolioScreenshots,
+		links: [
+			{ title: 'GitHub Repository', url: 'https://github.com/rochelle-rossman/portfolio-site' }
+		]
 	}
 ]

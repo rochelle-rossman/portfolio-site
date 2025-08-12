@@ -10,6 +10,7 @@ type ProjectData = {
 	challenges: { title: string; description: string }[]
 	impact: { title: string; description: string }[]
 	screenshots?: { src: string; alt: string }[]
+	links?: { title: string; url: string }[]
 }
 
 export default function ProjectDetails({
@@ -22,6 +23,7 @@ export default function ProjectDetails({
 	challenges,
 	impact,
 	screenshots,
+	links,
 }: ProjectData) {
 	return (
 		<div className='space-y-8'>
@@ -92,6 +94,26 @@ export default function ProjectDetails({
 						</ul>
 					</section>
 
+					{links && links.length > 0 && (
+						<section>
+							<h3>Related Links</h3>
+							<ul>
+								{links.map((link, i) => (
+									<li key={i}>
+										<a
+											className='text-purple underline'
+											href={link.url}
+											target='_blank'
+											rel='noopener noreferrer'
+										>
+											{link.title}
+										</a>
+									</li>
+								))}
+							</ul>
+						</section>
+					)}
+
 					{screenshots && (
 						<section>
 							<h3>Sample Screenshots</h3>
@@ -99,12 +121,15 @@ export default function ProjectDetails({
 								<Carousel images={screenshots} />
 							</div>
 
-							<p className='mt-2 text-xs text-center text-muted-foreground italic'>
-								This project reflects work I contributed to
-								while employed at TechnologyAdvice. Screenshots
-								shown are of publicly available content and are
-								shared solely for demonstration purposes.
-							</p>
+							{company === 'TechnologyAdvice' && (
+								<p className='mt-2 text-xs text-center text-muted-foreground italic'>
+									This project reflects work I contributed to
+									while employed at TechnologyAdvice.
+									Screenshots shown are of publicly available
+									content and are shared solely for
+									demonstration purposes.
+								</p>
+							)}
 						</section>
 					)}
 				</div>
