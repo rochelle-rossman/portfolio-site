@@ -42,7 +42,7 @@ export default function RootLayout({
 			<body className='relative bg-gradient-radial bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mb-12'>
 				<ThemeProvider attribute='class' defaultTheme='system'>
 					<main
-						className='relative z-10 min-h-screen px-4 max-w-4xl w-full'
+						className='relative z-10 min-h-screen px-4 lg:px-0 max-w-4xl w-full'
 						role='main'
 					>
 

@@ -28,15 +28,24 @@ export function ModeToggle() {
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align='end'>
-				<DropdownMenuItem onClick={() => setTheme('light')} className='flex items-center gap-2'>
+				<DropdownMenuItem
+					onClick={() => setTheme('light')}
+					className='flex items-center gap-2'
+				>
 					<Sun className='h-[1.2rem] w-[1.2rem]' />
 					Light
 				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('dark')} className='flex items-center gap-2'>
+				<DropdownMenuItem
+					onClick={() => setTheme('dark')}
+					className='flex items-center gap-2'
+				>
 					<Moon className='h-[1.2rem] w-[1.2rem]' />
 					Dark
 				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('system')} className='flex items-center gap-2'>
+				<DropdownMenuItem
+					onClick={() => setTheme('system')}
+					className='flex items-center gap-2'
+				>
 					<ComputerIcon className='h-[1.2rem] w-[1.2rem]' />
 					System
 				</DropdownMenuItem>

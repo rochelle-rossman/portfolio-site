@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+@import "tailwindcss-animated";
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
@@ -14,6 +14,8 @@
   --color-navy: oklch(9.237% 0.02109 239.797);
 
   --breakpoint-xs: var(--breakpoint-xs);
+
+  --gradient-gold-teal-coral: linear-gradient(to right, var(--color-gold), var(--color-teal), var(--color-coral));
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -30,7 +32,7 @@
   --muted-foreground: oklch(0.553 0.013 58.071);
   --accent: oklch(0.97 0.001 106.424);
   --accent-foreground: oklch(0.216 0.006 56.043);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: var(--color-coral);
   --border: oklch(0.923 0.003 48.717);
   --input: oklch(0.923 0.003 48.717);
   --ring: oklch(0.709 0.01 56.259);
@@ -105,7 +107,7 @@
   --muted-foreground: oklch(0.8 0.12 79.6);
   --accent: oklch(0.216 0.006 56.043);
   --accent-foreground: oklch(0.985 0.001 106.423);
-  --border:oklch(42.142% 0.19215 293.758);
+  --border: oklch(42.142% 0.19215 293.758);
   --input: oklch(0.8 0.12 79.6);
 }
 
@@ -113,28 +115,28 @@
   * {
     @apply border-border outline-ring/50;
   }
-  
+
 
   body {
     @apply bg-background text-foreground font-sans font-medium text-shadow-sm
   }
-  
+
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center drop-shadow-md mb-8
+    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center mb-8 drop-shadow-lg dark:drop-shadow-purple-700
   }
-  
+
   h2 {
     @apply text-3xl font-semibold mb-2
   }
-  
+
   h3 {
     @apply text-2xl font-semibold mb-2
   }
-  
-    p {
-      @apply leading-relaxed
-    }
-  
+
+  p {
+    @apply leading-relaxed
+  }
+
   ul {
     @apply list-disc list-outside space-y-2 pl-5
   }
@@ -192,7 +194,30 @@
     mix-blend-mode: overlay;
   }
 
-  .bg-gradient-to-r {
-    background-image: linear-gradient(to right, var(--color-purple), var(--color-gold), var(--color-coral));
+  .nav-link {
+    @apply relative inline-block px-2 py-1 transition-transform duration-200 hover:scale-105;
   }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.25rem;
+    height: 3px;
+    width: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    background-image: var(--gradient-gold-teal-coral);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s;
+    z-index: 1;
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus::after,
+  .nav-link:active::after {
+    transform: scaleX(1);
+  }
+
 }

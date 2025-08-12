@@ -8,6 +8,7 @@ export default function Navbar() {
 				<NavLink href='/'>About</NavLink>
 				<NavLink href='/projects'>Projects</NavLink>
 				<NavLink href='/resume'>Résumé</NavLink>
+				<NavLink href='/contact'>Contact</NavLink>
 				<ModeToggle />
 			</div>
 		</nav>

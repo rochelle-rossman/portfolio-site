@@ -14,7 +14,6 @@ import {
 type CarouselImage = {
 	src: string
 	alt: string
-	caption?: string
 }
 
 type CarouselProps = {
@@ -71,7 +70,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					{images.map((img: CarouselImage, idx: number) => (
 						<SplideSlide
 							key={idx}
-							className='relative aspect-video overflow-hidden bg-accent/70 rounded-lg cursor-zoom-in outline-none'
+							className='relative aspect-video overflow-hidden bg-accent rounded-xl cursor-zoom-in outline-none'
 							tabIndex={0}
 							role='button'
 							aria-label={`View image ${idx + 1}`}
@@ -93,11 +92,6 @@ const Carousel = ({ images }: CarouselProps) => {
 								className='object-contain p-6'
 								priority={idx === 0}
 							/>
-							{img.caption && (
-								<figcaption className='text-xs absolute w-full bottom-0 text-center bg-muted/80 p-2 rounded'>
-									{img.caption}
-								</figcaption>
-							)}
 						</SplideSlide>
 					))}
 				</Splide>
@@ -107,7 +101,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					type='button'
 					onClick={() => splideRef.current?.go('<')}
 					aria-label='Previous slide'
-					className='absolute top-1/2 -left-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] rounded-full hover:scale-105 cursor-pointer'
+					className='absolute top-1/2 left-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] rounded-full hover:scale-105 cursor-pointer'
 				>
 					{/* eslint-disable-next-line @next/next/no-img-element */}
 					<img
@@ -121,7 +115,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					type='button'
 					onClick={() => splideRef.current?.go('>')}
 					aria-label='Next slide'
-					className='absolute top-1/2 -right-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] hover:scale-105 rounded-full cursor-pointer'
+					className='absolute top-1/2 right-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] hover:scale-105 rounded-full cursor-pointer'
 				>
 					{/* eslint-disable-next-line @next/next/no-img-element */}
 					<img
@@ -137,12 +131,12 @@ const Carousel = ({ images }: CarouselProps) => {
 				onOpenChange={closeLightbox}
 			>
 				<DialogOverlay className='bg-black/50 backdrop-blur-sm' />
-				<DialogContent className='min-h-[80vh] min-w-[70vw]'>
+				<DialogContent className='min-h-[80vh] min-w-[70vw] p-8'>
 					<DialogTitle className='sr-only'>
 						Enlarged project screenshot
 					</DialogTitle>
 					{selectedImage && (
-						<div className='relative'>
+						<div className='relative '>
 							<Image
 								src={selectedImage}
 								alt={`Enlarged project screenshot: ${
@@ -151,11 +145,6 @@ const Carousel = ({ images }: CarouselProps) => {
 								fill
 								className='object-contain'
 							/>
-							{images[selectedIndex!].caption && (
-								<figcaption className='text-xs text-muted-foreground absolute w-full bottom-2 text-center bg-muted/70 p-2 rounded'>
-									{images[selectedIndex!].caption}
-								</figcaption>
-							)}
 						</div>
 					)}
 				</DialogContent>

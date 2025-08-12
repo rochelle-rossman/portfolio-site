@@ -1,8 +1,13 @@
 export default function About() {
 	return (
-		<section className='mx-auto max-w-3xl px-6'>
+		<section className='mx-auto max-w-3xl '>
+			<div className='text-3xl font-bold'>
+				<span className='inline-block mr-2' role='img' aria-label='Waving hand'>
+					👋
+				</span>
+				I’m Rochelle...
+			</div>{' '}
 			<p className='mb-4'>
-				<span className='text-3xl font-bold'>👋 I’m Rochelle</span>{' '}
 				<br /> — a web software developer who loves turning ideas into
 				accessible, responsive, and thoughtfully crafted web
 				experiences.{' '}
@@ -15,9 +20,9 @@ export default function About() {
 			<p className='mb-4'>
 				I’m currently based in 📍 Kingston, NY and open to remote or
 				NYC-area hybrid roles. I’m especially drawn to mission-driven
-				organizations that prioritize equity and public
-				impact—teams where clean code and inclusive collaboration go
-				hand-in-hand with purposeful work.
+				organizations that prioritize equity and public impact—teams
+				where clean code and inclusive collaboration go hand-in-hand
+				with purposeful work.
 			</p>
 			<p className='mb-4'>
 				My journey into tech followed more than 15 years in leadership,
@@ -42,7 +47,6 @@ export default function About() {
 				maintainable solutions that reflect care for both users and
 				teams.
 			</p>
-
 			<p className='mb-4'>
 				Outside of tech, I’m a hobbyist woodworker with a love for
 				interior design, a good TV binge, and immersive, story-rich
@@ -52,7 +56,6 @@ export default function About() {
 			<p className='mb-4'>
 				<strong>Let’s build something meaningful together.</strong>
 			</p>
-
 		</section>
 	)
 }
