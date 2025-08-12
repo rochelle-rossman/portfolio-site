@@ -9,7 +9,7 @@ export default function StyledHeadshot() {
 						src='/headshot.png'
 						alt='A headshot of Rochelle Rossman'
 						fill
-						className='object-top object-cover filter brightness-120 contrast-110'
+						className='object-cover object-top filter brightness-120 contrast-105'
 					/>
 				</div>
 			</div>
