@@ -10,7 +10,7 @@ export const projects = [
 		},
 		role: 'Web Developer',
 		company: 'TechnologyAdvice',
-		techStack: 'JavaScript, React, PHP, Splide.js, SCSS',
+		techStack: ['JavaScript', 'React', 'PHP', 'Splide.js', 'SCSS'],
 		overview:
 			'At TechnologyAdvice, I led the development of a modular, accessible carousel component as a custom Gutenberg block for deployment across a large portfolio of full-site editing (FSE) WordPress properties with distinct brands. Designed to be theme-agnostic and highly configurable, it empowered content creators to add and customize carousels without developer support—while ensuring code maintainability, optimal performance, and a consistent user experience.',
 		keyFeatures: [
@@ -40,7 +40,7 @@ export const projects = [
 		},
 		role: "Frontend Developer",
 		company: "TechnologyAdvice",
-		techStack: "Vue.js, WordPress, PHP, REST APIs, SCSS",
+		techStack: ["Vue.js", "WordPress", "PHP", "REST APIs", "SCSS"],
 		overview:
 			"Led a front-end refactor of a custom WordPress plugin that rendered real-time, filterable product listings and reviews across multiple site contexts. The plugin powered dynamic product selectors in blog content, browsable software categories, and individual product pages—built with Vue.js and integrated with internal SaaS APIs.",
 		keyFeatures: [
@@ -105,7 +105,7 @@ export const projects = [
 		},
 		role: "Frontend Developer",
 		company: "TechnologyAdvice",
-		techStack: "WordPress, PHP, HTML, CSS, Gutenberg (FSE), ACF, Docker, AWS, Argo CD",
+		techStack: ["WordPress", "PHP", "HTML", "CSS", "Gutenberg (FSE)", "ACF", "Docker", "AWS", "Argo CD"],
 		overview:
 			"Led front-end development and platform migration efforts for several WordPress site redesigns. This work included building custom Full Site Editing (FSE) themes and migrating sites from third-party hosts (like WP Engine) to a containerized AWS platform—resulting in faster, more flexible deployments and reduced technical debt across the organization.",
 		keyFeatures: [
@@ -165,7 +165,7 @@ export const projects = [
 		},
 		role: 'Designer & Developer',
 		company: 'Personal Project',
-		techStack: 'Next.js, React, TypeScript, Tailwind CSS, Vercel, Shadcn UI',
+		techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'Shadcn UI'],
 		overview:
 			`This portfolio site features a modern, fully responsive design to showcase my work and skills. Built with a focus on accessibility, performance, and maintainability, it features dynamic project pages powered by a custom TypeScript data system. The site uses utility-first styling with Tailwind CSS, leverages Vercel for deployment and analytics, and is structured for easy updates and scalability. Accessibility is prioritized through color contrast, keyboard navigation, and responsive layouts. Continuous integration and deployment are enabled via Vercel for GitHub.`,
 		keyFeatures: [

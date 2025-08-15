@@ -1,10 +1,11 @@
 import Carousel from '@/components/carousel'
+import { Badge } from '@/components/ui/badge'
 
 type ProjectData = {
 	title: string
 	role: string
 	company: string
-	techStack: string
+	techStack: string[]
 	overview: string
 	keyFeatures: { title: string; description: string }[]
 	challenges: { title: string; description: string }[]
@@ -49,7 +50,16 @@ export default function ProjectDetails({
 								<dt className='text-muted-foreground'>
 									Tech Stack
 								</dt>
-								<dd>{techStack}</dd>
+								<dd className='flex flex-wrap gap-2 mt-1'>
+									{techStack.map((tech) => (
+										<Badge
+											key={tech}
+											variant='outline'
+										>
+											{tech}
+										</Badge>
+									))}
+								</dd>
 							</div>
 						</dl>
 						<p className='text-lg'>{overview}</p>

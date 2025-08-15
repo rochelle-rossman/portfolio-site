@@ -124,27 +124,27 @@
 
 
   body {
-    @apply bg-background text-foreground 
+    @apply bg-background text-foreground font-sans font-medium text-shadow-sm;
   }
 
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center mb-8 drop-shadow-lg dark:drop-shadow-purple-700
+    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center mb-8 drop-shadow-lg drop-shadow-gold/70 dark:drop-shadow-purple/70;
   }
 
   h2 {
-    @apply text-3xl font-semibold mb-2
+    @apply text-3xl font-semibold mb-2;
   }
 
   h3 {
-    @apply text-2xl font-semibold mb-2
+    @apply text-2xl font-semibold mb-2;
   }
 
   p {
-    @apply leading-relaxed
+    @apply leading-relaxed;
   }
 
   ul {
-    @apply list-disc list-outside space-y-2 pl-5
+    @apply list-disc list-outside space-y-2 pl-5;
   }
 }
 

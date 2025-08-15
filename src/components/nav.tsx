@@ -1,3 +1,5 @@
+'use client'
+import { useState } from 'react'
 import { ModeToggle } from '@/components/mode-toggle'
 import {
 	Sheet,
@@ -10,6 +12,12 @@ import { Menu } from 'lucide-react'
 import NavLink from '@/components/nav-link'
 
 export default function Navbar() {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const handleLinkClick = () => {
+		setIsOpen(false);
+	};
+
 	return (
 		<nav className='p-6 px-0 mb-6'>
 			<ModeToggle />
@@ -24,7 +32,7 @@ export default function Navbar() {
 			{/* Mobile Nav (Sheet) */}
 			<div className='flex sm:hidden items-center'>
 				<div />
-				<Sheet>
+				<Sheet open={isOpen} onOpenChange={setIsOpen}>
 					<SheetTrigger asChild>
 						<Menu
 							aria-label='Open menu'
@@ -37,13 +45,13 @@ export default function Navbar() {
 					>
 						<DialogTitle className='sr-only'>Menu</DialogTitle>
 						<nav className='flex flex-col p-6 gap-4 mt-8 text-lg'>
-							<NavLink href='/'>About</NavLink>
+							<NavLink onClick={handleLinkClick} href='/'>About</NavLink>
 							<Separator />
-							<NavLink href='/projects'>Projects</NavLink>
+							<NavLink onClick={handleLinkClick} href='/projects'>Projects</NavLink>
 							<Separator />
-							<NavLink href='/resume'>Résumé</NavLink>
+							<NavLink onClick={handleLinkClick} href='/resume'>Résumé</NavLink>
 							<Separator />
-							<NavLink href='/contact'>Contact</NavLink>
+							<NavLink onClick={handleLinkClick} href='/contact'>Contact</NavLink>
 						</nav>
 					</SheetContent>
 				</Sheet>

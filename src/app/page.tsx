@@ -16,7 +16,7 @@ export default function Home() {
 					height={300}
 					className='object-contain'
 				/>
-				<h1 className='motion-safe:animate-fade-down absolute dark:text-background dark:drop-shadow-none top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+				<h1 className='motion-safe:animate-fade-down absolute dark:text-background drop-shadow-gold/70 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
 					Rochelle Rossman
 				</h1>
 			</div>
