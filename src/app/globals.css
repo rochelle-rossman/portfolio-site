@@ -124,7 +124,7 @@
 
 
   body {
-    @apply bg-background text-foreground font-sans font-medium text-shadow-sm
+    @apply bg-background text-foreground 
   }
 
   h1 {
