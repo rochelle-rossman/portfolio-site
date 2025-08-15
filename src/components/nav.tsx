@@ -1,13 +1,13 @@
 import { ModeToggle } from '@/components/mode-toggle'
 import {
 	Sheet,
-	SheetClose,
 	SheetContent,
 	SheetTrigger,
 } from '@/components/ui/sheet'
-import { DialogTitle } from '@radix-ui/react-dialog'
+import { DialogTitle } from '@/components/ui/dialog'
+import { Separator } from '@/components/ui/separator'
 import { Menu } from 'lucide-react'
-import NavLink from './nav-link'
+import NavLink from '@/components/nav-link'
 
 export default function Navbar() {
 	return (
@@ -33,22 +33,17 @@ export default function Navbar() {
 					</SheetTrigger>
 					<SheetContent
 						side='left'
-						className='w-full bg-background/90'
+						className='w-full bg-background'
 					>
 						<DialogTitle className='sr-only'>Menu</DialogTitle>
 						<nav className='flex flex-col p-6 gap-4 mt-8 text-lg'>
-							<SheetClose asChild>
-								<NavLink href='/'>About</NavLink>
-							</SheetClose>
-							<SheetClose asChild>
-								<NavLink href='/projects'>Projects</NavLink>
-							</SheetClose>
-							<SheetClose asChild>
-								<NavLink href='/resume'>Résumé</NavLink>
-							</SheetClose>
-							<SheetClose asChild>
-								<NavLink href='/contact'>Contact</NavLink>
-							</SheetClose>
+							<NavLink href='/'>About</NavLink>
+							<Separator />
+							<NavLink href='/projects'>Projects</NavLink>
+							<Separator />
+							<NavLink href='/resume'>Résumé</NavLink>
+							<Separator />
+							<NavLink href='/contact'>Contact</NavLink>
 						</nav>
 					</SheetContent>
 				</Sheet>
