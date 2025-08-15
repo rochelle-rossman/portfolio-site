@@ -39,8 +39,8 @@ export default function ProjectPage({
 				<div>
 					<Link href='/projects'>
 						<Button
-							variant={'link'}
-							className='cursor-pointer'
+							variant={'ghost'}
+							className='cursor-pointer hover:scale-105'
 						>
 							<ChevronLeft />
 							Back to Projects
@@ -51,8 +51,8 @@ export default function ProjectPage({
 					{projectIndex > 0 && (
 						<Link href={`/projects/${prevProjectSlug}`}>
 							<Button
-								variant={'link'}
-								className='cursor-pointer'
+								variant={'ghost'}
+								className='cursor-pointer hover:scale-105'
 							>
 								<ChevronLeft />
 								<span className='truncate max-w-80 lg:max-w-full'>{projects[prevIndex].title}</span>
@@ -62,8 +62,8 @@ export default function ProjectPage({
 					{projectIndex < projects.length - 1 && (
 						<Link href={`/projects/${nextProjectSlug}`}>
 							<Button
-								variant={'link'}
-								className='cursor-pointer'
+								variant={'ghost'}
+								className='cursor-pointer hover:scale-105'
 							>
 								<span className='truncate max-w-80 lg:max-w-full'>{projects[nextIndex].title}</span>
 								<ChevronRight />

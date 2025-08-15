@@ -1,7 +1,8 @@
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from './ui/button'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 
 type ProjectData = {
 	title: string
@@ -12,7 +13,7 @@ type ProjectData = {
 	}
 	role: string
 	company: string
-	techStack: string
+	techStack: string[]
 	overview: string
 }
 
@@ -62,7 +63,17 @@ export default function ProjectCard({
 								<dt className='text-muted-foreground font-medium'>
 									Tech Stack
 								</dt>
-								<dd>{techStack}</dd>
+								<dd className='flex flex-wrap gap-2 mt-1'>
+									{techStack.map((tech) => (
+										<Badge
+											key={tech}
+											variant='outline'
+											className='text-xs'
+										>
+											{tech}
+										</Badge>
+									))}
+								</dd>
 							</div>
 						</dl>
 						<h3 className='mt-4'>Overview</h3>
