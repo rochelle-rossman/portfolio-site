@@ -2,7 +2,7 @@ import StyledHeadshot from './headshot'
 
 export default function About() {
 	return (
-		<section className='mx-auto'>
+		<section className='mx-auto motion-safe:animate-fade-up'>
 			<span className='float-circle'>
 				<StyledHeadshot />
 			</span>
