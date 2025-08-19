@@ -9,7 +9,7 @@ export default function Projects() {
 			<h1>
 				Project Samples
 			</h1>
-			<div className='flex flex-col gap-8'>
+			<div className='flex flex-col gap-8 motion-safe:animate-fade-up'>
 				{projects.map((project, i) => (
 					<ProjectCard
 						key={i}
