@@ -3,11 +3,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --font-sans: var(--font-montserrat);
-  --font-headline: var(--font-climate-crisis);
+  --font-sans: var(--font-quicksand);
+    --font-headline: var(--font-erica-one);
 
   --color-cream: oklch(0.968 0.027 74.15);
-  --color-coral: oklch(0.697 0.25 20.62);
+  --color-coral: oklch(0.67 0.15 20.62);
   --color-purple: oklch(0.572 0.244 295.3);
   --color-gold: oklch(0.827 0.2 79.6);
   --color-teal: oklch(0.791 0.159 189.5);
@@ -52,7 +52,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-quicksand);
   --font-headline: var(--font-headline);
   --color-cream: var(--color-cream);
   --color-coral: var(--color-coral);
@@ -128,7 +128,14 @@
   }
 
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center mb-8 drop-shadow-lg drop-shadow-gold/70 dark:drop-shadow-purple/70;
+    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center text-coral text-shadow-lg mb-8 drop-shadow-lg;
+    text-shadow:
+        2px 2px 4px var(--color-navy),
+        -1px -1px 0 var(--color-navy),
+        1px -1px 0 var(--color-navy),
+        -1px 1px 0 var(--color-navy),
+        1px 1px 0 var(--color-navy);
+    
   }
 
   h2 {

@@ -14,7 +14,7 @@ export default function About() {
 				>
 					👋
 				</span>
-				I’m Rochelle...
+				I’m Rochelle —
 			</div>{' '}
 			<p className='text-lg leading-loose mb-4'>
 				{' '}
