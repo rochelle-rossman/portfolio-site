@@ -26,7 +26,6 @@ const quicksand = Quicksand({
 	variable: '--font-quicksand',
 	subsets: ['latin'],
 	display: 'swap',
-	weight: '400',
 })
 
 export default function RootLayout({
