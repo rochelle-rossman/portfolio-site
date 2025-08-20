@@ -4,19 +4,15 @@
 
 :root {
   --font-sans: var(--font-quicksand);
-    --font-headline: var(--font-erica-one);
-
+  --font-heading: var(--font-erica-one);
   --color-cream: oklch(0.968 0.027 74.15);
   --color-coral: oklch(0.67 0.15 20.62);
   --color-purple: oklch(0.572 0.244 295.3);
   --color-gold: oklch(0.827 0.2 79.6);
   --color-teal: oklch(0.791 0.159 189.5);
   --color-navy: oklch(9.237% 0.02109 239.797);
-
   --breakpoint-xs: var(--breakpoint-xs);
-
   --gradient-gold-teal-coral: linear-gradient(to right, var(--color-gold), var(--color-teal), var(--color-coral));
-
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
@@ -53,7 +49,7 @@
 
 @theme inline {
   --font-sans: var(--font-quicksand);
-  --font-headline: var(--font-headline);
+  --font-heading: var(--font-heading);
   --color-cream: var(--color-cream);
   --color-coral: var(--color-coral);
   --color-purple: var(--color-purple);
@@ -128,14 +124,13 @@
   }
 
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-headline text-center text-coral text-shadow-lg mb-8 drop-shadow-lg;
+    @apply text-4xl xs:text-5xl md:text-6xl font-heading text-center text-coral text-shadow-lg mb-8 drop-shadow-lg;
     text-shadow:
-        2px 2px 4px var(--color-navy),
-        -1px -1px 0 var(--color-navy),
-        1px -1px 0 var(--color-navy),
-        -1px 1px 0 var(--color-navy),
-        1px 1px 0 var(--color-navy);
-    
+      2px 2px 4px var(--color-navy),
+      -1px -1px 0 var(--color-navy),
+      1px -1px 0 var(--color-navy),
+      -1px 1px 0 var(--color-navy),
+      1px 1px 0 var(--color-navy);
   }
 
   h2 {
