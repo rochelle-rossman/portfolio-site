@@ -1,10 +1,10 @@
-'use client';
+'use client'
+import ProjectDetails from '@/components/project-details'
+import { Button } from '@/components/ui/button'
+import { projects } from '@/lib/project-data'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 import { use } from 'react'
-import ProjectDetails from '@/components/project-details';
-import { projects } from "@/lib/project-data";
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 export default function ProjectPage({
 	params,
@@ -39,34 +39,35 @@ export default function ProjectPage({
 				<div>
 					<Link href='/projects'>
 						<Button
-							variant={'ghost'}
-							className='cursor-pointer hover:scale-105'
+							variant='branded'
 						>
-							<ChevronLeft />
+							<ArrowLeft />
 							Back to Projects
 						</Button>
 					</Link>
 				</div>
-				<div className='flex flex-col'>
+				<div className='flex flex-col gap-2'>
 					{projectIndex > 0 && (
 						<Link href={`/projects/${prevProjectSlug}`}>
 							<Button
-								variant={'ghost'}
-								className='cursor-pointer hover:scale-105'
+								variant='branded'
 							>
-								<ChevronLeft />
-								<span className='truncate max-w-80 lg:max-w-full'>{projects[prevIndex].title}</span>
+								<ArrowLeft />
+								<span className='truncate max-w-80 lg:max-w-full'>
+									{projects[prevIndex].title}
+								</span>
 							</Button>
 						</Link>
 					)}
 					{projectIndex < projects.length - 1 && (
 						<Link href={`/projects/${nextProjectSlug}`}>
 							<Button
-								variant={'ghost'}
-								className='cursor-pointer hover:scale-105'
+								variant='branded'
 							>
-								<span className='truncate max-w-80 lg:max-w-full'>{projects[nextIndex].title}</span>
-								<ChevronRight />
+								<span className='truncate max-w-80 lg:max-w-full'>
+									{projects[nextIndex].title}
+								</span>
+								<ArrowRight />
 							</Button>
 						</Link>
 					)}

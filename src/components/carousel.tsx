@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import type { Splide as SplideInstance } from '@splidejs/splide'
 import { Button } from './ui/button'
+import { ArrowRight, ArrowLeft } from 'lucide-react'
 import '@splidejs/react-splide/css'
 import { useState, useEffect, useCallback, useRef } from 'react'
 import {
@@ -99,29 +100,22 @@ const Carousel = ({ images }: CarouselProps) => {
 				{/* Custom Arrow Buttons */}
 				<Button
 					type='button'
+					variant='branded'
 					onClick={() => splideRef.current?.go('<')}
 					aria-label='Previous slide'
-					className='absolute top-1/2 left-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] rounded-full hover:scale-105 cursor-pointer'
+					className='absolute top-1/2 left-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px]'
 				>
-					{/* eslint-disable-next-line @next/next/no-img-element */}
-					<img
-						src='/arrow.svg'
-						alt='Previous'
-						className='rotate-180'
-					/>
+					<ArrowLeft />
 				</Button>
 
 				<Button
 					type='button'
+					variant='branded'
 					onClick={() => splideRef.current?.go('>')}
 					aria-label='Next slide'
-					className='absolute top-1/2 right-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px] hover:scale-105 rounded-full cursor-pointer'
+					className='absolute top-1/2 right-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px]'
 				>
-					{/* eslint-disable-next-line @next/next/no-img-element */}
-					<img
-						src='/arrow.svg'
-						alt='Previous'
-					/>
+					<ArrowRight />
 				</Button>
 			</div>
 

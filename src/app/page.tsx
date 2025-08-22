@@ -1,6 +1,6 @@
 import About from '@/components/about'
 import { Button } from '@/components/ui/button'
-import { ChevronRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -16,24 +16,25 @@ export default function Home() {
 					height={300}
 					className='object-contain'
 				/>
-				<h1 className='uppercase text-5xl xs:text-6xl md:text-7xl motion-safe:animate-fade-left absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+				<h1 className='uppercase text-4xl xxs:text-5xl xs:text-6xl sm:text-7xl motion-safe:animate-fade-left absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
 					Rochelle Rossman
 				</h1>
 			</div>
 
-			<div className='flex flex-col gap-4 items-center bg-background/80 rounded-lg shadow-xl p-6'>
+			<div className='flex flex-col gap-4 items-center bg-background/80 rounded-lg shadow-xl p-4 sm:p-6'>
 				<About />
-				<div className='w-full flex flex-col items-center justify-center sm:flex-row gap-4'>
+				<div className='w-full mx-2 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6'>
 					<Link
 						href='/projects'
 						className='w-full'
 					>
 						<Button
-							className='cursor-pointer w-full underline-offset-4 hover:underline hover:bg-primary'
+							className='w-full'
+							variant={'branded'}
 							role='link'
 						>
 							View My Work
-							<ChevronRight />
+							<ArrowRight />
 						</Button>
 					</Link>
 					<Link
@@ -41,15 +42,16 @@ export default function Home() {
 						className='w-full'
 					>
 						<Button
-							className='cursor-pointer w-full underline-offset-4 hover:underline hover:bg-primary'
+							className='w-full'
+							variant={'branded'}
 							role='link'
 						>
 							View My Résumé
-							<ChevronRight />
+							<ArrowRight />
 						</Button>
 					</Link>
 				</div>
-				<div className='relative w-80 h-80'>
+				<div className='relative w-60 h-60 md:w-80 md:h-80'>
 					<Image
 						src='/lightbulb-screen.png'
 						alt='A colorful laptop with a glowing lightbulb'

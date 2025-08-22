@@ -5,13 +5,15 @@
 :root {
   --font-sans: var(--font-quicksand);
   --font-heading: var(--font-erica-one);
-  --color-cream: oklch(0.968 0.027 74.15);
-  --color-coral: oklch(0.67 0.15 20.62);
-  --color-purple: oklch(0.572 0.244 295.3);
-  --color-gold: oklch(0.827 0.2 79.6);
-  --color-teal: oklch(0.791 0.159 189.5);
+  --color-cream: oklch(0.9585 0.0329 83.71);
+  --color-coral: oklch(0.7335 0.1635 14.62);
+  --color-purple: oklch(0.6597 0.1767 281.14);
+  --color-gold: oklch(0.8536 0.1355 79.29);
+  --color-teal: oklch(0.9175 0.09 202.67);
+  --color-indigo: oklch(0.3206 0.0495 293.24);
   --color-navy: oklch(9.237% 0.02109 239.797);
   --breakpoint-xs: var(--breakpoint-xs);
+  --breakpoint-xxs: var(--breakpoint-xxs);
   --gradient-gold-teal-coral: linear-gradient(to right, var(--color-gold), var(--color-teal), var(--color-coral));
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -55,8 +57,10 @@
   --color-purple: var(--color-purple);
   --color-gold: var(--color-gold);
   --color-teal: var(--color-teal);
+  --color-indigo: var(--color-indigo);
   --color-navy: var(--color-navy);
   --breakpoint-xs: 30rem;
+  --breakpoint-xxs: 25rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -105,8 +109,8 @@
   --primary-foreground: oklch(0.216 0.006 56.043);
   --secondary: oklch(0.97 0.001 106.424);
   --secondary-foreground: oklch(0.216 0.006 56.043);
-  --muted: var(--color-navy);
-  --muted-foreground: oklch(0.8 0.12 79.6);
+  --muted: var(--color-indigo);
+  --muted-foreground: var(--color-gold);
   --accent: oklch(0.216 0.006 56.043);
   --accent-foreground: oklch(0.985 0.001 106.423);
   --border: oklch(42.142% 0.19215 293.758);
@@ -124,13 +128,14 @@
   }
 
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-heading text-center text-coral text-shadow-lg mb-8 drop-shadow-lg;
+    @apply text-4xl xs:text-5xl md:text-6xl font-heading text-center text-coral text-shadow-lg mb-8 drop-shadow-lg motion-safe:animate-fade-left;
+    
     text-shadow:
       2px 2px 4px var(--color-navy),
-      -1px -1px 0 var(--color-navy),
-      1px -1px 0 var(--color-navy),
-      -1px 1px 0 var(--color-navy),
-      1px 1px 0 var(--color-navy);
+      -1px -1px 1px var(--color-navy),
+      1px -1px 1px var(--color-navy),
+      -1px 1px 1px var(--color-navy),
+      1px 1px 1px var(--color-navy);
   }
 
   h2 {
@@ -142,11 +147,15 @@
   }
 
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed ;
   }
 
   ul {
     @apply list-disc list-outside space-y-2 pl-5;
+  }
+  
+  button {
+    @apply cursor-pointer;
   }
 }
 
@@ -217,14 +226,14 @@
     position: absolute;
     left: 0;
     bottom: -0.25rem;
-    height: 3px;
+    height: 4px;
     width: 100%;
     border-radius: 0.75rem;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
     background-image: var(--gradient-gold-teal-coral);
     transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s;
+    transform-origin: left;
+    transition: transform 0.2s;
     z-index: 1;
   }
 

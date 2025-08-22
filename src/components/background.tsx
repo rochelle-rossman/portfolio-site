@@ -2,12 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 
 const twinkles = [
-	{ top: '10%', left: '5%', size: 80 },
+	{ top: '10%', left: '5%', size: 45 },
 	{ top: '22%', left: '87%', size: 60, flip: true },
 	{ top: '60%', left: '8%', size: 70 },
-	{ top: '75%', left: '80%', size: 55, flip: true },
-	{ top: '8%', left: '85%', size: 35 },
-	{ top: '90%', left: '90%', size: 55 }
+	{ top: '75%', left: '80%', size: 25, flip: true },
+	{ top: '90%', left: '90%', size: 35 }
 ]
 
 const clouds = [
