@@ -1,7 +1,7 @@
 'use client'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ExternalLink } from 'lucide-react'
+import { SquareArrowOutUpRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ResumePage() {
@@ -54,10 +54,11 @@ export default function ResumePage() {
 							title='Opens a PDF file in a new tab'
 						>
 							<Button
-								className='cursor-pointer w-full underline-offset-4 hover:underline hover:bg-primary'
+								className='w-full'
+								variant='branded'
 								role='link'
 							>
-								<ExternalLink />
+								<SquareArrowOutUpRight />
 								View PDF
 							</Button>
 						</Link>
@@ -68,10 +69,11 @@ export default function ResumePage() {
 							title='Opens an HTML file in a new tab'
 						>
 							<Button
-								className='cursor-pointer w-full underline-offset-4 hover:underline hover:bg-primary'
+								className='w-full'
+								variant='branded'
 								role='link'
 							>
-								<ExternalLink />
+								<SquareArrowOutUpRight />
 								View HTML
 							</Button>
 						</Link>

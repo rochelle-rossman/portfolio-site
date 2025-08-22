@@ -18,7 +18,6 @@ export default function Projects() {
 						role={project.role}
 						company={project.company}
 						techStack={project.techStack}
-						overview={project.overview}
 					/>
 				))}
 			</div>

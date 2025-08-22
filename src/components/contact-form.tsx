@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import Link from 'next/link'
+import { House, SendHorizontal } from 'lucide-react'
 import React, { FormEvent, useState } from 'react'
 
 // Public API key for Web3Forms - Safe to expose in client-side code
@@ -74,7 +76,7 @@ export default function ContactForm() {
 							name='name'
 							id='name'
 							required
-							placeholder='Your name'
+							placeholder='Enter your name'
 							className='bg-background'
 							value={formValues.name}
 							onChange={handleInputChange}
@@ -93,7 +95,7 @@ export default function ContactForm() {
 							name='email'
 							id='email'
 							required
-							placeholder='email@example.com'
+							placeholder='Enter your email'
 							className='bg-background'
 							value={formValues.email}
 							onChange={handleInputChange}
@@ -128,32 +130,20 @@ export default function ContactForm() {
 							name='message'
 							id='message'
 							required
-							placeholder='Enter Message'
+							placeholder='Enter your message'
 							className='bg-background'
 							value={formValues.message}
 							onChange={handleInputChange}
 						/>
 					</div>
-					<Button type='submit'>Submit</Button>
+					<Button variant='branded' type='submit'>Send <SendHorizontal /></Button>
 				</form>
 			) : (
 				<div className='text-center py-10'>
 					<h2 className='text-2xl mb-4'>Thank you!</h2>
-					<p>Your message has been sent successfully.</p>
-					<Button
-						className='mt-6 underline-offset-4 hover:underline hover:bg-primary'
-						onClick={() => {
-							setSubmitted(false)
-							setFormValues({
-								name: '',
-								email: '',
-								subject: '',
-								message: '',
-							})
-						}}
-					>
-						Send another message
-					</Button>
+				<p className='mb-4'>Your message has been sent successfully and will be reviewed shortly.</p>
+				<Link href='/'><Button variant='link'><House className='h-4 w-4' />Back to Home</Button></Link>
+
 				</div>
 			)}
 		</div>

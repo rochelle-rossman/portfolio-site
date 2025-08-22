@@ -1,20 +1,18 @@
-import { ChevronRight } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 
 type ProjectData = {
 	title: string
 	featuredImage?: {
 		src: string
 		alt: string
-		caption?: string
 	}
 	role: string
 	company: string
 	techStack: string[]
-	overview: string
 }
 
 export default function ProjectCard({
@@ -23,7 +21,6 @@ export default function ProjectCard({
 	role,
 	company,
 	techStack,
-	overview,
 }: ProjectData) {
 	return (
 		<article className='relative bg-background/80 dark:bg-background/90 rounded-lg shadow-xl p-6 lg:group-hover:scale-105 transition-transform duration-300'>
@@ -76,8 +73,6 @@ export default function ProjectCard({
 								</dd>
 							</div>
 						</dl>
-						<h3 className='mt-4'>Overview</h3>
-						<p className='line-clamp-4'>{overview}</p>
 					</section>
 					<footer className='mt-4'>
 						<Link
@@ -86,11 +81,12 @@ export default function ProjectCard({
 								.replace(/\s+/g, '-')}`}
 						>
 							<Button
-								className='cursor-pointer w-full underline-offset-4 hover:underline hover:bg-primary'
+								className='w-full'
+								variant='branded'
 								role='link'
 							>
 								View More
-								<ChevronRight />
+								<ArrowRight />
 							</Button>
 						</Link>
 					</footer>

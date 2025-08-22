@@ -39,13 +39,13 @@ export default function RootLayout({
 			className={`${erica_one.variable} ${quicksand.variable} antialiased`}
 			suppressHydrationWarning
 		>
-			<body className='relative bg-gradient-radial bg-radial-blur bg-radial-blend flex flex-col items-center justify-center mb-12'>
+			<body className='relative bg-gradient-radial bg-radial-blur bg-radial-blend flex flex-col items-center justify-center'>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
 				>
 					<main
-						className='relative z-10 min-h-screen px-4 max-w-5xl w-full'
+						className='relative z-10 min-h-screen px-4 max-w-6xl w-full'
 						role='main'
 					>
 						<Navbar />
