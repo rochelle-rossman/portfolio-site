@@ -43,21 +43,23 @@ export default function ProjectCard({
 						<h2>{title}</h2>
 					</header>
 					<section>
-						<dl className='grid grid-cols-1 lg:grid-cols-2 gap-2 text-sm'>
-							<div>
-								<dt className='text-muted-foreground font-medium'>
-									Role
-								</dt>
-								<dd>{role}</dd>
+						<dl className='flex flex-col gap-4 text-sm font-semibold mb-6'>
+							<div className='grid grid-cols-2 gap-4'>
+								<div>
+									<dt className='text-muted-foreground'>
+										Role
+									</dt>
+									<dd>{role}</dd>
+								</div>
+								<div>
+									<dt className='text-muted-foreground'>
+										Company
+									</dt>
+									<dd>{company}</dd>
+								</div>
 							</div>
 							<div>
-								<dt className='text-muted-foreground font-medium'>
-									Company
-								</dt>
-								<dd>{company}</dd>
-							</div>
-							<div>
-								<dt className='text-muted-foreground font-medium'>
+								<dt className='text-muted-foreground'>
 									Tech Stack
 								</dt>
 								<dd className='flex flex-wrap gap-2 mt-1'>
@@ -65,7 +67,6 @@ export default function ProjectCard({
 										<Badge
 											key={tech}
 											variant='outline'
-											className='text-xs'
 										>
 											{tech}
 										</Badge>

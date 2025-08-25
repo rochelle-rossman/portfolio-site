@@ -22,7 +22,7 @@ export default function Navbar() {
 		<nav className='p-6 px-0 mb-6'>
 			<ModeToggle />
 			{/* Desktop Nav */}
-			<div className='hidden sm:flex sm:text-lg md:text-xl justify-center gap-2 md:gap-6 items-center'>
+			<div className='hidden sm:flex sm:text-lg md:text-xl justify-center gap-8 items-center'>
 				<NavLink href='/'>About</NavLink>
 				<NavLink href='/projects'>Projects</NavLink>
 				<NavLink href='/resume'>Résumé</NavLink>
