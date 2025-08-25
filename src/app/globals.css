@@ -10,7 +10,7 @@
   --color-purple: oklch(0.6597 0.1767 281.14);
   --color-gold: oklch(0.8536 0.1355 79.29);
   --color-teal: oklch(0.9175 0.09 202.67);
-  --color-indigo: oklch(0.3206 0.0495 293.24);
+  --color-indigo: oklch(42.142% 0.19215 293.758);
   --color-navy: oklch(9.237% 0.02109 239.797);
   --breakpoint-xs: var(--breakpoint-xs);
   --breakpoint-xxs: var(--breakpoint-xxs);
@@ -139,11 +139,11 @@
   }
 
   h2 {
-    @apply text-3xl font-semibold mb-2;
+    @apply text-2xl sm:text-3xl font-bold mb-2;
   }
 
   h3 {
-    @apply text-2xl font-semibold mb-2;
+    @apply text-xl sm:text-2xl font-semibold mb-2;
   }
 
   p {
@@ -215,32 +215,6 @@
 
   .bg-radial-blend::before {
     mix-blend-mode: overlay;
-  }
-
-  .nav-link {
-    @apply relative inline-block px-2 py-1 transition-transform duration-200 hover:scale-105 max-sm:max-w-[100] max-sm:hover:scale-100;
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.25rem;
-    height: 4px;
-    width: 100%;
-    border-radius: 0.75rem;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
-    background-image: var(--gradient-gold-teal-coral);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.2s;
-    z-index: 1;
-  }
-
-  .nav-link:hover::after,
-  .nav-link:focus::after,
-  .nav-link:active::after {
-    transform: scaleX(1);
   }
 
 }

@@ -35,16 +35,20 @@ export default function ProjectDetails({
 				<div className='flex flex-col gap-6 motion-safe:animate-fade-up bg-background/80 dark:bg-background/90 rounded-lg shadow-xl p-6'>
 					<section>
 						<h2>Project Overview</h2>
-						<dl className='grid grid-cols-2 gap-4 text-sm font-semibold mb-6'>
-							<div>
-								<dt className='text-muted-foreground'>Role</dt>
-								<dd>{role}</dd>
-							</div>
-							<div>
-								<dt className='text-muted-foreground'>
-									Company
-								</dt>
-								<dd>{company}</dd>
+						<dl className='flex flex-col gap-4 text-sm font-semibold mb-6'>
+							<div className='grid grid-cols-2 gap-4'>
+								<div>
+									<dt className='text-muted-foreground'>
+										Role
+									</dt>
+									<dd>{role}</dd>
+								</div>
+								<div>
+									<dt className='text-muted-foreground'>
+										Company
+									</dt>
+									<dd>{company}</dd>
+								</div>
 							</div>
 							<div>
 								<dt className='text-muted-foreground'>
@@ -62,7 +66,7 @@ export default function ProjectDetails({
 								</dd>
 							</div>
 						</dl>
-						<p className='text-lg'>{overview}</p>
+						<p>{overview}</p>
 					</section>
 
 					<section>

@@ -18,7 +18,7 @@ export default function NavLink({ href, children, className, onClick }: NavLinkP
 		<Link
 			href={href}
 			className={cn(
-				'nav-link',
+				'hover:italic md:hover:scale-115',
 				isActive && 'font-bold',
 				className
 			)}

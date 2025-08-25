@@ -35,7 +35,7 @@ export default function ProjectPage({
 	return (
 		<div className='flex flex-col gap-8'>
 			<ProjectDetails {...project} />
-			<div className='flex justify-between flex-wrap w-full'>
+			<div className='flex justify-between flex-wrap gap-2 w-full'>
 				<div>
 					<Link href='/projects'>
 						<Button
@@ -46,12 +46,10 @@ export default function ProjectPage({
 						</Button>
 					</Link>
 				</div>
-				<div className='flex flex-col gap-2'>
+				<div className='flex flex-col gap-2 w-full'>
 					{projectIndex > 0 && (
 						<Link href={`/projects/${prevProjectSlug}`}>
-							<Button
-								variant='branded'
-							>
+							<Button variant='branded'>
 								<ArrowLeft />
 								<span className='truncate max-w-80 lg:max-w-full'>
 									{projects[prevIndex].title}
@@ -61,9 +59,7 @@ export default function ProjectPage({
 					)}
 					{projectIndex < projects.length - 1 && (
 						<Link href={`/projects/${nextProjectSlug}`}>
-							<Button
-								variant='branded'
-							>
+							<Button variant='branded'>
 								<span className='truncate max-w-80 lg:max-w-full'>
 									{projects[nextIndex].title}
 								</span>
