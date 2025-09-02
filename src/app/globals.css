@@ -16,7 +16,7 @@
   --breakpoint-xxs: var(--breakpoint-xxs);
   --gradient-gold-teal-coral: linear-gradient(to right, var(--color-gold), var(--color-teal), var(--color-coral));
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(98.5% 0 0);
   --foreground: oklch(0.147 0.004 49.25);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.147 0.004 49.25);
@@ -128,8 +128,8 @@
   }
 
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-heading text-center text-coral text-shadow-lg mb-8 drop-shadow-lg motion-safe:animate-fade-left;
-    
+    @apply text-4xl xs:text-5xl md:text-6xl font-heading text-center text-coral text-shadow-lg mb-8 drop-shadow-lg;
+
     text-shadow:
       2px 2px 4px var(--color-navy),
       -1px -1px 1px var(--color-navy),

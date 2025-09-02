@@ -39,7 +39,7 @@ export default function BackgroundDecor() {
 						alt=''
 						fill
 						className={[
-							'object-contain opacity-60',
+							'object-contain opacity-90',
 							twinkle.flip ? '-scale-x-100' : '',
 						].join(' ')}
 						priority={i === 0}
@@ -61,7 +61,7 @@ export default function BackgroundDecor() {
 						src='/cloud.png'
 						alt=''
 						fill
-						className='object-contain opacity-60'
+						className='object-contain opacity-90'
 					/>
 				</div>
 			))}

@@ -32,7 +32,7 @@ export default function ProjectDetails({
 				<header>
 					<h1 className='text-3xl md:text-4xl'>{title}</h1>
 				</header>
-				<div className='flex flex-col gap-6 motion-safe:animate-fade-up bg-background/80 dark:bg-background/90 rounded-lg shadow-xl p-6'>
+				<div className='flex flex-col gap-6 motion-safe:animate-fade-up bg-background dark:bg-background/90 rounded-lg shadow-xl p-6'>
 					<section>
 						<h2>Project Overview</h2>
 						<dl className='flex flex-col gap-4 text-sm font-semibold mb-6'>

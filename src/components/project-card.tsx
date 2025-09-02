@@ -23,10 +23,15 @@ export default function ProjectCard({
 	techStack,
 }: ProjectData) {
 	return (
-		<article className='relative bg-background/80 dark:bg-background/90 rounded-lg shadow-xl p-6 lg:group-hover:scale-105 transition-transform duration-300'>
-			<div className='flex flex-col-reverse md:flex-row gap-6'>
+		<article className='relative bg-background border-2 border-navy rounded-xl shadow-xl lg:group-hover:scale-105 transition-transform duration-300'>
+			<div className='bg-gold dark:bg-gray-700 border-b-2 border-navy px-3 py-2 rounded-t-xl flex'>
+				<span className='block w-4 h-4 border-2 border-navy bg-red-400 rounded-full' />
+				<span className='block w-4 h-4 border-2 border-navy bg-yellow-300 rounded-full mx-2' />
+				<span className='block w-4 h-4 border-2 border-navy bg-green-400 rounded-full' />
+			</div>
+			<div className='flex flex-col-reverse md:flex-row gap-6 p-6'>
 				{featuredImage && (
-					<div className='md:w-1/3 w-full p-4 flex items-center bg-accent/70  rounded-lg shadow-xl'>
+					<div className='md:w-1/3 w-full'>
 						<figure className=''>
 							<Image
 								src={featuredImage.src}
