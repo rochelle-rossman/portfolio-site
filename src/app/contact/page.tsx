@@ -8,7 +8,7 @@ export default function ContactPage() {
 				<h2 className='text-center'>
 					Let&apos;s Chat About Your Next Project
 				</h2>
-				<p className='text-center'>
+				<p className='text-center mb-4'>
 					Interested in transforming your ideas into accessible and
 					responsive web experiences? Reach out to discuss custom web
 					development solutions tailored to your needs.

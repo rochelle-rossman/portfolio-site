@@ -58,7 +58,7 @@ export default function ContactForm() {
 	}
 
 	return (
-		<div className='bg-background rounded-lg shadow-xl p-6'>
+		<div className='border-2 rounded-lg shadow-xl p-6'>
 			{!submitted ? (
 				<form
 					onSubmit={handleSubmit}

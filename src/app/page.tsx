@@ -8,12 +8,12 @@ export default function Home() {
 	return (
 		<section className='flex flex-col items-center mx-auto'>
 			<div className='w-full max-w-3xl mb-10 border-2 border-navy rounded-xl shadow-xl overflow-clip'>
-				<div className='bg-gold dark:bg-gray-700 border-b-2 border-navy px-3 py-2 rounded-t-xl flex'>
+				<div className='bg-gold dark:bg-gray-600 border-b-2 border-navy px-3 py-2 rounded-t-xl flex'>
 					<span className='block w-4 h-4 border-2 border-navy bg-red-400 rounded-full' />
-					<span className='block w-4 h-4 border-2 border-navy bg-yellow-300 rounded-full mx-2' />
+					<span className='block w-4 h-4 border-2 border-navy bg-yellow-300 rounded-full mx-1' />
 					<span className='block w-4 h-4 border-2 border-navy bg-green-400 rounded-full' />
 				</div>
-				<div className='p-6 bg-background'>
+				<div className='p-6 bg-background dark:bg-gray-800'>
 					<h1 className='uppercase mb-4'>Rochelle Rossman</h1>
 				</div>
 			</div>

@@ -7,7 +7,7 @@ export default function About() {
 			<span className='float-circle'>
 				<StyledHeadshot />
 			</span>
-			<div className='text-3xl sm:text-4xl mb-4 '>
+			<div className='text-3xl sm:text-4xl mb-4 w-full'>
 				<span
 					className='inline-block mr-2'
 					role='img'
@@ -18,10 +18,10 @@ export default function About() {
 
 				<TextType
 					text={['I\’m Rochelle —', 'Hey! I’m Rochelle...']}
-					typingSpeed={75}
-					pauseDuration={1500}
+
+
 					showCursor={true}
-					textColors={['inherit']}
+
 					cursorCharacter='|'
 				/>
 			</div>{' '}
