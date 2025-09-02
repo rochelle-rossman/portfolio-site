@@ -7,7 +7,6 @@ interface TypingTextProps {
 	text: string | string[]
 	className?: string
 	loop?: boolean
-	showCursor?: boolean
 	cursorCharacter?: string
 }
 

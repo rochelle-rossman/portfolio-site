@@ -38,7 +38,7 @@ export default function ProjectCard({
 								alt={featuredImage.alt}
 								width={600}
 								height={400}
-								className='object-cover rounded-lg w-full h-auto'
+								className='object-cover rounded-lg border-2 border-navy w-full h-auto'
 							/>
 						</figure>
 					</div>

@@ -18,10 +18,6 @@ export default function About() {
 
 				<TextType
 					text={['I\’m Rochelle —', 'Hey! I’m Rochelle...']}
-
-
-					showCursor={true}
-
 					cursorCharacter='|'
 				/>
 			</div>{' '}
