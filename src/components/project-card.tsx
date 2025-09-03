@@ -24,8 +24,8 @@ export default function ProjectCard({
 	techStack,
 }: ProjectData) {
 	return (
-		
-			<Card className=''>
+		<Card className=''>
+			<article>
 				<div className='flex flex-col-reverse md:flex-row gap-6 p-6'>
 					{featuredImage && (
 						<div className='md:w-1/3 w-full'>
@@ -95,6 +95,7 @@ export default function ProjectCard({
 						</footer>
 					</div>
 				</div>
-			</Card>
+			</article>
+		</Card>
 	)
 }

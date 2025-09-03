@@ -31,7 +31,7 @@
   --accent: oklch(0.97 0.001 106.424);
   --accent-foreground: oklch(0.216 0.006 56.043);
   --destructive: var(--color-coral);
-  --border: oklch(0.923 0.003 48.717);
+  --border: var(--color-navy);
   --input: oklch(0.923 0.003 48.717);
   --ring: oklch(0.709 0.01 56.259);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -113,7 +113,7 @@
   --muted-foreground: var(--color-gold);
   --accent: oklch(0.216 0.006 56.043);
   --accent-foreground: oklch(0.985 0.001 106.423);
-  --border: oklch(42.142% 0.19215 293.758);
+  --border: var(--color-indigo);
   --input: oklch(0.8 0.12 79.6);
 }
 
@@ -128,7 +128,7 @@
   }
 
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-heading text-center text-coral mb-8 text-shadow-lg drop-shadow-lg;
+    @apply text-4xl xs:text-5xl md:text-6xl font-heading text-center text-coral mb-8 text-shadow-lg drop-shadow-[-5px_5px_var(--color-purple)] dark:drop-shadow-[-5px_5px_var(--color-indigo)];
     -webkit-text-stroke: 2px var(--color-navy);
   }
 

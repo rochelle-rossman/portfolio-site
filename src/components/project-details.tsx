@@ -1,5 +1,6 @@
 import Carousel from '@/components/carousel'
 import { Badge } from '@/components/ui/badge'
+import Card from '@/components/card'
 
 type ProjectData = {
 	title: string
@@ -131,9 +132,9 @@ export default function ProjectDetails({
 					{screenshots && (
 						<section>
 							<h3>Sample Screenshots</h3>
-							<div>
+							<Card>
 								<Carousel images={screenshots} />
-							</div>
+							</Card>
 
 							{company === 'TechnologyAdvice' && (
 								<p className='mt-2 text-xs text-center text-muted-foreground italic'>
