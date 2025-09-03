@@ -1,5 +1,5 @@
-import StyledHeadshot from './headshot'
-import TextType from './type-text'
+import StyledHeadshot from '@/components/headshot'
+import TextType from '@/components/typing-text'
 
 export default function About() {
 	return (

@@ -6,14 +6,12 @@ import { gsap } from 'gsap'
 interface TypingTextProps {
 	text: string | string[]
 	className?: string
-	loop?: boolean
 	cursorCharacter?: string
 }
 
 const TypingText = ({
 	text,
 	className = '',
-	loop = true,
 	cursorCharacter = '|',
 }: TypingTextProps) => {
 	const [displayedText, setDisplayedText] = useState('')
@@ -65,10 +63,6 @@ const TypingText = ({
 				setCharIndex((i) => i + 1)
 			}, 60)
 		} else if (!isDeleting && charIndex === currentText.length) {
-			if (!loop && textIndex === textArray.length - 1) {
-				// reached last string → stop completely
-				return
-			}
 			// pause before deleting
 			timeout = setTimeout(() => {
 				setIsDeleting(true)
@@ -84,13 +78,11 @@ const TypingText = ({
 			setIsDeleting(false)
 			if (textIndex < textArray.length - 1) {
 				setTextIndex((i) => i + 1)
-			} else if (loop) {
-				setTextIndex(0)
 			}
 		}
 
 		return () => clearTimeout(timeout)
-	}, [charIndex, textIndex, isDeleting, loop, text, isReducedMotion])
+	}, [charIndex, textIndex, isDeleting, text, isReducedMotion])
 
 	return (
 		<div className={`inline-block whitespace-pre-wrap ${className}`}>
