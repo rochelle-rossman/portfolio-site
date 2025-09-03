@@ -19,9 +19,7 @@ export function ModeToggle() {
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<Button
-					variant='branded'
-					// size='icon'
-					className='absolute top-6 right-4 rounded-lg'
+					className='absolute top-6 right-4'
 					title='Toggle theme'
 					aria-label='Toggle theme'
 				>

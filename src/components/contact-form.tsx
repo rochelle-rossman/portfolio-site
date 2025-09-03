@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import Link from 'next/link'
 import { House, SendHorizontal } from 'lucide-react'
+import Link from 'next/link'
 import React, { FormEvent, useState } from 'react'
 
 // Public API key for Web3Forms - Safe to expose in client-side code
@@ -58,7 +58,7 @@ export default function ContactForm() {
 	}
 
 	return (
-		<div className='bg-background/80 rounded-lg shadow-xl p-6 mb-12'>
+		<div className='border-2 rounded-lg shadow-xl p-6'>
 			{!submitted ? (
 				<form
 					onSubmit={handleSubmit}
@@ -136,14 +136,26 @@ export default function ContactForm() {
 							onChange={handleInputChange}
 						/>
 					</div>
-					<Button variant='branded' type='submit'>Send <SendHorizontal /></Button>
+					<Button
+						variant='branded'
+						type='submit'
+					>
+						Send <SendHorizontal />
+					</Button>
 				</form>
 			) : (
 				<div className='text-center py-10'>
 					<h2 className='text-2xl mb-4'>Thank you!</h2>
-				<p className='mb-4'>Your message has been sent successfully and will be reviewed shortly.</p>
-				<Link href='/'><Button variant='link'><House className='h-4 w-4' />Back to Home</Button></Link>
-
+					<p className='mb-4'>
+						Your message has been sent successfully and will be
+						reviewed shortly.
+					</p>
+					<Link href='/'>
+						<Button variant='link'>
+							<House className='h-4 w-4' />
+							Back to Home
+						</Button>
+					</Link>
 				</div>
 			)}
 		</div>

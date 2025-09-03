@@ -1,4 +1,4 @@
-import BackgroundDecor from '@/components/background'
+// import BackgroundDecor from '@/components/background'
 import Footer from '@/components/footer'
 import Navbar from '@/components/nav'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -45,7 +45,7 @@ export default function RootLayout({
 					defaultTheme='system'
 				>
 					<main
-						className='relative z-10 min-h-screen px-4 max-w-6xl w-full'
+						className='relative z-10 min-h-screen px-4 max-w-5xl w-full'
 						role='main'
 					>
 						<Navbar />
@@ -55,7 +55,7 @@ export default function RootLayout({
 				</ThemeProvider>
 				<SpeedInsights />
 				<Analytics />
-				<BackgroundDecor />
+				{/* <BackgroundDecor /> */}
 			</body>
 		</html>
 	)

@@ -1,4 +1,5 @@
-import StyledHeadshot from './headshot'
+import StyledHeadshot from '@/components/headshot'
+import TextType from '@/components/typing-text'
 
 export default function About() {
 	return (
@@ -6,7 +7,7 @@ export default function About() {
 			<span className='float-circle'>
 				<StyledHeadshot />
 			</span>
-			<div className='text-3xl sm:text-4xl mb-4 font-bold tracking-wide'>
+			<div className='text-3xl sm:text-4xl mb-4 w-full'>
 				<span
 					className='inline-block mr-2'
 					role='img'
@@ -14,7 +15,11 @@ export default function About() {
 				>
 					👋
 				</span>
-				I’m Rochelle —
+
+				<TextType
+					text={['I\’m Rochelle —', 'Hey! I’m Rochelle...']}
+					cursorCharacter='|'
+				/>
 			</div>{' '}
 			<p className='md:text-lg mb-4'>
 				{' '}
@@ -73,7 +78,9 @@ export default function About() {
 			<p className='md:text-lg mb-4'>
 				Whether you’re looking for a long-term teammate or a freelance
 				partner — <br />
-				<strong className='text-lg md:text-xl inline-block mt-2'>Let’s build something meaningful together.</strong>
+				<strong className='text-lg md:text-xl inline-block mt-2'>
+					Let’s build something meaningful together.
+				</strong>
 			</p>
 		</section>
 	)
