@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { ModeToggle } from '@/components/mode-toggle'
+import { ThemeToggle } from '@/components/theme-toggle'
 import {
 	Sheet,
 	SheetContent,
@@ -20,7 +20,7 @@ export default function Navbar() {
 
 	return (
 		<nav className='p-6 px-0 mb-6'>
-			<ModeToggle />
+			<ThemeToggle />
 			{/* Desktop Nav */}
 			<div className='hidden sm:flex sm:text-lg md:text-xl justify-center gap-8 items-center'>
 				<NavLink href='/'>About</NavLink>

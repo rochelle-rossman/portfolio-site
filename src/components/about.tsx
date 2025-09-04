@@ -3,11 +3,11 @@ import TextType from '@/components/typing-text'
 
 export default function About() {
 	return (
-		<section className='mx-auto motion-safe:animate-fade-up'>
+		<section className='mx-auto'>
 			<span className='float-circle'>
 				<StyledHeadshot />
 			</span>
-			<div className='text-3xl sm:text-4xl mb-4 w-full'>
+			<div className='text-3xl md:text-4xl mb-4 w-full'>
 				<span
 					className='inline-block mr-2'
 					role='img'
@@ -17,8 +17,7 @@ export default function About() {
 				</span>
 
 				<TextType
-					text={['I\’m Rochelle —', 'Hey! I’m Rochelle...']}
-					cursorCharacter='|'
+					text={['I’m Rochelle —', 'Hey! I’m Rochelle...']}
 				/>
 			</div>{' '}
 			<p className='md:text-lg mb-4'>
@@ -33,13 +32,6 @@ export default function About() {
 				</strong>
 			</p>
 			<p className='md:text-lg mb-4'>
-				I’m currently based in 📍 Kingston, NY and open to remote or
-				NYC-area hybrid roles. I’m especially drawn to mission-driven
-				organizations that prioritize equity and public impact—teams
-				where clean code and inclusive collaboration go hand-in-hand
-				with purposeful work.
-			</p>
-			<p className='md:text-lg mb-4'>
 				Before tech I spent 15+ years in leadership, management, and
 				customer-facing roles in restaurants and grocery. That chapter
 				shaped my people-first values:{' '}
@@ -51,12 +43,11 @@ export default function About() {
 				that are genuinely useful, accessible, and rooted in inclusion.
 			</p>
 			<p className='md:text-lg mb-4'>
-				Toolkit highlights: JavaScript, TypeScript, React, Next.js, Vue,
-				WordPress (custom Gutenberg blocks), and containerized
-				deployments (AWS, ArgoCD). Whether I’m engineering a scalable
-				design system or implementing accessibility best practices, I
-				aim for thoughtful, maintainable work that supports both users
-				and teams.
+				I’m based in 📍 Kingston, NY and open to remote or
+				NYC-area hybrid roles. I’m especially drawn to mission-driven
+				organizations that prioritize equity and public impact—teams
+				where clean code and inclusive collaboration go hand-in-hand
+				with purposeful work.
 			</p>
 			<p className='md:text-lg mb-4'>
 				I’m also available for freelance and contract work — I&apos;m
@@ -67,6 +58,14 @@ export default function About() {
 				performance tuning, and ongoing site maintenance. I’m
 				comfortable with short-term projects and longer retained
 				relationships alike.
+			</p>
+			<p className='md:text-lg mb-4'>
+				Toolkit highlights: JavaScript, TypeScript, React, Next.js, Vue,
+				WordPress (custom Gutenberg blocks), and containerized
+				deployments (AWS, ArgoCD). Whether I’m engineering a scalable
+				design system or implementing accessibility best practices, I
+				aim for thoughtful, maintainable work that supports both users
+				and teams.
 			</p>
 			<p className='md:text-lg mb-4'>
 				Outside of web development, I’m a hobbyist woodworker with a

@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import Card from '@/components/card'
 import { House, SendHorizontal } from 'lucide-react'
 import Link from 'next/link'
 import React, { FormEvent, useState } from 'react'
@@ -60,7 +59,7 @@ export default function ContactForm() {
 
 	return (
 		
-			<Card>
+			<div>
 				{!submitted ? (
 					<form
 						onSubmit={handleSubmit}
@@ -160,6 +159,6 @@ export default function ContactForm() {
 						</Link>
 					</div>
 				)}
-			</Card>
+			</div>
 	)
 }
