@@ -3,7 +3,7 @@ import TextType from '@/components/typing-text'
 
 export default function About() {
 	return (
-		<section className='mx-auto motion-safe:animate-fade-up'>
+		<section className='mx-auto'>
 			<span className='float-circle'>
 				<StyledHeadshot />
 			</span>

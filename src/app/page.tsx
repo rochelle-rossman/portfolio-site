@@ -6,7 +6,7 @@ import Card from '@/components/card'
 
 export default function Home() {
 	return (
-		<section className='flex flex-col gap-6 items-center mx-auto'>
+		<section className='flex flex-col gap-6 items-center mx-auto motion-safe:animate-fade-up'>
 			<Card>
 				<h1 className='uppercase mb-4 xs:text-6xl'>Rochelle Rossman</h1>
 			</Card>
