@@ -86,12 +86,12 @@ const TypingText = ({
 
 	return (
 		<div className={`inline-block whitespace-pre-wrap ${className}`}>
-			{displayedText}
+			<strong>{displayedText}</strong>
 
 			{!isReducedMotion && (
 				<span
 					ref={cursorRef}
-					className='ml-1 inline-block'
+					className='inline-block'
 				>
 					{cursorCharacter}
 				</span>

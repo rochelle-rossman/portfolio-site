@@ -1,10 +1,11 @@
 import ContactForm from '@/components/contact-form'
+import Card from '@/components/card'
 
 export default function ContactPage() {
 	return (
 		<div className='mx-auto p-6 space-y-6 min-h-dvh'>
 			<h1>Contact</h1>
-			<section className='bg-background rounded-lg shadow-xl p-6 mb-12 motion-safe:animate-fade-up'>
+			<Card className='mb-12 motion-safe:animate-fade-up'>
 				<h2 className='text-center'>
 					Let&apos;s Chat About Your Next Project
 				</h2>
@@ -14,7 +15,7 @@ export default function ContactPage() {
 					development solutions tailored to your needs.
 				</p>
 				<ContactForm />
-			</section>
+			</Card>
 		</div>
 	)
 }

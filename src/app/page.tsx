@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<section className='flex flex-col gap-6 items-center mx-auto'>
 			<Card>
-				<h1 className='uppercase mb-4'>Rochelle Rossman</h1>
+				<h1 className='uppercase mb-4 xs:text-6xl'>Rochelle Rossman</h1>
 			</Card>
 
 			<div className='flex flex-col gap-6 items-center bg-background rounded-xl border-2 border-navy shadow-xl p-4 sm:p-6'>

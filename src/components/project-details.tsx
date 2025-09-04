@@ -31,7 +31,7 @@ export default function ProjectDetails({
 		<div className='space-y-8'>
 			<article>
 				<header>
-					<h1 className='text-3xl md:text-4xl'>{title}</h1>
+					<h1 className='text-4xl md:text-5xl'>{title}</h1>
 				</header>
 				<div className='flex flex-col gap-6 motion-safe:animate-fade-up bg-background dark:bg-background/90 rounded-lg shadow-xl p-6'>
 					<section>

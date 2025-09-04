@@ -128,7 +128,7 @@
   }
 
   h1 {
-    @apply text-4xl xs:text-5xl md:text-6xl font-heading text-center text-coral mb-8 text-shadow-lg drop-shadow-[-5px_5px_var(--color-purple)] dark:drop-shadow-[-5px_5px_var(--color-indigo)];
+    @apply text-5xl md:text-6xl font-heading text-center text-coral mb-8 text-shadow-md drop-shadow-[-5px_5px_var(--color-purple)] dark:drop-shadow-[-5px_5px_var(--color-indigo)];
     -webkit-text-stroke: 2px var(--color-navy);
   }
 
