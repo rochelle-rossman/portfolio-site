@@ -34,8 +34,8 @@ export default function ResumePage() {
 		<section className='flex flex-col items-center mx-auto'>
 			<h1>Résumé</h1>
 
-			<div className='motion-safe:animate-fade-up'>
-				<div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between bg-background rounded-lg shadow-xl p-6 w-full mb-10'>
+			<div className='bg-background rounded-xl border-2 border-navy shadow-xl p-4 sm:p-6 motion-safe:animate-fade-up'>
+				<div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-10'>
 					<div>
 						<h2 className='text-4xl text-center md:text-left'>
 							Rochelle Rossman
@@ -81,7 +81,7 @@ export default function ResumePage() {
 				</div>
 
 				<section className='space-y-12'>
-					<div className='bg-background rounded-lg shadow-xl p-6'>
+					<div>
 						<h3>Summary</h3>
 						<p className='md:text-lg'>
 							Innovative and results-driven Web Software Developer
@@ -96,7 +96,7 @@ export default function ResumePage() {
 						</p>
 					</div>
 
-					<div className='bg-background rounded-lg shadow-xl p-6'>
+					<div>
 						<h3>Skills</h3>
 						<div className='space-y-6'>
 							<div className='flex flex-wrap gap-2'>
@@ -112,7 +112,7 @@ export default function ResumePage() {
 						</div>
 					</div>
 
-					<div className='bg-background rounded-lg shadow-xl p-6'>
+					<div>
 						<h3>Experience</h3>
 
 						<div className='mb-6'>
@@ -162,7 +162,7 @@ export default function ResumePage() {
 						</div>
 
 						<div>
-							<h3 className='text-xl '>Trader Joe’s</h3>
+							<h3 className='text-xl'>Trader Joe’s</h3>
 							<p className='italic mb-2'>
 								Lead Sign Artist & Crew Member • Nov 2013 – Jul
 								2022
@@ -184,7 +184,7 @@ export default function ResumePage() {
 						</div>
 					</div>
 
-					<div className='bg-background rounded-lg shadow-xl p-6'>
+					<div>
 						<h3>Education</h3>
 						<p>
 							<strong>
