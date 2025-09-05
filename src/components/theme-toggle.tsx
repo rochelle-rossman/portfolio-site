@@ -15,7 +15,7 @@ export function ThemeToggle() {
 	}, [])
 
 	return mount ? (
-		<div className='absolute top-4 right-4'>
+		<div>
 			<Button
 				onClick={() =>
 					setTheme(currentTheme === 'dark' ? 'light' : 'dark')
