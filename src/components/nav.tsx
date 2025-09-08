@@ -33,8 +33,7 @@ export default function Navbar() {
 
 			{/* Desktop Nav */}
 			<div className='hidden md:flex text-xl gap-8 items-center'>
-				{/* TODO: update link when page done */}
-				<NavLink href='/'>About</NavLink>
+				<NavLink href='/about'>About</NavLink>
 				<NavLink href='/projects'>Projects</NavLink>
 				<NavLink href='/resume'>Résumé</NavLink>
 				<NavLink href='/contact'>Contact</NavLink>

@@ -76,17 +76,15 @@ const TypingText = ({
 		} else if (isDeleting && charIndex === 0) {
 			// move to next text
 			setIsDeleting(false)
-			if (textIndex < textArray.length - 1) {
-				setTextIndex((i) => i + 1)
-			}
+			setTextIndex((i) => (i + 1) % textArray.length)
 		}
 
 		return () => clearTimeout(timeout)
 	}, [charIndex, textIndex, isDeleting, text, isReducedMotion])
 
 	return (
-		<div className={`inline-block whitespace-pre-wrap ${className}`}>
-			<strong>{displayedText}</strong>
+		<div className={`inline-block whitespace-pre-wrap ${className}`} >
+			{displayedText}
 
 			{!isReducedMotion && (
 				<span
