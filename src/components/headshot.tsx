@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function StyledHeadshot() {
 	return (
-		<div className='relative w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80'>
+		<div className='relative w-60 h-60 md:w-64 md:h-64 rounded-full'>
 			<div className='absolute inset-0 p-[3px] rounded-full'>
 				<div className='relative w-full h-full rounded-full overflow-hidden shadow-xl ring-2 ring-color-gold/30'>
 					<Image

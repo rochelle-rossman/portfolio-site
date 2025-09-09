@@ -117,6 +117,7 @@
   --input: oklch(0.8 0.12 79.6);
 }
 
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -192,6 +193,37 @@
         background-position: 25% 30%;
       }
     }
+    
+        @keyframes wave-animation {
+          0% {
+            transform: rotate(0deg);
+          }
+    
+          10% {
+            transform: rotate(-10deg);
+          }
+    
+          20% {
+            transform: rotate(12deg);
+          }
+    
+          30% {
+            transform: rotate(-10deg);
+          }
+    
+          40% {
+            transform: rotate(9deg);
+          }
+    
+          50% {
+            transform: rotate(0deg);
+          }
+    
+          100% {
+            transform: rotate(0deg);
+          }
+    
+        }
   }
 
   .bg-radial-blur::before {
@@ -215,37 +247,4 @@
     animation: wave-animation 2s 5 1.5s;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-
-    @keyframes wave-animation {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      10% {
-        transform: rotate(-10deg);
-      }
-
-      20% {
-        transform: rotate(12deg);
-      }
-
-      30% {
-        transform: rotate(-10deg);
-      }
-
-      40% {
-        transform: rotate(9deg);
-      }
-
-      50% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(0deg);
-      }
-
-    }
-  }
 }
