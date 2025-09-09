@@ -61,7 +61,7 @@ const TypingText = ({
 			timeout = setTimeout(() => {
 				setDisplayedText((prev) => prev + currentText[charIndex])
 				setCharIndex((i) => i + 1)
-			}, 60)
+			}, 100)
 		} else if (!isDeleting && charIndex === currentText.length) {
 			// pause before deleting
 			timeout = setTimeout(() => {
@@ -72,7 +72,7 @@ const TypingText = ({
 			timeout = setTimeout(() => {
 				setDisplayedText((prev) => prev.slice(0, -1))
 				setCharIndex((i) => i - 1)
-			}, 40)
+			}, 60)
 		} else if (isDeleting && charIndex === 0) {
 			// move to next text
 			setIsDeleting(false)
