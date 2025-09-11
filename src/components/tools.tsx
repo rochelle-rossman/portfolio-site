@@ -31,7 +31,7 @@ const ToolsMarquee = () => (
 			<MarqueeFade side='right' />
 			<MarqueeContent speed={30}>
 				{tools.map((tool, index) => (
-					<MarqueeItem key={index} className='mx-4 border-2 p-2  rounded-xl dark:bg-foreground/90'>
+					<MarqueeItem key={index} className='mx-4 border-2 p-4 rounded-full dark:bg-foreground/90'>
 						<Image
 							alt={tool.name}
 							title={tool.name}

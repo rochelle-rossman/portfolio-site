@@ -26,7 +26,7 @@ export default function ProjectBrowserContainer({
 	return (
 		<BrowserContainer className=''>
 			<article>
-				<div className='flex flex-col-reverse md:flex-row gap-6 p-6'>
+				<div className='flex flex-col-reverse items-center md:flex-row gap-6'>
 					{featuredImage && (
 						<div className='md:w-1/3 w-full'>
 							<figure className=''>

@@ -7,6 +7,7 @@
   --font-heading: var(--font-erica-one);
   --color-cream: oklch(0.9585 0.0329 83.71);
   --color-coral: oklch(0.7335 0.1635 14.62);
+  --color-orange: oklch(79.038% 0.12628 40.999);
   --color-purple: oklch(0.6597 0.1767 281.14);
   --color-gold: oklch(0.8536 0.1355 79.29);
   --color-teal: oklch(0.9175 0.09 202.67);
@@ -57,6 +58,7 @@
   --color-purple: var(--color-purple);
   --color-gold: var(--color-gold);
   --color-teal: var(--color-teal);
+  --color-orange: var(--color-orange);
   --color-indigo: var(--color-indigo);
   --color-navy: var(--color-navy);
   --breakpoint-xs: 30rem;
@@ -182,8 +184,17 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    @keyframes radial-drift {
+    @keyframes move-background {
+      from {
+        -webkit-transform: translate3d(0, 0px, 0px);
+      }
 
+      to {
+        -webkit-transform: translate3d(70vw, 0px, 0px);
+      }
+    }
+
+    @keyframes radial-drift {
       0%,
       100% {
         background-position: 20% 25%;
@@ -193,37 +204,69 @@
         background-position: 25% 30%;
       }
     }
-    
-        @keyframes wave-animation {
-          0% {
-            transform: rotate(0deg);
-          }
-    
-          10% {
-            transform: rotate(-10deg);
-          }
-    
-          20% {
-            transform: rotate(12deg);
-          }
-    
-          30% {
-            transform: rotate(-10deg);
-          }
-    
-          40% {
-            transform: rotate(9deg);
-          }
-    
-          50% {
-            transform: rotate(0deg);
-          }
-    
-          100% {
-            transform: rotate(0deg);
-          }
-    
-        }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0.4;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      70% {
+        opacity: 0.2;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translatey(0px);
+      }
+      
+      50% {
+        transform: translatey(-15px);
+      }
+
+      100% {
+        transform: translatey(0px);
+      }
+    }
+
+    @keyframes wave {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      10% {
+        transform: rotate(-10deg);
+      }
+
+      20% {
+        transform: rotate(12deg);
+      }
+
+      30% {
+        transform: rotate(-10deg);
+      }
+
+      40% {
+        transform: rotate(9deg);
+      }
+
+      50% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+
+    }
   }
 
   .bg-radial-blur::before {
@@ -244,7 +287,7 @@
   }
 
   .wave {
-    animation: wave-animation 2s 5 1.5s;
+    animation: wave-animation 2s infinite 1.5s;
   }
 
 }

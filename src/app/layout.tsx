@@ -1,6 +1,7 @@
-// import BackgroundDecor from '@/components/background'
+import BackgroundDecor from '@/components/background'
 import Footer from '@/components/footer'
-import Navbar from '@/components/nav'
+// import Navbar from '@/components/nav'
+import BubbleNav from '@/components/bubble-nav'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -44,11 +45,12 @@ export default function RootLayout({
 					attribute='class'
 					defaultTheme='system'
 				>
+					<BackgroundDecor />
 					<main
 						className='relative z-10 min-h-screen px-4 max-w-5xl w-full'
 						role='main'
 					>
-						<Navbar />
+						<BubbleNav />
 						{children}
 						<Footer />
 					</main>
