@@ -41,15 +41,14 @@ export default function Hero() {
 								</Button>
 							</Link>
 							<Link
-								href='/resume'
+								href='/#about'
 								className='w-full'
 							>
 								<Button
 									className='w-full'
 									variant={'branded'}
-									role='link'
 								>
-									View My Résumé
+									More About Me
 									<ArrowRight />
 								</Button>
 							</Link>

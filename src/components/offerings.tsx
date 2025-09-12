@@ -6,7 +6,10 @@ import {
 	ScanSearch,
 	Proportions,
 	ArrowBigUpDash,
+	ArrowRight,
 } from 'lucide-react'
+import Link from 'next/link'
+import { Button } from './ui/button'
 
 export default function Offerings() {
 	return (
@@ -41,7 +44,11 @@ export default function Offerings() {
 					<PersonStanding />
 					<h3>Accessibility</h3>
 					<p>
-						I prioritize accessibility in all my work and I strive to create inclusive digital experiences for all users. I follow WCAG guidelines and best practices to ensure that the websites I build are usable for everyone, regardless of their abilities or devices.
+						I prioritize accessibility in all my work and I strive
+						to create inclusive digital experiences for all users. I
+						follow WCAG guidelines and best practices to ensure that
+						the websites I build are usable for everyone, regardless
+						of their abilities or devices.
 					</p>
 				</Card>
 
@@ -65,7 +72,22 @@ export default function Offerings() {
 						visibility and organic traffic.
 					</p>
 				</Card>
-				
+				<Card>
+					<h2>In need of a web developer?</h2>
+					<p className='text-lg'>
+						Let&apos;s discuss your project and bring your vision to
+						life.
+					</p>
+					<Link href='/contact'>
+						<Button
+							variant='branded'
+							className='mt-2 w-full text-lg'
+						>
+							Get in Touch
+							<ArrowRight />
+						</Button>
+					</Link>
+				</Card>
 			</div>
 		</BrowserContainer>
 	)

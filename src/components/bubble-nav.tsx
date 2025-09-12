@@ -1,5 +1,11 @@
-'use client'
+"use client"
+
+
+	// Keyboard navigation for menu
+	
+import BubbleNavItem from '@/components/nav-link'
 import { Button } from '@/components/ui/button'
+import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
@@ -7,233 +13,121 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { ThemeToggle } from './theme-toggle'
 
-export default function BubbleNav() {
-	const items = [
-		{
-			label: 'home',
-			href: '/',
-			ariaLabel: 'Home',
-			rotation: -8,
-			hoverStyles: {
-				bgColor: 'var(--color-gold)',
-				textColor: 'var(--color-navy)',
-			},
-		},
-		{
-			label: 'about',
-			href: '/about',
-			ariaLabel: 'About',
-			rotation: 8,
-			hoverStyles: {
-				bgColor: 'var(--color-teal)',
-				textColor: 'var(--color-navy)',
-			},
-		},
-		{
-			label: 'projects',
-			href: '/projects',
-			ariaLabel: 'Projects',
-			rotation: 8,
-			hoverStyles: { bgColor: 'var(--color-coral)', textColor: '#fff' },
-		},
-		{
-			label: 'résumé',
-			href: '/resume',
-			ariaLabel: 'Résumé',
-			rotation: -8,
-			hoverStyles: {
-				bgColor: 'var(--color-orange)',
-				textColor: 'var(--color-navy)',
-			},
-		},
-		{
-			label: 'contact',
-			href: '/contact',
-			ariaLabel: 'Contact',
-			rotation: -8,
-			hoverStyles: { bgColor: 'var(--color-purple)' },
-		},
-	]
+// Navigations links
+const items = [
+	{
+		label: 'home',
+		href: '/',
+		ariaLabel: 'Home',
+		className:
+			'-rotate-2 md:-rotate-6 lg:-rotate-8 hover:bg-gold hover:text-navy',
+	},
+	{
+		label: 'projects',
+		href: '/projects',
+		ariaLabel: 'Projects',
+		className:
+			'rotate-2 md:rotate-6 lg:rotate-8 hover:bg-coral hover:text-navy',
+	},
+	{
+		label: 'résumé',
+		href: '/resume',
+		ariaLabel: 'Résumé',
+		className:
+			'-rotate-2 md:-rotate-6 lg:-rotate-8 hover:bg-orange hover:text-navy',
+	},
+	{
+		label: 'contact',
+		href: '/contact',
+		ariaLabel: 'Contact',
+		className:
+			'rotate-2 md:rotate-6 lg:rotate-8 hover:bg-teal hover:text-navy',
+	},
+]
 
-	type MenuItem = {
-		label: string
-		href: string
-		ariaLabel?: string
-		rotation?: number
-		hoverStyles?: {
-			bgColor?: string
-			textColor?: string
+export default function BubbleNav() {
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const [showMenu, setShowMenu] = useState(false)
+	const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+	const bubblesRef = useRef<HTMLAnchorElement[]>([])
+	const labelRefs = useRef<HTMLSpanElement[]>([])
+	const menuRef = useRef<HTMLDivElement>(null)
+	const toggleButtonRef = useRef<HTMLButtonElement>(null)
+	const prevMenuOpen = useRef(false)
+	
+	// Focus management for accessibility (WCAG)
+	useEffect(() => {
+		if (isMenuOpen && showMenu) {
+			const firstMenuItem = bubblesRef.current[0]
+			if (firstMenuItem) firstMenuItem.focus()
+		} else if (!isMenuOpen && prevMenuOpen.current) {
+			if (toggleButtonRef.current) toggleButtonRef.current.focus()
+		}
+	}, [isMenuOpen, showMenu])
+
+	// Keyboard navigation for menu
+	const handleMenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+		if (!isMenuOpen) return
+		const bubbles = bubblesRef.current.filter(Boolean)
+		const currentIndex = bubbles.findIndex((el: HTMLAnchorElement) => el === document.activeElement)
+		if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+			e.preventDefault()
+			const nextIndex = (currentIndex + 1) % bubbles.length
+			bubbles[nextIndex]?.focus()
+		} else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+			e.preventDefault()
+			const prevIndex = (currentIndex - 1 + bubbles.length) % bubbles.length
+			bubbles[prevIndex]?.focus()
+		} else if (e.key === 'Escape') {
+			e.preventDefault()
+			setIsMenuOpen(false)
 		}
 	}
 
-	type MenuBubbleProps = {
-		item: MenuItem
-		idx: number
-		isHovered: boolean
-		setHoveredIdx: (idx: number | null) => void
-		setIsMenuOpen: (open: boolean) => void
-		bubblesRef: React.RefObject<HTMLAnchorElement[]>
-		labelRefs: React.RefObject<HTMLSpanElement[]>
-	}
-
-	const MenuBubble = ({
-		item,
-		idx,
-		isHovered,
-		setHoveredIdx,
-		setIsMenuOpen,
-		bubblesRef,
-		labelRefs,
-	}: MenuBubbleProps) => {
-		const bgColor = isHovered
-			? item.hoverStyles?.bgColor
-			: 'var(--color-background)'
-		const textColor = isHovered
-			? item.hoverStyles?.textColor
-			: 'var(--color-text)'
-		return (
-			<div role='none'>
-				<Link
-					role='menuitem'
-					href={item.href}
-					aria-label={item.ariaLabel || item.label}
-					tabIndex={0}
-					className={[
-						'w-full rounded-full shadow-xl flex items-center justify-center relative bg-background ring-2 ring-border ring-inset border-purple dark:border-border border-r-3 border-b-3',
-						'transition-[background,color,transform] duration-300 ease-in-out box-border whitespace-nowrap overflow-hidden',
-					].join(' ')}
-					style={
-						{
-							background: bgColor,
-							color: textColor,
-							transform: `rotate(${item.rotation ?? 0}deg)`,
-							padding: 'clamp(1.5rem, 3vw, 8rem)',
-							fontSize: 'clamp(1.5rem, 4vw, 4rem)',
-						} as React.CSSProperties
-					}
-					ref={(el) => {
-						if (el) bubblesRef.current[idx] = el
-					}}
-					onMouseEnter={() => setHoveredIdx(idx)}
-					onMouseLeave={() => setHoveredIdx(null)}
-					onClick={() => setIsMenuOpen(false)}
-				>
-					<span
-						className='inline-block'
-						ref={(el) => {
-							if (el) labelRefs.current[idx] = el
-						}}
-					>
-						{item.label}
-					</span>
-				</Link>
-			</div>
-		)
-	}
-
-	const [isMenuOpen, setIsMenuOpen] = useState(false)
-	const [showMenu, setShowMenu] = useState(false)
-	const [hoveredIdx, setHoveredIdx] = useState<number | null>(null)
-	const bubblesRef = useRef<HTMLAnchorElement[]>([])
-	const labelRefs = useRef<HTMLSpanElement[]>([])
-	const prevMenuOpen = useRef(false)
-	const menuContainerRef = useRef<HTMLDivElement>(null)
-	const toggleButtonRef = useRef<HTMLButtonElement>(null)
-	const [isReducedMotion, setIsReducedMotion] = useState(false)
+	// Detect prefers-reduced-motion
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+			setPrefersReducedMotion(media.matches)
+			const handler = () => setPrefersReducedMotion(media.matches)
+			media.addEventListener('change', handler)
+			return () => media.removeEventListener('change', handler)
+		}
+	}, [])
 
 	const handleToggle = () => {
 		setIsMenuOpen((open) => !open)
 	}
-
-	// Focus management and scroll lock
+	// Show/hide menu instantly if prefers reduced motion
 	useEffect(() => {
-		if (showMenu) {
-			setTimeout(() => {
-				bubblesRef.current[0]?.focus()
-			}, 10)
-			document.body.style.overflow = 'hidden'
-		} else {
-			toggleButtonRef.current?.focus()
-			document.body.style.overflow = ''
+		if (prefersReducedMotion) {
+			setShowMenu(isMenuOpen)
+			prevMenuOpen.current = isMenuOpen
+			return
 		}
-	}, [showMenu])
-
-	// Focus trap, Escape, and arrow key navigation
-	useEffect(() => {
-		if (!showMenu) return
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if (e.key === 'Escape') setIsMenuOpen(false)
-			// Focus trap
-			if (e.key === 'Tab') {
-				const focusable = bubblesRef.current.filter(Boolean)
-				if (!focusable.length) return
-				const first = focusable[0]
-				const last = focusable[focusable.length - 1]
-				if (e.shiftKey) {
-					if (document.activeElement === first) {
-						e.preventDefault()
-						last.focus()
-					}
-				} else {
-					if (document.activeElement === last) {
-						e.preventDefault()
-						first.focus()
-					}
-				}
-			}
-			// Arrow key navigation
-			if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-				e.preventDefault()
-				const active = document.activeElement
-				const focusable = bubblesRef.current.filter(Boolean)
-				const idx = focusable.indexOf(active as HTMLAnchorElement)
-				const next = (idx + 1) % items.length
-				focusable[next]?.focus()
-			}
-			if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-				e.preventDefault()
-				const active = document.activeElement
-				const focusable = bubblesRef.current.filter(Boolean)
-				const idx = focusable.indexOf(active as HTMLAnchorElement)
-				const prev = (idx - 1 + items.length) % items.length
-				focusable[prev]?.focus()
-			}
-		}
-		document.addEventListener('keydown', handleKeyDown)
-		return () => document.removeEventListener('keydown', handleKeyDown)
-	}, [showMenu, items.length])
-
-	// Show menu when opening
-	useEffect(() => {
+		// Show menu when opening
 		if (isMenuOpen) setShowMenu(true)
-	}, [isMenuOpen])
+	}, [isMenuOpen, prefersReducedMotion])
 
-	// motion preference
-	useEffect(() => {
-		const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-		setIsReducedMotion(mediaQuery.matches)
-
-		const handler = () => setIsReducedMotion(mediaQuery.matches)
-		mediaQuery.addEventListener('change', handler)
-		return () => mediaQuery.removeEventListener('change', handler)
-	}, [])
-
-	// Animate open
-	useEffect(() => {
-		const bubbles = bubblesRef.current.filter(Boolean)
-		const labels = labelRefs.current.filter(Boolean)
-		if (!isReducedMotion) {
+	// Animate open/close if not prefers reduced motion
+	useGSAP(
+		() => {
+			if (prefersReducedMotion) return
+			const bubbles = bubblesRef.current.filter(Boolean)
+			const labels = labelRefs.current.filter(Boolean)
 			if (isMenuOpen && showMenu) {
-				gsap.killTweensOf([...bubbles, ...labels])
 				gsap.set(bubbles, { scale: 0, transformOrigin: '50% 50%' })
 				gsap.set(labels, { y: 24, autoAlpha: 0 })
 				bubbles.forEach((bubble, i) => {
-					const delay = i * 0.12 + gsap.utils.random(-0.05, 0.05)
-					const tl = gsap.timeline({ delay })
+					// const delay = i * 0.12 + gsap.utils.random(-0.05, 0.05)
+					const tl = gsap.timeline()
 					tl.to(bubble, {
 						scale: 1,
-						duration: 0.5,
+						duration: 0.8,
 						ease: 'back.out(1.5)',
+						onComplete: () => {
+							gsap.set(bubble, { clearProps: 'transform' })
+						},
 					})
 					if (labels[i]) {
 						tl.to(
@@ -251,34 +145,35 @@ export default function BubbleNav() {
 			}
 			// Animate close
 			if (!isMenuOpen && prevMenuOpen.current && showMenu) {
-				gsap.killTweensOf([...bubbles, ...labels])
 				bubbles.forEach((bubble, i) => {
-					const delay = (bubbles.length - 1 - i) * 0.08
-					const tl = gsap.timeline({ delay })
+					const tl = gsap.timeline()
 					tl.to(bubble, {
 						scale: 0,
 						duration: 0.3,
 						ease: 'back.in(1.5)',
+						onComplete: () => {
+							gsap.set(bubble, { clearProps: 'transform' })
+						},
 					})
 					if (labels[i]) {
-						tl.to(
-							labels[i],
-							{
-								y: 24,
-								autoAlpha: 0,
-								duration: 0.3,
-								ease: 'power3.in',
-							},
-							'-=0.25'
-						)
+						tl.to(labels[i], {
+							y: 24,
+							autoAlpha: 0,
+							duration: 0.3,
+							ease: 'power3.in',
+						})
 					}
 				})
 				// Hide after animation
 				setTimeout(() => setShowMenu(false), 350 + bubbles.length * 80)
 			}
+			prevMenuOpen.current = isMenuOpen
+		},
+		{
+			dependencies: [isMenuOpen, showMenu, prefersReducedMotion],
+			scope: menuRef,
 		}
-		prevMenuOpen.current = isMenuOpen
-	}, [isMenuOpen, showMenu, isReducedMotion])
+	)
 
 	return (
 		<nav
@@ -300,19 +195,19 @@ export default function BubbleNav() {
 			<div className='flex gap-4 items-center'>
 				<ThemeToggle />
 				<Button
-					ref={toggleButtonRef}
 					variant='branded'
 					onClick={handleToggle}
 					aria-label='Toggle navigation menu'
 					title='Toggle navigation menu'
+					ref={toggleButtonRef}
 				>
 					<Menu className='w-6 h-6' />
 				</Button>
 				{showMenu && (
 					<div
-						ref={menuContainerRef}
 						className='fixed inset-0 flex items-center bg-background/80 justify-center pointer-events-none z-[1000]'
-						aria-hidden={!isMenuOpen}
+						// inert={!isMenuOpen}
+						ref={menuRef}
 						role='dialog'
 						aria-modal='true'
 					>
@@ -325,24 +220,30 @@ export default function BubbleNav() {
 						>
 							<X className='w-6 h-6' />
 						</Button>
-						<div
-							className='absolute top-6 p-6  mx-auto w-full pointer-events-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
-							role='menu'
-							aria-label='Menu links'
-						>
-							{items.map((item, idx) => (
-								<MenuBubble
-									key={item.label}
-									item={item}
-									idx={idx}
-									isHovered={hoveredIdx === idx}
-									setHoveredIdx={setHoveredIdx}
-									setIsMenuOpen={setIsMenuOpen}
-									bubblesRef={bubblesRef}
-									labelRefs={labelRefs}
-								/>
-							))}
-						</div>
+									<div
+										className='absolute top-6 p-6  mx-auto w-full pointer-events-auto grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
+										role='menu'
+										aria-label='Menu links'
+										onKeyDown={handleMenuKeyDown}
+										tabIndex={-1}
+									>
+										{items.map((item, i) => (
+														<BubbleNavItem
+															key={item.href}
+															href={item.href}
+															label={item.label}
+															ariaLabel={item.ariaLabel}
+															className={item.className}
+															ref={(el: HTMLAnchorElement | null) => {
+															bubblesRef.current[i] = el!
+															}}
+															labelRef={(el: HTMLSpanElement | null) => {
+															labelRefs.current[i] = el!
+															}}
+															onClick={() => setIsMenuOpen(false)}
+														/>
+										))}
+									</div>
 					</div>
 				)}
 			</div>

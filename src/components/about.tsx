@@ -3,11 +3,8 @@ import BrowserContainer from '@/components/browser-container'
 
 export default function About() {
 	return (
-		<BrowserContainer>
-			<section
-				className='mx-auto'
-				id='about'
-			>
+		<BrowserContainer id='about'>
+			<section className='mx-auto'>
 				<div className='flex flex-col items-center text-center md:block md:text-left'>
 					<span className='float-circle'>
 						<div className='w-72 h-72 lg:w-80 lg:h-80 rounded-full shadow-xl border-2 border-b-4 border-r-4 overflow-clip'>

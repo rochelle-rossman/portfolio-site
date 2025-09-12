@@ -34,7 +34,7 @@
   --destructive: var(--color-coral);
   --border: var(--color-navy);
   --input: oklch(0.923 0.003 48.717);
-  --ring: oklch(0.709 0.01 56.259);
+  --ring:oklch(0.6597 0.1767 281.14);;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -121,8 +121,12 @@
 
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring outline-offset-8;
   }
 
 
@@ -195,6 +199,7 @@
     }
 
     @keyframes radial-drift {
+
       0%,
       100% {
         background-position: 20% 25%;
@@ -227,7 +232,7 @@
       0% {
         transform: translatey(0px);
       }
-      
+
       50% {
         transform: translatey(-15px);
       }
