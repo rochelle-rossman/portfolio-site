@@ -47,11 +47,13 @@ function SocialLinks() {
 
 export default function Footer() {
 	return (
-		<footer className='mt-12 mb-10'>
-			<small>
-				<time>© {YEAR}</time> Rochelle Rossman
-			</small>
-			<SocialLinks />
+		<footer className='flex justify-center mt-12 bg-gradient-radial border-t-2 w-full z-50'>
+			<div className='px-4 py-8 max-w-5xl flex items-center justify-between w-full'>
+				<small>
+					<time>© {YEAR}</time> Rochelle Rossman
+				</small>
+				<SocialLinks />
+			</div>
 		</footer>
 	)
 }

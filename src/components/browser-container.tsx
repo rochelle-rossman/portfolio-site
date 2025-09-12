@@ -12,7 +12,7 @@ export default function BrowserBrowserContainer({ children, className, id }: Bro
 				<span className='block w-4 h-4 border-2 border-navy bg-yellow-300 rounded-full mx-1' />
 				<span className='block w-4 h-4 border-2 border-navy bg-green-400 rounded-full' />
 			</div>
-			<div className='p-6 lg:p-8 bg-background h-full'>
+			<div className='p-4 lg:p-6 bg-background h-full'>
 				{children}
 			</div>
 		</div>

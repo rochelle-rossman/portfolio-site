@@ -31,11 +31,14 @@ const ToolsMarquee = () => (
 			<MarqueeFade side='right' />
 			<MarqueeContent speed={30}>
 				{tools.map((tool, index) => (
-					<MarqueeItem key={index} className='mx-4 border-2 p-4 rounded-full dark:bg-foreground/90'>
+					<MarqueeItem
+						key={index}
+						className='border-2 p-4 mx-1 sm:mx-2 md:mx-3 rounded-full dark:bg-foreground/90'
+					>
 						<Image
 							alt={tool.name}
 							title={tool.name}
-							className='h-10 w-10 md:h-16 md:w-16'
+							className='h-8 w-8 sm:h-12 sm:w-12 md:h-16 md:w-16'
 							src={tool.image}
 							width={128}
 							height={128}

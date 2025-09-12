@@ -15,8 +15,6 @@ export const Marquee = ({ className, ...props }: MarqueeProps) => (
   />
 );
 
-
-// Add children prop for drag fallback
 export type MarqueeContentProps = FastMarqueeProps & {
   children: ReactNode;
 };
@@ -38,47 +36,6 @@ export const MarqueeContent = ({
     mediaQuery.addEventListener('change', handler);
     return () => mediaQuery.removeEventListener('change', handler);
   }, []);
-
-  // Unified pointer events for drag-to-scroll
-  useEffect(() => {
-    if (!isReducedMotion) return;
-    const container = containerRef.current;
-    if (!container) return;
-
-    let pointerDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    const onPointerDown = (e: PointerEvent) => {
-      pointerDown = true;
-      container.setPointerCapture(e.pointerId);
-      startX = e.clientX;
-      scrollLeft = container.scrollLeft;
-      container.classList.add('cursor-grabbing');
-    };
-    const onPointerMove = (e: PointerEvent) => {
-      if (!pointerDown) return;
-      e.preventDefault();
-      const x = e.clientX;
-      const walk = (x - startX) * 1.5;
-      container.scrollLeft = scrollLeft - walk;
-    };
-    const onPointerUp = (e: PointerEvent) => {
-      pointerDown = false;
-      container.releasePointerCapture(e.pointerId);
-      container.classList.remove('cursor-grabbing');
-    };
-    container.addEventListener('pointerdown', onPointerDown);
-    container.addEventListener('pointermove', onPointerMove);
-    container.addEventListener('pointerup', onPointerUp);
-    container.addEventListener('pointerleave', onPointerUp);
-    return () => {
-      container.removeEventListener('pointerdown', onPointerDown);
-      container.removeEventListener('pointermove', onPointerMove);
-      container.removeEventListener('pointerup', onPointerUp);
-      container.removeEventListener('pointerleave', onPointerUp);
-    };
-  }, [isReducedMotion]);
 
   if (isReducedMotion) {
     return (
@@ -121,7 +78,7 @@ export const MarqueeFade = ({
 }: MarqueeFadeProps) => (
   <div
     className={cn(
-      'absolute top-0 bottom-0 z-10 h-full w-24 from-background to-transparent',
+      'absolute top-0 bottom-0 z-10 h-full w-4 md:w-10 lg:w-16 from-background to-transparent',
       side === 'left' ? 'left-0 bg-gradient-to-r' : 'right-0 bg-gradient-to-l',
       className
     )}

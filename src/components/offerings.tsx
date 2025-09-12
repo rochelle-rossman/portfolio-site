@@ -17,6 +17,22 @@ export default function Offerings() {
 			<h2 className='mb-4'>What I Offer</h2>
 			<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
 				<Card>
+					<h2>In need of a web developer?</h2>
+					<p className='text-lg'>
+						Let&apos;s discuss your project and bring your vision to
+						life.
+					</p>
+					<Link href='/contact'>
+						<Button
+							variant='branded'
+							className='mt-2 w-full text-lg'
+						>
+							Get in Touch
+							<ArrowRight />
+						</Button>
+					</Link>
+				</Card>
+				<Card>
 					<Braces />
 					<h3>Custom Web Development</h3>
 					<p>
@@ -71,22 +87,6 @@ export default function Offerings() {
 						on-page optimization, I help improve your website&#39;s
 						visibility and organic traffic.
 					</p>
-				</Card>
-				<Card>
-					<h2>In need of a web developer?</h2>
-					<p className='text-lg'>
-						Let&apos;s discuss your project and bring your vision to
-						life.
-					</p>
-					<Link href='/contact'>
-						<Button
-							variant='branded'
-							className='mt-2 w-full text-lg'
-						>
-							Get in Touch
-							<ArrowRight />
-						</Button>
-					</Link>
 				</Card>
 			</div>
 		</BrowserContainer>

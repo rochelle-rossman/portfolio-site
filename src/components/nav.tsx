@@ -1,97 +1,260 @@
-// 'use client'
-// import { useState } from 'react'
-// import { ThemeToggle } from '@/components/theme-toggle'
-// import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-// import { DialogTitle } from '@/components/ui/dialog'
-// import { Separator } from '@/components/ui/separator'
-// import { Menu } from 'lucide-react'
-// import NavLink from '@/components/nav-link'
-// import Image from 'next/image'
-// import Link from 'next/link'
+'use client'
+import BubbleNavItem from '@/components/nav-link'
+import { Button } from '@/components/ui/button'
+import { useGSAP } from '@gsap/react'
+import { gsap } from 'gsap'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
+import { ThemeToggle } from './theme-toggle'
 
-// export default function Navbar() {
-// 	const [isOpen, setIsOpen] = useState(false)
+const navItems = [
+	{
+		label: 'home',
+		href: '/',
+		ariaLabel: 'Home',
+		className:
+			'-rotate-2 md:-rotate-6 lg:-rotate-8 hover:bg-gold hover:text-navy',
+	},
+	{
+		label: 'projects',
+		href: '/projects',
+		ariaLabel: 'Projects',
+		className:
+			'rotate-2 md:rotate-6 lg:rotate-8 hover:bg-coral hover:text-navy',
+	},
+	{
+		label: 'résumé',
+		href: '/resume',
+		ariaLabel: 'Résumé',
+		className:
+			'-rotate-2 md:-rotate-6 lg:-rotate-8 hover:bg-orange hover:text-navy',
+	},
+	{
+		label: 'contact',
+		href: '/contact',
+		ariaLabel: 'Contact',
+		className:
+			'rotate-2 md:rotate-6 lg:rotate-8 hover:bg-teal hover:text-navy',
+	},
+]
 
-// 	const handleLinkClick = () => {
-// 		setIsOpen(false)
-// 	}
+export default function BubbleNav() {
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const [showMenu, setShowMenu] = useState(false)
+	const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+	const bubblesRef = useRef<HTMLAnchorElement[]>([])
+	const labelRefs = useRef<HTMLSpanElement[]>([])
+	const menuRef = useRef<HTMLDivElement>(null)
+	const toggleButtonRef = useRef<HTMLButtonElement>(null)
+	const prevMenuOpen = useRef(false)
 
-// 	return (
-// 		<nav className='py-4 md:py-6 px-0 mb-6 flex gap-6 items-center justify-between'>
-// 			<Link
-// 				href='/'
-// 				title='Home'
-// 			>
-// 				<Image
-// 					src='/lightbulb-screen.png'
-// 					width={200}
-// 					height={200}
-// 					alt=''
-// 					className='h-16 w-16 md:h-24 md:w-24 object-contain'
-// 				/>
-// 			</Link>
+	// Focus management for accessibility (WCAG)
+	useEffect(() => {
+		if (isMenuOpen && showMenu) {
+			const firstMenuItem = bubblesRef.current[0]
+			if (firstMenuItem) firstMenuItem.focus()
+		} else if (!isMenuOpen && prevMenuOpen.current) {
+			if (toggleButtonRef.current) toggleButtonRef.current.focus()
+		}
+	}, [isMenuOpen, showMenu])
 
-// 			{/* Desktop Nav */}
-// 			<div className='hidden md:flex text-xl gap-8 items-center'>
-// 				<NavLink href='/about'>About</NavLink>
-// 				<NavLink href='/projects'>Projects</NavLink>
-// 				<NavLink href='/resume'>Résumé</NavLink>
-// 				<NavLink href='/contact'>Contact</NavLink>
-// 			</div>
-// 			<div className='flex gap-4'>
-// 				<ThemeToggle />
+	// Keyboard navigation for menu
+	const handleMenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+		if (!isMenuOpen) return
+		const bubbles = bubblesRef.current.filter(Boolean)
+		const currentIndex = bubbles.findIndex(
+			(el: HTMLAnchorElement) => el === document.activeElement
+		)
+		if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+			e.preventDefault()
+			const nextIndex = (currentIndex + 1) % bubbles.length
+			bubbles[nextIndex]?.focus()
+		} else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+			e.preventDefault()
+			const prevIndex =
+				(currentIndex - 1 + bubbles.length) % bubbles.length
+			bubbles[prevIndex]?.focus()
+		} else if (e.key === 'Escape') {
+			e.preventDefault()
+			setIsMenuOpen(false)
+		}
+	}
 
-// 				{/* Mobile Nav (Sheet) */}
-// 				<div className='flex md:hidden items-center'>
-// 					<div />
-// 					<Sheet
-// 						open={isOpen}
-// 						onOpenChange={setIsOpen}
-// 					>
-// 						<SheetTrigger asChild>
-// 							<Menu
-// 								aria-label='Open menu'
-// 								className='cursor-pointer'
-// 							/>
-// 						</SheetTrigger>
-// 						<SheetContent
-// 							side='left'
-// 							className='w-full bg-background'
-// 						>
-// 							<DialogTitle className='sr-only'>Menu</DialogTitle>
-// 							<nav className='flex flex-col p-6 gap-4 mt-8 text-lg'>
-// 								<NavLink
-// 									onClick={handleLinkClick}
-// 									href='/'
-// 								>
-// 									About
-// 								</NavLink>
-// 								<Separator />
-// 								<NavLink
-// 									onClick={handleLinkClick}
-// 									href='/projects'
-// 								>
-// 									Projects
-// 								</NavLink>
-// 								<Separator />
-// 								<NavLink
-// 									onClick={handleLinkClick}
-// 									href='/resume'
-// 								>
-// 									Résumé
-// 								</NavLink>
-// 								<Separator />
-// 								<NavLink
-// 									onClick={handleLinkClick}
-// 									href='/contact'
-// 								>
-// 									Contact
-// 								</NavLink>
-// 							</nav>
-// 						</SheetContent>
-// 					</Sheet>
-// 				</div>
-// 			</div>
-// 		</nav>
-// 	)
-// }
+	// Detect prefers-reduced-motion
+	useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+			setPrefersReducedMotion(media.matches)
+			const handler = () => setPrefersReducedMotion(media.matches)
+			media.addEventListener('change', handler)
+			return () => media.removeEventListener('change', handler)
+		}
+	}, [])
+
+	const handleToggle = () => {
+		setIsMenuOpen((open) => !open)
+	}
+	// Show/hide menu instantly if prefers reduced motion
+	useEffect(() => {
+		if (prefersReducedMotion) {
+			setShowMenu(isMenuOpen)
+			prevMenuOpen.current = isMenuOpen
+			return
+		}
+		// Show menu when opening
+		if (isMenuOpen) setShowMenu(true)
+	}, [isMenuOpen, prefersReducedMotion])
+
+	// Animate open/close if not prefers reduced motion
+	useGSAP(
+		() => {
+			if (prefersReducedMotion) return
+			const bubbles = bubblesRef.current.filter(Boolean)
+			const labels = labelRefs.current.filter(Boolean)
+			if (isMenuOpen && showMenu) {
+				gsap.set(bubbles, { scale: 0, transformOrigin: '50% 50%' })
+				gsap.set(labels, { y: 24, autoAlpha: 0 })
+				bubbles.forEach((bubble, i) => {
+					// const delay = i * 0.12 + gsap.utils.random(-0.05, 0.05)
+					const tl = gsap.timeline()
+					tl.to(bubble, {
+						scale: 1,
+						duration: 0.8,
+						ease: 'back.out(1.5)',
+						onComplete: () => {
+							gsap.set(bubble, { clearProps: 'transform' })
+						},
+					})
+					if (labels[i]) {
+						tl.to(
+							labels[i],
+							{
+								y: 0,
+								autoAlpha: 1,
+								duration: 0.5,
+								ease: 'power3.out',
+							},
+							'-=0.45'
+						)
+					}
+				})
+			}
+			// Animate close
+			if (!isMenuOpen && prevMenuOpen.current && showMenu) {
+				bubbles.forEach((bubble, i) => {
+					const tl = gsap.timeline()
+					tl.to(bubble, {
+						scale: 0,
+						duration: 0.3,
+						ease: 'back.in(1.5)',
+						onComplete: () => {
+							gsap.set(bubble, { clearProps: 'transform' })
+						},
+					})
+					if (labels[i]) {
+						tl.to(labels[i], {
+							y: 24,
+							autoAlpha: 0,
+							duration: 0.3,
+							ease: 'power3.in',
+						})
+					}
+				})
+				// Hide after animation
+				setTimeout(() => setShowMenu(false), 350 + bubbles.length * 80)
+			}
+			prevMenuOpen.current = isMenuOpen
+		},
+		{
+			dependencies: [isMenuOpen, showMenu, prefersReducedMotion],
+			scope: menuRef,
+		}
+	)
+
+	return (
+		<nav
+			className='flex justify-center fixed top-0 left-0 right-0 z-50 w-full bg-gradient-radial border-b-2 shadow-2xl'
+			aria-label='Main navigation'
+		>
+			<div className='px-4 py-2 max-w-5xl flex items-center justify-between w-full'>
+				<Link
+					href='/'
+					title='Home'
+					className='flex items-center gap-4'
+				>
+					<div className='h-16 w-16 md:h-18 md:w-18 drop-shadow-[-5px_5px_var(--color-teal)] dark:drop-shadow-[-5px_5px_var(--color-indigo)]'>
+						<Image
+							src='/lightbulb-screen.png'
+							width={200}
+							height={200}
+							alt=''
+							className=' object-contain'
+						/>
+					</div>
+
+					{/* <span className='text-3xl font-heading drop-shadow-[-2px_2px_var(--color-teal)] dark:drop-shadow-[-2px_2px_var(--color-indigo)] hidden sm:block'>
+						Rochelle Rossman
+					</span> */}
+				</Link>
+				<div className='flex gap-4 items-center'>
+					<ThemeToggle />
+					<Button
+						variant='branded'
+						onClick={handleToggle}
+						aria-label='Toggle navigation menu'
+						title='Toggle navigation menu'
+						ref={toggleButtonRef}
+					>
+						<Menu className='w-6 h-6' />
+					</Button>
+					{showMenu && (
+						<div
+							className='fixed inset-0 flex items-center bg-background/80 justify-center pointer-events-none z-[1000]'
+							ref={menuRef}
+							role='dialog'
+							aria-modal='true'
+						>
+							<Button
+								variant='branded'
+								onClick={handleToggle}
+								className='absolute top-6 right-6 pointer-events-auto z-50'
+								aria-label='Close navigation menu'
+								title='Close navigation menu'
+							>
+								<X className='w-6 h-6' />
+							</Button>
+							<div
+								className='absolute top-6 px-8 mt-8 mx-auto w-full pointer-events-auto grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
+								role='menu'
+								aria-label='Menu links'
+								onKeyDown={handleMenuKeyDown}
+								tabIndex={-1}
+							>
+								{navItems.map((item, i) => (
+									<BubbleNavItem
+										key={item.href}
+										href={item.href}
+										label={item.label}
+										ariaLabel={item.ariaLabel}
+										className={item.className}
+										ref={(el: HTMLAnchorElement | null) => {
+											bubblesRef.current[i] = el!
+										}}
+										labelRef={(
+											el: HTMLSpanElement | null
+										) => {
+											labelRefs.current[i] = el!
+										}}
+										onClick={() => setIsMenuOpen(false)}
+									/>
+								))}
+							</div>
+						</div>
+					)}
+				</div>
+			</div>
+		</nav>
+	)
+}

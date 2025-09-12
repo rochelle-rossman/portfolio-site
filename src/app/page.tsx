@@ -8,8 +8,8 @@ export default function Home() {
 		<section className='flex flex-col gap-8 md:gap-10 items-center mx-auto motion-safe:animate-fade-up'>
 			<Hero />
 			<ToolsMarquee />
-			<About />
 			<Offerings />
+			<About />
 		</section>
 	)
 }

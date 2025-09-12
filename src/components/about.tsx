@@ -1,9 +1,12 @@
-import Image from 'next/image'
 import BrowserContainer from '@/components/browser-container'
+import Image from 'next/image'
 
 export default function About() {
 	return (
-		<BrowserContainer id='about'>
+		<BrowserContainer
+			id='about'
+			className='scroll-mt-24'
+		>
 			<section className='mx-auto'>
 				<div className='flex flex-col items-center text-center md:block md:text-left'>
 					<span className='float-circle'>
@@ -87,13 +90,31 @@ export default function About() {
 					dogs, Astrid and Ty, and I’m always on the hunt for the best
 					sandwiches.
 				</p>
-				<p className='md:text-lg mb-4'>
-					Whether you’re looking for a long-term teammate or a
-					freelance partner — <br />
-					<strong className='text-lg md:text-xl inline-block mt-2'>
-						Let’s build something meaningful together.
-					</strong>
-				</p>
+				{/* CTA Section */}
+				<div className='mt-10 flex flex-col items-center gap-4 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-xl p-6 shadow-lg'>
+					<h2 className='text-2xl font-bold text-indigo-700 dark:text-indigo-200 mb-1'>
+						Ready to collaborate?
+					</h2>
+					<p className='text-base md:text-lg text-gray-700 dark:text-gray-200 mb-4 text-center max-w-2xl'>
+						Whether you’re seeking a dedicated full-time web
+						developer or a creative freelance partner, let’s connect
+						and build something meaningful together.
+					</p>
+					<div className='flex flex-col sm:flex-row gap-3'>
+						<a
+							href='/resume'
+							className='inline-block px-6 py-2 rounded-md bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition'
+						>
+							Hire Full-Time
+						</a>
+						<a
+							href='/contact'
+							className='inline-block px-6 py-2 rounded-md bg-purple-600 text-white font-semibold hover:bg-purple-700 transition'
+						>
+							Start a Project
+						</a>
+					</div>
+				</div>
 			</section>
 		</BrowserContainer>
 	)

@@ -31,7 +31,7 @@ export default function ResumePage() {
 	]
 
 	return (
-		<section className='flex flex-col items-center mx-auto'>
+		<section className='flex flex-col gap-8 md:gap-10 items-center mx-auto motion-safe:animate-fade-up'>
 			<h1>Résumé</h1>
 
 			<div className='bg-background rounded-xl border-2 border-navy shadow-xl p-4 sm:p-6 motion-safe:animate-fade-up'>

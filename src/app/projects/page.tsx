@@ -5,7 +5,7 @@ import { projects } from '@/lib/project-data'
 
 export default function Projects() {
 	return (
-		<section>
+		<section className='flex flex-col gap-8 md:gap-10 items-center mx-auto motion-safe:animate-fade-up'>
 			<h1>Project Samples</h1>
 			<div className='flex flex-col gap-8 motion-safe:animate-fade-up'>
 				{projects.map((project, i) => (
