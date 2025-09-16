@@ -32,7 +32,7 @@ function SocialLink({ href, icon: Icon, ariaLabel }: SocialLinkProps) {
 
 function SocialLinks() {
 	return (
-		<div className='flex text-xl gap-3.5 float-right'>
+		<div className='flex text-2xl gap-4'>
 			{socialLinks.map((link, index) => (
 				<SocialLink
 					key={index}
@@ -47,7 +47,7 @@ function SocialLinks() {
 
 export default function Footer() {
 	return (
-		<footer className='flex justify-center mt-12 bg-gradient-radial border-t-2 w-full z-50'>
+		<footer className='flex justify-center mt-12 w-full z-50'>
 			<div className='px-4 py-8 max-w-5xl flex items-center justify-between w-full'>
 				<small>
 					<time>© {YEAR}</time> Rochelle Rossman

@@ -34,7 +34,7 @@ export default function ResumePage() {
 		<section className='flex flex-col gap-8 md:gap-10 items-center mx-auto motion-safe:animate-fade-up'>
 			<h1>Résumé</h1>
 
-			<div className='bg-background rounded-xl border-2 border-navy shadow-xl p-4 sm:p-6 motion-safe:animate-fade-up'>
+			<div className='bg-background rounded-xl border-2 border-navy shadow-xl p-4 sm:p-6'>
 				<div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-10'>
 					<div>
 						<h2 className='text-4xl text-center md:text-left'>
@@ -46,7 +46,7 @@ export default function ResumePage() {
 						</p>
 					</div>
 
-					<div className='flex flex-col gap-4'>
+					<div className='flex flex-col gap-4 min-w-1/3'>
 						<Link
 							href='/rochelle-rossman-resume.pdf'
 							target='_blank'

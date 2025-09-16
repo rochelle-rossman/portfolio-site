@@ -194,9 +194,6 @@ export default function BubbleNav() {
 						/>
 					</div>
 
-					{/* <span className='text-3xl font-heading drop-shadow-[-2px_2px_var(--color-teal)] dark:drop-shadow-[-2px_2px_var(--color-indigo)] hidden sm:block'>
-						Rochelle Rossman
-					</span> */}
 				</Link>
 				<div className='flex gap-4 items-center'>
 					<ThemeToggle />

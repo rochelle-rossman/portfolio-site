@@ -35,7 +35,7 @@ export default function ProjectPage({
 	return (
 		<div className='flex flex-col gap-8'>
 			<ProjectDetails {...project} />
-			<div className='flex justify-between flex-wrap gap-2 w-full'>
+			<div className='flex justify-between flex-wrap gap-4 w-full'>
 				<div>
 					<Link href='/projects'>
 						<Button
@@ -46,7 +46,7 @@ export default function ProjectPage({
 						</Button>
 					</Link>
 				</div>
-				<div className='flex flex-col gap-2 w-full'>
+				<div className='flex flex-col gap-4'>
 					{projectIndex > 0 && (
 						<Link href={`/projects/${prevProjectSlug}`}>
 							<Button variant='branded'>

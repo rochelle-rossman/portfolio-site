@@ -1,5 +1,9 @@
 import BrowserContainer from '@/components/browser-container'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { ArrowRight } from 'lucide-react'
+
 
 export default function About() {
 	return (
@@ -91,28 +95,53 @@ export default function About() {
 					sandwiches.
 				</p>
 				{/* CTA Section */}
-				<div className='mt-10 flex flex-col items-center gap-4 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-xl p-6 shadow-lg'>
-					<h2 className='text-2xl font-bold text-indigo-700 dark:text-indigo-200 mb-1'>
-						Ready to collaborate?
-					</h2>
-					<p className='text-base md:text-lg text-gray-700 dark:text-gray-200 mb-4 text-center max-w-2xl'>
-						Whether you’re seeking a dedicated full-time web
-						developer or a creative freelance partner, let’s connect
-						and build something meaningful together.
-					</p>
-					<div className='flex flex-col sm:flex-row gap-3'>
-						<a
-							href='/resume'
-							className='inline-block px-6 py-2 rounded-md bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition'
-						>
-							Hire Full-Time
-						</a>
-						<a
-							href='/contact'
-							className='inline-block px-6 py-2 rounded-md bg-purple-600 text-white font-semibold hover:bg-purple-700 transition'
-						>
-							Start a Project
-						</a>
+				<div className='mt-10 flex flex-col sm:flex-row gap-6 items-center border-2 rounded-xl p-6 shadow-lg'>
+					<div className='flex flex-col items-center gap-4 text-center'>
+						<h2 className='text-2xl md:text-3xl font-bold'>
+							Ready to collaborate?
+						</h2>
+
+						<p className='text-base md:text-lg mb-4 max-w-2xl'>
+							Whether you’re seeking a dedicated full-time web
+							developer or a creative freelance partner, let’s
+							connect and build something meaningful together.
+						</p>
+						<div className='flex flex-col gap-4 w-full'>
+							<Link
+								href='/resume'
+								className='w-full'
+							>
+								<Button
+									className='w-full'
+									variant={'branded'}
+									role='link'
+								>
+									View My Résumé
+									<ArrowRight />
+								</Button>
+							</Link>
+							<Link
+								href='/contact'
+								className='w-full'
+							>
+								<Button
+									className='w-full'
+									variant={'branded'}
+								>
+									Start Your Project
+									<ArrowRight />
+								</Button>
+							</Link>
+						</div>
+					</div>
+					<div>
+						<Image
+							src='/lightbulb-screen.png'
+							alt=''
+							width={300}
+							height={300}
+							className='object-scale-down'
+						/>
 					</div>
 				</div>
 			</section>
