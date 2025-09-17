@@ -3,90 +3,90 @@ import Card from '@/components/card'
 import {
 	Braces,
 	PersonStanding,
-	ScanSearch,
 	Proportions,
 	ArrowBigUpDash,
 	ArrowRight,
+	HandHelping,
+	AppWindow,
 } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from './ui/button'
 
 export default function Offerings() {
+	const offerings = [
+		{
+			icon: Braces,
+			title: 'Custom Development',
+			desc: 'Build tailored websites and web apps with clean, scalable code that performs reliably.',
+		},
+		{
+			icon: Proportions,
+			title: 'Responsive Design',
+			desc: 'Ensure your site looks and works beautifully on all devices, from desktop to mobile.',
+			color: 'bg-blue-100 dark:bg-blue-900',
+		},
+		{
+			icon: PersonStanding,
+			title: 'Accessibility',
+			desc: 'Create inclusive, WCAG-compliant websites that work for all users.',
+		},
+		{
+			icon: ArrowBigUpDash,
+			title: 'Performance & SEO',
+			desc: 'Optimize speed, smooth interactions, and search engine visibility for better user engagement.',
+		},
+		{
+			icon: HandHelping,
+			title: 'Collaboration',
+			desc: 'Maintain clear communication, reliable delivery, and ongoing support throughout your project.',
+		},
+	]
+
 	return (
-		<BrowserContainer>
-			<h2 className='mb-4'>What I Offer</h2>
-			<div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+		<BrowserContainer id='offerings'>
+			<h2 className='mb-8 text-3xl font-semibold text-center md:text-left'>
+				What I Offer
+			</h2>
+
+			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+				{offerings.map((item, idx) => {
+					const Icon = item.icon
+					return (
+						<Card key={idx}>
+							<div className='flex items-center justify-center w-12 h-12 text-2xl mx-auto'>
+								<Icon aria-label={item.title + ' icon'} />
+							</div>
+							<h3 className='text-center'>{item.title}</h3>
+							<p className='text-center'>{item.desc}</p>
+						</Card>
+					)
+				})}
+
+				{/* CTA Card */}
 				<Card>
-					<h2>In need of a web developer?</h2>
-					<p className='text-lg'>
+					<div className='flex items-center justify-center w-12 h-12 text-2xl mx-auto'>
+						<AppWindow />
+					</div>
+
+					<h3 className='text-center'>Need a web developer?</h3>
+					<p className='text-center'>
 						Let&apos;s discuss your project and bring your vision to
 						life.
 					</p>
-					<Link href='/contact'>
-						<Button
-							variant='branded'
-							className='mt-2 w-full text-lg'
+					<div className='w-full'>
+						<Link
+							href='/contact'
+							className='w-full'
 						>
-							Get in Touch
-							<ArrowRight />
-						</Button>
-					</Link>
-				</Card>
-				<Card>
-					<Braces />
-					<h3>Custom Web Development</h3>
-					<p>
-						From concept to launch, I create websites and web
-						applications tailored to your unique vision. With a
-						focus on clean code, scalability, and performance, I
-						ensure your digital presence is both impactful and
-						reliable.
-					</p>
-				</Card>
-
-				<Card>
-					<Proportions />
-					<h3>Responsive Design</h3>
-					<p>
-						I ensure that your website looks great and functions
-						well on all devices, from desktops to mobile phones. By
-						following responsive design principles, I create fluid
-						layouts that adapt to different screen sizes and
-						orientations.
-					</p>
-				</Card>
-
-				<Card>
-					<PersonStanding />
-					<h3>Accessibility</h3>
-					<p>
-						I prioritize accessibility in all my work and I strive
-						to create inclusive digital experiences for all users. I
-						follow WCAG guidelines and best practices to ensure that
-						the websites I build are usable for everyone, regardless
-						of their abilities or devices.
-					</p>
-				</Card>
-
-				<Card>
-					<ArrowBigUpDash />
-					<h3>Performance Optimization</h3>
-					<p>
-						I optimize your website for speed and performance,
-						ensuring fast loading times and a smooth user
-						experience.
-					</p>
-				</Card>
-
-				<Card>
-					<ScanSearch />
-					<h3>SEO Optimization</h3>
-					<p>
-						I implement SEO best practices to ensure your website is
-						optimized for search engines. From keyword research to
-						on-page optimization, I help improve your website&#39;s
-						visibility and organic traffic.
-					</p>
+							<Button
+								variant='branded'
+								className='w-full'
+							>
+								Get in Touch
+								<ArrowRight />
+							</Button>
+						</Link>
+					</div>
 				</Card>
 			</div>
 		</BrowserContainer>

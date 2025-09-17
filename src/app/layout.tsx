@@ -48,7 +48,7 @@ export default function RootLayout({
 					<BackgroundDecor />
 					<BubbleNav />
 					<main
-						className='relative z-10 min-h-screen px-4 max-w-5xl w-full mt-32'
+						className='relative z-10 min-h-screen px-4 md:px-6 max-w-5xl w-full mt-28 md:mt-32 lg:mt-36'
 						role='main'
 					>
 						{children}

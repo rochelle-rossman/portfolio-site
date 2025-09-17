@@ -15,28 +15,28 @@ const navItems = [
 		href: '/',
 		ariaLabel: 'Home',
 		className:
-			'-rotate-2 md:-rotate-6 lg:-rotate-8 hover:bg-gold hover:text-navy',
+			'-rotate-2 md:-rotate-8 hover:bg-gold hover:text-navy',
 	},
 	{
 		label: 'projects',
 		href: '/projects',
 		ariaLabel: 'Projects',
 		className:
-			'rotate-2 md:rotate-6 lg:rotate-8 hover:bg-coral hover:text-navy',
+			'rotate-2 md:rotate-8 hover:bg-coral hover:text-navy',
 	},
 	{
 		label: 'résumé',
 		href: '/resume',
 		ariaLabel: 'Résumé',
 		className:
-			'-rotate-2 md:-rotate-6 lg:-rotate-8 hover:bg-orange hover:text-navy',
+			'-rotate-2 md:-rotate-8 hover:bg-orange hover:text-navy',
 	},
 	{
 		label: 'contact',
 		href: '/contact',
 		ariaLabel: 'Contact',
 		className:
-			'rotate-2 md:rotate-6 lg:rotate-8 hover:bg-teal hover:text-navy',
+			'rotate-2 md:rotate-8 hover:bg-teal hover:text-navy',
 	},
 ]
 
@@ -107,22 +107,20 @@ export default function BubbleNav() {
 		if (isMenuOpen) setShowMenu(true)
 	}, [isMenuOpen, prefersReducedMotion])
 
-	// Animate open/close if not prefers reduced motion
 	useGSAP(
 		() => {
 			if (prefersReducedMotion) return
 			const bubbles = bubblesRef.current.filter(Boolean)
 			const labels = labelRefs.current.filter(Boolean)
 			if (isMenuOpen && showMenu) {
-				gsap.set(bubbles, { scale: 0, transformOrigin: '50% 50%' })
+				gsap.set(bubbles, { scale: 0 })
 				gsap.set(labels, { y: 24, autoAlpha: 0 })
 				bubbles.forEach((bubble, i) => {
-					// const delay = i * 0.12 + gsap.utils.random(-0.05, 0.05)
 					const tl = gsap.timeline()
 					tl.to(bubble, {
 						scale: 1,
-						duration: 0.8,
-						ease: 'back.out(1.5)',
+						duration: 0.5,
+						ease: 'expoScale(10,2.5,power2.out)',
 						onComplete: () => {
 							gsap.set(bubble, { clearProps: 'transform' })
 						},
@@ -134,7 +132,7 @@ export default function BubbleNav() {
 								y: 0,
 								autoAlpha: 1,
 								duration: 0.5,
-								ease: 'power3.out',
+								ease: 'back.in(1.5)',
 							},
 							'-=0.45'
 						)

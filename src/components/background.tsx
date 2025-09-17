@@ -2,29 +2,29 @@
 import Image from 'next/image'
 
 const twinkles = [
-	{ top: '12%', left: '5%', size: 30 },
+	{ top: '15%', left: '5%', size: 30 },
 	{ top: '22%', left: '90%', size: 40, flip: true },
-	{ top: '60%', left: '8%', size: 70 },
+	{ top: '60%', left: '8%', size: 60 },
 	{ top: '75%', left: '80%', size: 25, flip: true },
-	{ top: '90%', left: '90%', size: 35 }
+	{ top: '85%', left: '40%', size: 30 },
 ]
 
 const clouds = [
-	{ top: '20%', left: '-5%', size: 270 },
-	{ top: '40%', left: '80%', size: 225 },
-	{ top: '75%', left: '10%', size: 250 }
+	{ top: '15%', left: '-5%', size: 240 },
+	{ top: '30%', left: '50%', size: 220 },
+	{ top: '75%', left: '15%', size: 205 },
 ]
 
 export default function BackgroundDecor() {
 	return (
 		<div
-			className='fixed inset-0 z-0 pointer-events-none animate-[move-background_700s_ease-in-out_infinite]'
+			className='fixed inset-0 z-0 pointer-events-none moving-background'
 			aria-hidden='true'
 		>
 			{twinkles.map((twinkle, i) => (
 				<div
 					key={`twinkle-${i}`}
-					className='absolute scale-50 md:scale-75 lg:scale-100 motion-safe:animate-[pulse_5s_ease-in-out_infinite]'
+					className='absolute scale-75 lg:scale-100 twinkle'
 					style={{
 						top: twinkle.top,
 						left: twinkle.left,
@@ -48,7 +48,7 @@ export default function BackgroundDecor() {
 			{clouds.map((cloud, i) => (
 				<div
 					key={`cloud-${i}`}
-					className='absolute scale-50 md:scale-75 lg:scale-100 motion-safe:animate-[float_10s_ease-in-out_infinite]'
+					className='absolute scale-75 lg:scale-100 floating'
 					style={{
 						top: cloud.top,
 						left: cloud.left,

@@ -14,7 +14,6 @@
   --color-indigo: oklch(42.142% 0.19215 293.758);
   --color-navy: oklch(9.237% 0.02109 239.797);
   --breakpoint-xs: var(--breakpoint-xs);
-  --breakpoint-xxs: var(--breakpoint-xxs);
   --gradient-gold-teal-coral: linear-gradient(to right, var(--color-gold), var(--color-teal), var(--color-coral));
   --radius: 0.625rem;
   --background: oklch(98.5% 0 0);
@@ -34,7 +33,8 @@
   --destructive: var(--color-coral);
   --border: var(--color-navy);
   --input: oklch(0.923 0.003 48.717);
-  --ring:oklch(0.6597 0.1767 281.14);;
+  --ring: oklch(0.6597 0.1767 281.14);
+  ;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -62,7 +62,6 @@
   --color-indigo: var(--color-indigo);
   --color-navy: var(--color-navy);
   --breakpoint-xs: 30rem;
-  --breakpoint-xxs: 25rem;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -167,10 +166,10 @@
         oklch(0.75 0.1 189.5),
         oklch(0.67 0.15 20.62),
         oklch(0.56 0.12 295.3));
-    background-size: 200% 200%;
+    background-size: 200% 150%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: radial-drift 18s ease-in-out infinite;
+    animation: radial-drift 8s ease-in-out infinite;
   }
 
   .dark .bg-gradient-radial {
@@ -194,12 +193,11 @@
       }
 
       to {
-        -webkit-transform: translate3d(70vw, 0px, 0px);
+        -webkit-transform: translate3d(100vw, 0px, 0px);
       }
     }
 
     @keyframes radial-drift {
-
       0%,
       100% {
         background-position: 20% 25%;
@@ -211,35 +209,26 @@
     }
 
     @keyframes twinkle {
-      0% {
-        opacity: 0.4;
-      }
-
-      30% {
-        opacity: 1;
-      }
-
-      70% {
-        opacity: 0.2;
-      }
-
+      0%,
       100% {
         opacity: 1;
+      }
+
+      50% {
+        opacity: 0.6;
       }
     }
 
     @keyframes float {
-      0% {
-        transform: translatey(0px);
-      }
-
-      50% {
-        transform: translatey(-15px);
-      }
-
+      0%,
       100% {
         transform: translatey(0px);
       }
+      
+      50% {
+        transform: translatey(-10px);
+      }
+
     }
 
     @keyframes wave {
@@ -289,6 +278,18 @@
 
   .bg-radial-blend::before {
     mix-blend-mode: overlay;
+  }
+
+  .moving-background {
+    animation: move-background 800s ease-in-out infinite;
+  }
+
+  .twinkle {
+    animation: twinkle 3s ease 3s infinite;
+  }
+
+  .floating {
+    animation: float 12s ease 1s infinite;
   }
 
   .wave {
