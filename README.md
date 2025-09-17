@@ -6,8 +6,6 @@ A custom-built site to showcase my work as a web developer and front-end softwar
 
 [https://rochellerossman.dev](https://rochellerossman.dev)
 
-[![Portfolio Screenshot](./public/desktop-lighthouse-score.jpeg)](https://rochellerossman.dev)
-
 ## 🛠️ Tech Stack
 
 - **Framework**: [Next.js](https://nextjs.org/), React, TypeScript

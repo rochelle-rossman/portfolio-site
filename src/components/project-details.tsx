@@ -1,6 +1,6 @@
+import BrowserContainer from '@/components/browser-container'
 import Carousel from '@/components/carousel'
 import { Badge } from '@/components/ui/badge'
-import Card from '@/components/card'
 
 type ProjectData = {
 	title: string
@@ -33,7 +33,7 @@ export default function ProjectDetails({
 				<header>
 					<h1 className='text-4xl md:text-5xl'>{title}</h1>
 				</header>
-				<div className='flex flex-col gap-6 motion-safe:animate-fade-up bg-background dark:bg-background/90 rounded-lg shadow-xl p-6'>
+				<div className='flex flex-col gap-6 bg-background rounded-xl border-2 border-navy shadow-xl p-4 sm:p-6 motion-safe:animate-fade-up'>
 					<section>
 						<h2>Project Overview</h2>
 						<dl className='flex flex-col gap-4 text-sm font-semibold mb-6'>
@@ -131,10 +131,10 @@ export default function ProjectDetails({
 
 					{screenshots && (
 						<section>
-							<h3>Sample Screenshots</h3>
-							<Card>
+							<h3 className='mb-6'>Sample Screenshots</h3>
+							<BrowserContainer>
 								<Carousel images={screenshots} />
-							</Card>
+							</BrowserContainer>
 
 							{company === 'TechnologyAdvice' && (
 								<p className='mt-2 text-xs text-center text-muted-foreground italic'>

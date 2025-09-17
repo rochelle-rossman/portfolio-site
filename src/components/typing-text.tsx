@@ -61,7 +61,7 @@ const TypingText = ({
 			timeout = setTimeout(() => {
 				setDisplayedText((prev) => prev + currentText[charIndex])
 				setCharIndex((i) => i + 1)
-			}, 60)
+			}, 100)
 		} else if (!isDeleting && charIndex === currentText.length) {
 			// pause before deleting
 			timeout = setTimeout(() => {
@@ -72,21 +72,19 @@ const TypingText = ({
 			timeout = setTimeout(() => {
 				setDisplayedText((prev) => prev.slice(0, -1))
 				setCharIndex((i) => i - 1)
-			}, 40)
+			}, 60)
 		} else if (isDeleting && charIndex === 0) {
 			// move to next text
 			setIsDeleting(false)
-			if (textIndex < textArray.length - 1) {
-				setTextIndex((i) => i + 1)
-			}
+			setTextIndex((i) => (i + 1) % textArray.length)
 		}
 
 		return () => clearTimeout(timeout)
 	}, [charIndex, textIndex, isDeleting, text, isReducedMotion])
 
 	return (
-		<div className={`inline-block whitespace-pre-wrap ${className}`}>
-			<strong>{displayedText}</strong>
+		<div className={`inline-block whitespace-pre-wrap ${className}`} >
+			{displayedText}
 
 			{!isReducedMotion && (
 				<span

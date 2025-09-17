@@ -1,32 +1,30 @@
-import React from 'react'
+// 'use client'
 import Image from 'next/image'
 
 const twinkles = [
-	{ top: '10%', left: '5%', size: 45 },
-	{ top: '22%', left: '87%', size: 60, flip: true },
-	{ top: '60%', left: '8%', size: 70 },
+	{ top: '15%', left: '5%', size: 30 },
+	{ top: '22%', left: '90%', size: 40, flip: true },
+	{ top: '60%', left: '8%', size: 60 },
 	{ top: '75%', left: '80%', size: 25, flip: true },
-	{ top: '90%', left: '90%', size: 35 }
+	{ top: '85%', left: '40%', size: 30 },
 ]
 
 const clouds = [
-	{ top: '60%', left: '80%', size: 160 },
-	{ top: '20%', left: '5%', size: 120 },
-	{ top: '75%', left: '10%', size: 250 },
-	{ top: '44%', left: '15%', size: 190 },
-	{ top: '30%', left: '75%', size: 125 }
+	{ top: '15%', left: '-5%', size: 240 },
+	{ top: '30%', left: '50%', size: 220 },
+	{ top: '75%', left: '15%', size: 205 },
 ]
 
 export default function BackgroundDecor() {
 	return (
 		<div
-			className='absolute inset-0 z-0 overflow-hidden pointer-events-none'
+			className='fixed inset-0 z-0 pointer-events-none moving-background'
 			aria-hidden='true'
 		>
 			{twinkles.map((twinkle, i) => (
 				<div
 					key={`twinkle-${i}`}
-					className={`absolute`}
+					className='absolute scale-75 lg:scale-100 twinkle'
 					style={{
 						top: twinkle.top,
 						left: twinkle.left,
@@ -38,8 +36,9 @@ export default function BackgroundDecor() {
 						src='/twinkle.png'
 						alt=''
 						fill
+						sizes='(max-width: 640px) 32px, (max-width: 768px) 40px, (max-width: 1024px) 48px, 56px'
 						className={[
-							'object-contain opacity-90',
+							'object-contain',
 							twinkle.flip ? '-scale-x-100' : '',
 						].join(' ')}
 						priority={i === 0}
@@ -49,7 +48,7 @@ export default function BackgroundDecor() {
 			{clouds.map((cloud, i) => (
 				<div
 					key={`cloud-${i}`}
-					className='absolute'
+					className='absolute scale-75 lg:scale-100 floating'
 					style={{
 						top: cloud.top,
 						left: cloud.left,
@@ -62,6 +61,7 @@ export default function BackgroundDecor() {
 						alt=''
 						fill
 						className='object-contain opacity-90'
+						sizes='(max-width: 640px) 180px, (max-width: 768px) 260px, (max-width: 1024px) 320px, 350px'
 					/>
 				</div>
 			))}

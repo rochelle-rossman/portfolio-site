@@ -183,8 +183,5 @@ export const projects = [
 			{ title: 'Easy Content Updates', description: 'Project data and content can be updated without modifying layout code.' }
 		],
 		screenshots: portfolioScreenshots,
-		links: [
-			{ title: 'GitHub Repository', url: 'https://github.com/rochelle-rossman/portfolio-site' }
-		]
 	}
 ]

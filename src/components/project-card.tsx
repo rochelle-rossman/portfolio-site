@@ -1,6 +1,6 @@
+import BrowserContainer from '@/components/browser-container'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import Card from '@/components/card'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,7 +16,7 @@ type ProjectData = {
 	techStack: string[]
 }
 
-export default function ProjectCard({
+export default function ProjectBrowserContainer({
 	title,
 	featuredImage,
 	role,
@@ -24,9 +24,9 @@ export default function ProjectCard({
 	techStack,
 }: ProjectData) {
 	return (
-		<Card className=''>
+		<BrowserContainer className=''>
 			<article>
-				<div className='flex flex-col-reverse md:flex-row gap-6 p-6'>
+				<div className='flex flex-col-reverse items-center md:flex-row gap-6'>
 					{featuredImage && (
 						<div className='md:w-1/3 w-full'>
 							<figure className=''>
@@ -96,6 +96,6 @@ export default function ProjectCard({
 					</div>
 				</div>
 			</article>
-		</Card>
+		</BrowserContainer>
 	)
 }

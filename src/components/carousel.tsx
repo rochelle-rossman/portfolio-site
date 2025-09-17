@@ -103,7 +103,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					variant='branded'
 					onClick={() => splideRef.current?.go('<')}
 					aria-label='Previous slide'
-					className='absolute top-1/2 left-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px]'
+					className='absolute top-1/2 left-0 sm:left-4 z-10 -translate-y-1/2 w-11'
 				>
 					<ArrowLeft />
 				</Button>
@@ -113,7 +113,7 @@ const Carousel = ({ images }: CarouselProps) => {
 					variant='branded'
 					onClick={() => splideRef.current?.go('>')}
 					aria-label='Next slide'
-					className='absolute top-1/2 right-4 z-10 -translate-y-1/2 p-2 w-[36px] h-[36px] sm:w-[48px] sm:h-[48px]'
+					className='absolute top-1/2 right-0 sm:right-4 z-10 -translate-y-1/2 w-11'
 				>
 					<ArrowRight />
 				</Button>
