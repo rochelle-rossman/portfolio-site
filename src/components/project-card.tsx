@@ -45,22 +45,22 @@ export default function ProjectBrowserContainer({
 							<h2>{title}</h2>
 						</header>
 						<section>
-							<dl className='flex flex-col gap-4 text-sm font-semibold mb-6'>
-								<div className='grid grid-cols-2 gap-4'>
-									<div>
-										<dt className='text-muted-foreground'>
-											Role
-										</dt>
-										<dd>{role}</dd>
-									</div>
-									<div>
-										<dt className='text-muted-foreground'>
-											Company
-										</dt>
-										<dd>{company}</dd>
-									</div>
+							<dl className='grid grid-cols-2 gap-4 text-sm font-semibold mb-6'>
+								<div className='flex flex-col'>
+									<dt className='text-muted-foreground'>
+										Role
+									</dt>
+									<dd>{role}</dd>
 								</div>
-								<div>
+
+								<div className='flex flex-col'>
+									<dt className='text-muted-foreground'>
+										Company
+									</dt>
+									<dd>{company}</dd>
+								</div>
+
+								<div className='col-span-2'>
 									<dt className='text-muted-foreground'>
 										Tech Stack
 									</dt>
