@@ -40,7 +40,7 @@ export default function About() {
 				<p className='md:text-lg mb-4'>
 					As a web developer, I love turning ideas into accessible,
 					responsive, and thoughtfully crafted web experiences. I
-					bring a <strong>creative</strong>and{' '}
+					bring a <strong>creative</strong> and{' '}
 					<strong>detail-oriented eye</strong>, a{' '}
 					<strong>growth mindset</strong>, and a strong sense of{' '}
 					<strong>curiosity</strong> to every project I touch.
