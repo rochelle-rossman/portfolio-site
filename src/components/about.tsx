@@ -48,12 +48,12 @@ export default function About() {
 				<p className='md:text-lg mb-4'>
 					Prior to tech work, I worked in management, leadership, and
 					customer service positions in grocery stores and restaurants
-					for more than 15 years. My people-first values—
+					for more than 15 years. My people-first values —{' '}
 					<strong>
 						clear communication, deep empathy, and creative
 						problem-solving
-					</strong>
-					—were molded by that chapter. I changed my career path to
+					</strong>{' '}
+					— were molded by that chapter. I changed my career path to
 					web development in order to create inclusive, accessible,
 					and truly helpful tools and experiences.
 				</p>
@@ -61,7 +61,7 @@ export default function About() {
 					I’m based in 📍 Kingston, NY and I&apos;m open to remote or
 					hybrid roles in the NYC area. I’m really attracted to
 					mission-driven organizations that focus on equity and making
-					a positive impact—teams where clean code and inclusive
+					a positive impact — teams where clean code and inclusive
 					collaboration come together with meaningful work.
 				</p>
 				<p className='md:text-lg mb-4'>
