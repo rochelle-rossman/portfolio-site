@@ -39,49 +39,48 @@ export default function About() {
 				</div>{' '}
 				<p className='md:text-lg mb-4'>
 					As a web developer, I love turning ideas into accessible,
-					responsive, and thoughtfully crafted web experiences.{' '}
-					<strong>
-						I bring a creative and detail-oriented eye, a growth
-						mindset, and a strong sense of curiosity to every
-						project I touch.
-					</strong>
+					responsive, and thoughtfully crafted web experiences. I
+					bring a <strong>creative</strong>and{' '}
+					<strong>detail-oriented eye</strong>, a{' '}
+					<strong>growth mindset</strong>, and a strong sense of{' '}
+					<strong>curiosity</strong> to every project I touch.
 				</p>
 				<p className='md:text-lg mb-4'>
-					Before tech I spent 15+ years in leadership, management, and
-					customer-facing roles in restaurants and grocery. That
-					chapter shaped my people-first values:{' '}
+					Prior to tech work, I worked in management, leadership, and
+					customer service positions in grocery stores and restaurants
+					for more than 15 years. My people-first values—
 					<strong>
 						clear communication, deep empathy, and creative
-						problem-solving.
-					</strong>{' '}
-					I pivoted into web development to build tools and
-					experiences that are genuinely useful, accessible, and
-					rooted in inclusion.
+						problem-solving
+					</strong>
+					—were molded by that chapter. I changed my career path to
+					web development in order to create inclusive, accessible,
+					and truly helpful tools and experiences.
 				</p>
 				<p className='md:text-lg mb-4'>
-					I’m based in 📍 Kingston, NY and open to remote or NYC-area
-					hybrid roles. I’m especially drawn to mission-driven
-					organizations that prioritize equity and public impact—teams
-					where clean code and inclusive collaboration go hand-in-hand
-					with purposeful work.
+					I’m based in 📍 Kingston, NY and I&apos;m open to remote or
+					hybrid roles in the NYC area. I’m really attracted to
+					mission-driven organizations that focus on equity and making
+					a positive impact—teams where clean code and inclusive
+					collaboration come together with meaningful work.
 				</p>
 				<p className='md:text-lg mb-4'>
-					I’m also available for freelance and contract work —
-					I&apos;m interested in partnering with small businesses,
-					nonprofits, creators, and individuals on projects such as
-					new website builds, redesigns, personal portfolios,
-					WordPress migrations and custom block work, headless CMS
-					setups, accessibility audits, performance tuning, and
-					ongoing site maintenance. I’m comfortable with short-term
-					projects and longer retained relationships alike.
+					I’m also available for freelance and contract work — I’d
+					love to partner with small businesses, nonprofits, creators,
+					and individuals on projects like new website builds,
+					redesigns, personal portfolios, WordPress migrations and
+					custom block work, headless CMS setups, accessibility
+					audits, performance tuning, and ongoing site maintenance. I
+					enjoy working across both short-term projects and
+					longer-term collaborations.
 				</p>
 				<p className='md:text-lg mb-4'>
 					Toolkit highlights: JavaScript, TypeScript, React, Next.js,
 					Vue, WordPress (custom Gutenberg blocks), and containerized
 					deployments (AWS, ArgoCD). Whether I’m engineering a
 					scalable design system or implementing accessibility best
-					practices, I aim for thoughtful, maintainable work that
-					supports both users and teams.
+					practices, I strive to produce careful, maintainable work
+					that benefits teams and users.
 				</p>
 				<p className='md:text-lg mb-4'>
 					Outside of web development, I’m a hobbyist woodworker with a
@@ -89,7 +88,7 @@ export default function About() {
 					story-rich video games. I live with my wife and our two
 					dogs, Astrid and Ty, and I’m always on the hunt for the best
 					sandwiches.
-				</p>				
+				</p>
 			</section>
 		</BrowserContainer>
 	)
